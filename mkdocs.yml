@@ -61,7 +61,7 @@ extra_javascript:
 # Page tree
 nav:
 - PGSync: index.md
-- Features: features/index.md
+- Features: docs/features/index.md
 - Getting started:
   - getting-started/setup.md
   - getting-started/installation.md
