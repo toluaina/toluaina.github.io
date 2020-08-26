@@ -4,9 +4,11 @@
     <em>Postgres to Elasticsearch sync</em>
 </p>
 <p align="center">
+<!--
 <a href="https://github.com/toluaina/pgsync/actions" target="_blank">
     <img src="https://github.com/toluaina/pgsync/workflows/build/badge.svg" alt="Build">
 </a>
+-->
 <a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
     <img src="https://codecov.io/gh/toluaina/pgsync/branch/master/graph/badge.svg?token=EJCPrws1tE" alt="Coverage">
 </a>
@@ -17,9 +19,9 @@
 
 
 ---
-
+<!--
 **Documentation**: <a href="https://pgsync.com" target="_blank">https://pgsync.com</a>
-
+-->
 **Source Code**: <a href="https://github.com/toluaina/pg-sync" target="_blank">https://github.com/toluaina/pg-sync</a>
 
 ---
