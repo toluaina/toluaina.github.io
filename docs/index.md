@@ -12,11 +12,13 @@
 </a>
 </p>
 
----
-
-**Source Code**: <a href="https://github.com/toluaina/pg-sync" target="_blank">https://github.com/toluaina/pg-sync</a>
 
 ---
+
+**Documentation**: <a href="https://pgsync.com" target="_blank">https://pgsync.com</a>
+
+---
+
 
 PGSync is a middleware for syncing data from Postgres to Elasticsearch. 
 It allows you to keep Postgres as your source of truth data source and expose 
