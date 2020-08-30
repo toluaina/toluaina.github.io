@@ -1,6 +1,5 @@
 Schema definition file
 
-
 ```JSON
 [
     {
@@ -118,7 +117,6 @@ rename a node column
             "<old column name 2>": "<new column name 2>",
         }
     ```
-
 
 !!! info
     Changing the schema effectively changes the structure of the document in Elasticsearch 
