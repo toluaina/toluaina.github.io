@@ -1,5 +1,5 @@
-First you need to bootstrap the database.
-This is a one time operation that:
+First, you need to bootstrap the database.
+This is a one-time operation that:
 
  - Creates pgsync triggers
  - Creates the logical replication slot
@@ -11,7 +11,7 @@ This is a one time operation that:
 
 There are two modes of running PGSync
 
- - daemon mode (runs continously forever)
+ - daemon mode (runs continuously forever)
  - non-daemon mode (runs a single pass and stops)
 
 === "Daemon"

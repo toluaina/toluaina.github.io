@@ -4,7 +4,7 @@ Re-indexing involves:
   ```
   curl -X DELETE <protocol>://<hostname>:<port>/<index>
   ```
-- Delete the checkpoint file.  
+- Delete the checkpoint file.
   This is a hidden file which is a concatenation of the database name and the index name
   ```
   rm .<database name>_<index name>

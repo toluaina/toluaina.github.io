@@ -55,23 +55,23 @@ Schema definition file
 This is the database name
 
 ### `index`
-Optional Elasticsearch index (defaults to database name)
+An optional Elasticsearch index (defaults to database name)
 
 ### `table`
 Node table name
 
 ### `schema`
-Optional Postgres table schema (defaults to public)
+An optional Postgres table schema (defaults to public)
 
 ### `label`
-Optional node name in Elasticsearch (defaults to table name)
+An optional node name in Elasticsearch (defaults to table name)
 
 ### `columns`
-Optional list of columns to display. This can be omitted in which case it selects all
+An optional list of columns to display. This can be omitted in which case it selects all
 columns.
 
 ### `children`
-Optional list of child nodes if any.
+An optional list of child nodes if any.
 This has the same structure as a parent node.
 
 ### `relationship`
@@ -121,7 +121,7 @@ rename a node column
 
 
 !!! info
-    Changing the schema effectively changes the structure of document in Elasticsearch 
+    Changing the schema effectively changes the structure of the document in Elasticsearch 
     and this requires re-indexing Elasticsearch.
 
-    See advanced section on re-indexing on how-to.
+    See the advanced section on re-indexing on how-to.
