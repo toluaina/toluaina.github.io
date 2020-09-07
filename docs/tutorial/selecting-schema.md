@@ -1,6 +1,8 @@
 Postgres supports having multiple schemas in the same database.
 
-You can select the schema in the node instead of the default `public` schema.
+You can select an alternative schema using the node `schema` attribute.
+
+The default schema is the `public` schema.
 
 
 ```JSON

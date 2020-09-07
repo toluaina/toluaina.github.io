@@ -1,11 +1,5 @@
 # Setup
 
-=== "AWS"
-    - Ensure Postgres database user is a superuser
-    ```
-    GRANT rds_superuser TO <username>
-    ```
-    - Enable **logical_replication** by using the parameter group settings describer [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html)
 === "Non-AWS"
     - Ensure Postgres database user is a superuser
       ```
@@ -20,3 +14,10 @@
         ```
         max_replication_slots = 1
         ```
+
+=== "AWS"
+    - Ensure Postgres database user is a superuser
+    ```
+    GRANT rds_superuser TO <username>
+    ```
+    - Enable **logical_replication** by using the parameter group settings describer [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html)

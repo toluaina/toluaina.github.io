@@ -36,6 +36,11 @@ Schema definition file
                                 "<old column 1>": "<new column 1>",
                                 "<old column 2>": "<new column 2>",
                                 ...
+                            },
+                            "mapping": {
+                                "<new column 1>": "<data type>",
+                                "<new column 2>": "<data type>",
+                                ...
                             }
                         }
                     },

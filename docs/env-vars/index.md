@@ -1,7 +1,7 @@
 PGSync uses the [dotenv](https://github.com/theskumar/python-dotenv) module for reading a .env file.
 You can place your environment variables in a .env file located at the root of your application.
 
-Alternatively, you can also set environment variables manually.
+Alternatively, you can set environment variables manually.
 e.g 
 
 <div class="termy">
