@@ -33,6 +33,8 @@ PGSync provides the following environment variables:
 | `PG_USER`                    |             | Postgres database username (superuser) |
 | `PG_PORT`                    | 5432        | Postgres database port |
 | `PG_PASSWORD`                |             | Postgres database user password |
+| `PG_SSLMODE`                 |             | Postgres SSL TCP/IP connection mode ('disable', 'allow', 'prefer', 'require', 'verify-ca' or 'verify-full') |
+| `PG_SSLROOTCERT`             |             | The name of a file containing SSL certificate authority (CA) certificate(s) |
 | `REDIS_HOST`                 | localhost   | Redis server host |
 | `REDIS_PORT`                 | 6379        | Redis server port |
 | `REDIS_DB`                   | 0           | Redis database |
