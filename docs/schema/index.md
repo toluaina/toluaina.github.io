@@ -5,6 +5,7 @@ Schema definition file
     {
         "database": "<Postgres database name>",
         "index": "<Elasticsearch index name>",
+        "setting": "<Elasticsearch setting>",
         "nodes": [
             {
                 "table": "<root table name>",
@@ -60,6 +61,51 @@ This is the database name
 
 ### `index`
 An optional Elasticsearch index (defaults to database name)
+
+### `node`
+An list of nodes describing the Elasticsearch document
+
+- #### `setting`
+Elasticsearch setting configuration
+
+    - #### `object`
+
+        ```JSON
+        {
+            "setting": {
+                "analysis": {
+                    "analyzer": {
+                        "ngram_analyzer": {
+                            "filter": [
+                                "lowercase"
+                            ],
+                            "type": "custom",
+                            "tokenizer": "ngram_tokenizer"
+                        }
+                    },
+                    "tokenizer": {
+                        "ngram_tokenizer": {
+                            "token_chars": [
+                                "letter",
+                                "digit",
+                                "punctuation",
+                                "symbol"
+                            ],
+                            "min_gram": "9",
+                            "type": "nGram",
+                            "max_gram": "10"
+                        }
+                    }
+                }
+            }
+        }
+        ```
+
+    - #### `scalar`
+
+        ```JSON
+        ["Haruki Murakami", "Philip Gabriel"]
+        ```
 
 ### `table`
 Node table name

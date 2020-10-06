@@ -14,7 +14,7 @@
 
 
 PGSync is a middleware for syncing data from Postgres to Elasticsearch. 
-It allows you to keep Postgres as your source of truth data source and expose 
+It allows you to keep Postgres as your source of truth and expose 
 structured denormalized documents in Elasticsearch.
 
 Simply describe your document structure or schema in JSON and PGSync will 
