@@ -67,7 +67,6 @@ An list of nodes describing the Elasticsearch document
 
 ### `setting`
 Elasticsearch setting configuration
-
     ```JSON
     {
         "setting": {
@@ -158,6 +157,28 @@ rename a node column
         "rename": {
             "<old column name 1>": "<new column name 1>",
             "<old column name 2>": "<new column name 2>",
+        }
+    ```
+
+- #### `mapping`
+Specify Elasticsearch mapping
+
+    ```JSON
+        "mapping": {
+             "book_id": {
+                "type": "long"
+            },
+            "book_isbn": {
+                "type": "long",
+                "fields":{
+                    "ngram": {
+                        "type": "text",
+                        "analyzer": "ngram_analyzer",
+                        "search_analyzer": "ngram_analyzer",
+                        "fielddata": true
+                    }
+                }
+            }
         }
     ```
 
