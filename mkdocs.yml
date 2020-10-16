@@ -50,7 +50,7 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/pgsync2
     - icon: fontawesome/solid/at
-      link: mailto:contact@pgsync.com
+      link: mailto:toluaina@hotmail.com
     - icon: fontawesome/brands/medium
       link: https://medium.com/@toluaina/real-time-integration-of-postgresql-with-elasticsearch-with-pgsync-9425ffa9b4e9
 
