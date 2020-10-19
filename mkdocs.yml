@@ -6,8 +6,8 @@ site_description: >-
   PGSync simplifies your data pipeline by integrating Postgres into Elasticsearch.
 
 # Repository
-repo_name: toluaina/pg-sync
-repo_url: https://github.com/toluaina/pg-sync
+repo_name: toluaina/pgsync
+repo_url: https://github.com/toluaina/pgsync
 edit_uri: ""
 
 # Copyright
@@ -44,7 +44,7 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/pgsync
     - icon: fontawesome/brands/github
-      link: https://github.com/toluaina/pg-sync
+      link: https://github.com/toluaina/pgsync
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/pgsync/
     - icon: fontawesome/brands/instagram
