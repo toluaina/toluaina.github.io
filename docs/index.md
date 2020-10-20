@@ -5,7 +5,7 @@
 </p>
 <p align="center">
 <a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
-    <img src="https://codecov.io/gh/toluaina/pgsync/branch/master/graph/badge.svg?token=EJCPrws1tE" alt="Coverage">
+    <img src="https://codecov.io/gh/toluaina/pgsync/branch/master/graph/badge.svg?token=cvQzYkz6CV" alt="Coverage">
 </a>
 <a href="https://badge.fury.io/py/pgsync" target="_blank">
     <img src="https://badge.fury.io/py/pgsync.svg" alt="Package version">
