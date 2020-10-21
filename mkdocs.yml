@@ -81,6 +81,6 @@ nav:
   - tutorial/relationship-with-one-to-many-type.md
   - tutorial/relationship-with-through-tables.md
   - tutorial/transform-nodes.md
-  - tutorial/json-fields.md
+  - tutorial/JSON-fields.md
 - Advanced - User Guide:
   - advanced/re-indexing.md
