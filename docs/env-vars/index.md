@@ -21,6 +21,7 @@ PGSync provides the following environment variables:
 | `SCHEMA`                     |             | Path to the application schema config |
 | `QUERY_CHUNK_SIZE`           | 10000       | Database query chunk size (how many records to fetch at a time) |
 | `POLL_TIMEOUT`               | 0.1         | Poll db interval (consider reducing this duration to increase throughput) |
+| `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 3600.0 | Replication slot cleanup interval (in secs) |
 | `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch protocol |
 | `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch host |
 | `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch port |
