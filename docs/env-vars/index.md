@@ -39,7 +39,7 @@ PGSync provides the following environment variables:
 | `REDIS_HOST`                 | localhost   | Redis server host |
 | `REDIS_PORT`                 | 6379        | Redis server port |
 | `REDIS_DB`                   | 0           | Redis database |
-| `REDIS_AUTH`                 |             | Postgres database password |
+| `REDIS_AUTH`                 |             | Redis password |
 | `REDIS_CHUNK_SIZE`           | 1000        | Number of items to read from Redis at a time |
 | `REDIS_SOCKET_TIMEOUT`       | 5           | Redis socket connection timeout |
 | `NEW_RELIC_ENVIRONMENT`      |             | New Relic environment name |
