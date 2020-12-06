@@ -20,4 +20,4 @@
     ```
     GRANT rds_superuser TO <username>
     ```
-    - Enable **logical_replication** by using the parameter group settings describer [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html)
+    - Enable **logical_replication** by using the parameter group settings described [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html)

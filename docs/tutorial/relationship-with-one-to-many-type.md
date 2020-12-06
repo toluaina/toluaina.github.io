@@ -67,5 +67,5 @@ To get this document structure in [Elasticsearch](https://www.elastic.co/product
 ```
 
 !!! info
-    A relationship must define both a `variant` and a `type` attribute
+    A relationship must include both a `variant` and a `type` attribute
 

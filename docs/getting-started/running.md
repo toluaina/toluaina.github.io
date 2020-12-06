@@ -11,8 +11,8 @@ This is a one-time operation that:
 
 There are two modes of running PGSync
 
- - daemon mode (runs continuously forever)
- - non-daemon mode (runs a single pass and stops)
+ - Daemon mode (runs continuously forever)
+ - Non-daemon mode (runs a single pass and stops)
 
 === "Daemon"
 
@@ -28,4 +28,4 @@ There are two modes of running PGSync
 
 !!! info
     You can also specify the schema config as an environment variable **SCHEMA** and omit it in the command(s) above.
-    The next section describes how to specify connection parameters via environment variables.
+    The next section describes how to provide connection parameters via environment variables.

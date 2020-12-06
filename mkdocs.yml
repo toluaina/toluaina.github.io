@@ -82,5 +82,6 @@ nav:
   - tutorial/relationship-with-through-tables.md
   - tutorial/transform-nodes.md
   - tutorial/JSON-fields.md
+  - tutorial/multiple-schemas-in-single-config.md
 - Advanced - User Guide:
   - advanced/re-indexing.md
