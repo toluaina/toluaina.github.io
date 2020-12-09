@@ -29,6 +29,9 @@ PGSync provides the following environment variables:
 | `ELASTICSEARCH_PASSWORD`     |             | Elasticsearch password |
 | `ELASTICSEARCH_TIMEOUT`      | 10          | Increase this if you are getting read request timeouts |
 | `ELASTICSEARCH_CHUNK_SIZE`   | 2000        | Elasticsearch index chunk size (how many documents to index at a time) |
+| `ELASTICSEARCH_MAX_CHUNK_BYTES`   | 104857600 | The maximum size of the Elasticsearch request in bytes (default: 100MB) |
+| `ELASTICSEARCH_THREAD_COUNT`   | 4        | The size of the threadpool to use for Elasticsearch bulk requests |
+| `ELASTICSEARCH_QUEUE_SIZE`   | 4        | The size of the task queue between the main thread (producing chunks to send) and the processing threads |
 | `ELASTICSEARCH_VERIFY_CERTS` | True        | Verify Elasticsearch SSL certificates |
 | `PG_HOST`                    | localhost   | Postgres database host |
 | `PG_USER`                    |             | Postgres database username (superuser) |
