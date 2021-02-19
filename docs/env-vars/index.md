@@ -45,6 +45,7 @@ PGSync provides the following environment variables:
 | `REDIS_AUTH`                 |             | Redis password |
 | `REDIS_CHUNK_SIZE`           | 1000        | Number of items to read from Redis at a time |
 | `REDIS_SOCKET_TIMEOUT`       | 5           | Redis socket connection timeout |
+| `REDIS_POLL_INTERVAL`        | 0.01        | Redis poll interval |
 | `NEW_RELIC_ENVIRONMENT`      |             | New Relic environment name |
 | `NEW_RELIC_APP_NAME`         |             | New Relic application name |
 | `NEW_RELIC_LOG_LEVEL`        |             | Sets the level of detail of messages sent to the log file |
