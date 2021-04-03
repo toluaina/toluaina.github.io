@@ -80,8 +80,10 @@ nav:
   - tutorial/relationship-with-one-to-one-type.md
   - tutorial/relationship-with-one-to-many-type.md
   - tutorial/relationship-with-through-tables.md
+  - tutorial/relationship-with-user-defined-foreign-key.md
   - tutorial/transform-nodes.md
   - tutorial/JSON-fields.md
+  - tutorial/plugins.md
   - tutorial/multiple-schemas-in-single-config.md
 - Advanced - User Guide:
   - advanced/re-indexing.md

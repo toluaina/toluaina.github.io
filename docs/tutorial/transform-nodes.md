@@ -1,4 +1,4 @@
-Transform nodes allow changing the output of the document type
+Transform nodes allow you to change the output of the document type
 
 ### `rename`
 
@@ -76,3 +76,34 @@ You can find the list of supported data types [here](https://www.elastic.co/guid
     }
 ]
 ```
+
+### `concat`
+
+You can concatenate multiple columns into a single field with an optional delimiter.
+
+```JSON
+[
+    {
+        "database": "book",
+        "index": "book",
+        "nodes": [
+            {
+                "table": "book",
+                "columns": [
+                    "title",
+                    "firstname",
+                    "lastname"
+                ],
+                "transform": {
+                    "concat": {
+                        "columns": ["title", "firstname", "lastname"],
+                        "destination": "fullname",
+                        "delimiter": "-"
+                    }
+                }
+            }
+        ]
+    }
+]
+```
+
