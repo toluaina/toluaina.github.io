@@ -106,4 +106,3 @@ You can concatenate multiple columns into a single field with an optional delimi
     }
 ]
 ```
-

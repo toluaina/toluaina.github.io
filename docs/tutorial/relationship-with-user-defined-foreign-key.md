@@ -1,4 +1,4 @@
-You can specify the relationship foreign keys explicitly as a `relationship` property.
+You can specify the relationship foreign key as a property on the `relationship`.
 
 ```JSON
 [
