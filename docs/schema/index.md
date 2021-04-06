@@ -6,6 +6,7 @@ Schema definition file
         "database": "<Postgres database name>",
         "index": "<Elasticsearch index name>",
         "setting": "<Elasticsearch setting>",
+        "plugins": ["<Plugin A>", "<Plugin B>"...],
         "nodes": [
             {
                 "table": "<root table name>",
@@ -39,9 +40,14 @@ Schema definition file
                                 ...
                             },
                             "mapping": {
-                                "<new column 1>": "<data type>",
-                                "<new column 2>": "<data type>",
+                                "<new column 1>": {"<data type>"},
+                                "<new column 2>": {"<data type>"},
                                 ...
+                            },
+                            "concat": {
+                                "columns": ["column 1", "column 2" ...],
+                                "destination": "<new column 1>",
+                                "delimiter": "<char>"
                             }
                         }
                     },
