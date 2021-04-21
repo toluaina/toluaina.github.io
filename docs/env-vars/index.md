@@ -30,9 +30,16 @@ PGSync provides the following environment variables:
 | `ELASTICSEARCH_TIMEOUT`      | 10          | Increase this if you are getting read request timeouts |
 | `ELASTICSEARCH_CHUNK_SIZE`   | 2000        | Elasticsearch index chunk size (how many documents to index at a time) |
 | `ELASTICSEARCH_MAX_CHUNK_BYTES`   | 104857600 | The maximum size of the Elasticsearch request in bytes (default: 100MB) |
-| `ELASTICSEARCH_THREAD_COUNT`   | 4        | The size of the threadpool to use for Elasticsearch bulk requests |
-| `ELASTICSEARCH_QUEUE_SIZE`   | 4        | The size of the task queue between the main thread (producing chunks to send) and the processing threads |
+| `ELASTICSEARCH_THREAD_COUNT` | 4           | The size of the threadpool to use for Elasticsearch bulk requests |
+| `ELASTICSEARCH_QUEUE_SIZE`   | 4           | The size of the task queue between the main thread (producing chunks to send) and the processing threads |
 | `ELASTICSEARCH_VERIFY_CERTS` | True        | Verify Elasticsearch SSL certificates |
+| `ELASTICSEARCH_USE_SSL`      | False       | Turn on SSL |
+| `ELASTICSEARCH_SSL_SHOW_WARN`| False       | Show warnings about ssl certs verification |
+| `ELASTICSEARCH_CA_CERTS`     |             | Path to CA certs on disk |
+| `ELASTICSEARCH_CLIENT_CERT`  |             | PEM formatted SSL client certificate |
+| `ELASTICSEARCH_CLIENT_KEY`   |             | PEM formatted SSL client key |
+| `ELASTICSEARCH_AWS_REGION`   |             | Elasticsearch AWS Region for fully managed services |
+| `ELASTICSEARCH_AWS_HOSTED`   | False       | Elasticsearch fully managed service |
 | `PG_HOST`                    | localhost   | Postgres database host |
 | `PG_USER`                    |             | Postgres database username (superuser) |
 | `PG_PORT`                    | 5432        | Postgres database port |
