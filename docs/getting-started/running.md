@@ -11,7 +11,7 @@ This is a one-time operation that:
 
 There are two modes of running PGSync
 
- - Daemon mode (runs continuously forever)
+ - Daemon mode (runs continuously)
  - Non-daemon mode (runs a single pass and stops)
 
 === "Daemon"

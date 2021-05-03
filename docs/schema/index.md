@@ -7,6 +7,8 @@ Schema definition file
         "index": "<Elasticsearch index name>",
         "setting": "<Elasticsearch setting>",
         "plugins": ["<Plugin A>", "<Plugin B>"...],
+        "pipeline": "<pipeline>",
+        "routing": "<routing>",
         "node": {
             "table": "<root table name>",
             "schema": "<schema name>",
@@ -67,7 +69,7 @@ This is the database name
 An optional Elasticsearch index (defaults to database name)
 
 ### `node`
-An list of nodes describing the Elasticsearch document
+An object node describing the Elasticsearch document
 
 ### `setting`
 Elasticsearch setting configuration
@@ -185,6 +187,14 @@ Specify Elasticsearch mapping
             }
         }
     ```
+
+### `pipeline`
+Optional injest [pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html)
+
+
+### `routing`
+Optional [routing](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-routing-field.html) field
+
 
 !!! info
     Changing the schema effectively changes the structure of the document in Elasticsearch 

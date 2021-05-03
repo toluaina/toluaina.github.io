@@ -11,7 +11,7 @@ Re-indexing involves:
   ```
 - Then re-run pgsync
   ```
-  pgsync
+  pgsync -c /path/to/schema.json
   ```
 
 !!! info
