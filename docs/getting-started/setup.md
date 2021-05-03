@@ -10,10 +10,11 @@
       ```
       wal_level = logical
       ```
+
     - Ensure there is at least one replication slot defined in [postgres.conf](https://www.postgresql.org/docs/current/config-setting.html)
-        ```
-        max_replication_slots = 1
-        ```
+      ```
+      max_replication_slots = 1
+      ```
 
 === "AWS"
     - Ensure Postgres database user is a superuser
