@@ -9,21 +9,19 @@ We can simply define this [JSON](https://jsonapi.org) schema.
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "columns": [
-                    "isbn",
-                    "title"
-                ],
-                "transform": {
-                    "rename": {
-                        "isbn": "book_isbn",
-                        "title": "book_title"
-                    }
+        "node": {
+            "table": "book",
+            "columns": [
+                "isbn",
+                "title"
+            ],
+            "transform": {
+                "rename": {
+                    "isbn": "book_isbn",
+                    "title": "book_title"
                 }
             }
-        ]
+        }
     }
 ]
 ```
@@ -58,21 +56,19 @@ You can find the list of supported data types [here](https://www.elastic.co/guid
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "columns": [
-                    "isbn",
-                    "title"
-                ],
-                "transform": {
-                    "mapping": {
-                        "isbn": "long",
-                        "title": "keyword"
-                    }
+        "node": {
+            "table": "book",
+            "columns": [
+                "isbn",
+                "title"
+            ],
+            "transform": {
+                "mapping": {
+                    "isbn": "long",
+                    "title": "keyword"
                 }
             }
-        ]
+        }
     }
 ]
 ```
@@ -86,23 +82,21 @@ You can concatenate multiple columns into a single field with an optional delimi
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "columns": [
-                    "title",
-                    "firstname",
-                    "lastname"
-                ],
-                "transform": {
-                    "concat": {
-                        "columns": ["title", "firstname", "lastname"],
-                        "destination": "fullname",
-                        "delimiter": "-"
-                    }
+        "node": {
+            "table": "book",
+            "columns": [
+                "title",
+                "firstname",
+                "lastname"
+            ],
+            "transform": {
+                "concat": {
+                    "columns": ["title", "firstname", "lastname"],
+                    "destination": "fullname",
+                    "delimiter": "-"
                 }
             }
-        ]
+        }
     }
 ]
 ```

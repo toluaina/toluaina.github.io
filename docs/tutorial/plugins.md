@@ -49,11 +49,9 @@ Then simply activate the plugin by adding it to the list of plugins in the schem
         "database": "users",
         "index": "users",
         "plugins": ["Fullname"],
-        "nodes": [
-            {
-                "table": "profile"
-            }
-        ]
+        "node": {
+            "table": "profile"
+        }
     }
 ]
 ```

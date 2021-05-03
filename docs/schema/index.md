@@ -7,54 +7,52 @@ Schema definition file
         "index": "<Elasticsearch index name>",
         "setting": "<Elasticsearch setting>",
         "plugins": ["<Plugin A>", "<Plugin B>"...],
-        "nodes": [
-            {
-                "table": "<root table name>",
-                "schema": "<schema name>",
-                "columns": [
-                    "<column 1>",
-                    "<column 2>",
-                    ...
-                ],
-                "children": [
-                    {
-                        "table": "<child table name>",
-                        "columns": [
-                            "<column 1>",
-                            "<column 2>",
-                            ...
-                        ],
-                        "label": "<document label name>",
-                        "relationship": {
-                            "variant": "object" | "scalar",
-                            "type": "one_to_one" | "one_to_many",
-                            "through_tables": [
-                                "<through table name>"
-                            ]
-                        },
-                        "children": [],
-                        "transform": {
-                            "rename": {
-                                "<old column 1>": "<new column 1>",
-                                "<old column 2>": "<new column 2>",
-                                ...
-                            },
-                            "mapping": {
-                                "<new column 1>": {"<data type>"},
-                                "<new column 2>": {"<data type>"},
-                                ...
-                            },
-                            "concat": {
-                                "columns": ["column 1", "column 2" ...],
-                                "destination": "<new column 1>",
-                                "delimiter": "<char>"
-                            }
-                        }
+        "node": {
+            "table": "<root table name>",
+            "schema": "<schema name>",
+            "columns": [
+                "<column 1>",
+                "<column 2>",
+                ...
+            ],
+            "children": [
+                {
+                    "table": "<child table name>",
+                    "columns": [
+                        "<column 1>",
+                        "<column 2>",
+                        ...
+                    ],
+                    "label": "<document label name>",
+                    "relationship": {
+                        "variant": "object" | "scalar",
+                        "type": "one_to_one" | "one_to_many",
+                        "through_tables": [
+                            "<through table name>"
+                        ]
                     },
-                    ...
-                ]
-            }
-        ]
+                    "children": [],
+                    "transform": {
+                        "rename": {
+                            "<old column 1>": "<new column 1>",
+                            "<old column 2>": "<new column 2>",
+                            ...
+                        },
+                        "mapping": {
+                            "<new column 1>": {"<data type>"},
+                            "<new column 2>": {"<data type>"},
+                            ...
+                        },
+                        "concat": {
+                            "columns": ["column 1", "column 2" ...],
+                            "destination": "<new column 1>",
+                            "delimiter": "<char>"
+                        }
+                    }
+                },
+                ...
+            ]
+        }
     }
 ]
 ```

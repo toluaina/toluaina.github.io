@@ -27,31 +27,29 @@ We can simply define this [JSON](https://jsonapi.org) schema where the **_book_*
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "columns": [
-                    "isbn",
-                    "title",
-                    "description"
-                ],
-                "children": [
-                    {
-                        "table": "author",
-                        "columns": [
-                            "name"
-                        ]
-                    },
-                    {
-                        "table": "publisher",
-                        "columns": [
-                            "name",
-                            "id"
-                        ]
-                    }
-                ]
-            }
-        ]
+        "node": {
+            "table": "book",
+            "columns": [
+                "isbn",
+                "title",
+                "description"
+            ],
+            "children": [
+                {
+                    "table": "author",
+                    "columns": [
+                        "name"
+                    ]
+                },
+                {
+                    "table": "publisher",
+                    "columns": [
+                        "name",
+                        "id"
+                    ]
+                }
+            ]
+        }
     }
 ]
 ```

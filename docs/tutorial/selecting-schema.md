@@ -10,16 +10,14 @@ The default schema is the `public` schema.
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "schema": "my_book_library",
-                "columns": [
-                    "isbn",
-                    "title"
-                ]
-            }
-        ]
+        "node": {
+            "table": "book",
+            "schema": "my_book_library",
+            "columns": [
+                "isbn",
+                "title"
+            ]
+        }
     }
 ]
 ```

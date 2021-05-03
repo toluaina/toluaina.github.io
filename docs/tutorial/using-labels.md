@@ -8,24 +8,22 @@ We can simply define this [JSON](https://jsonapi.org) schema.
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "columns": [
-                    "isbn",
-                    "title"
-                ],
-                "children": [
-                    {
-                        "table": "author",
-                        "label": "authors",
-                        "columns": [
-                            "name"
-                        ]
-                    }
-                ]
-            }
-        ]
+        "node": {
+            "table": "book",
+            "columns": [
+                "isbn",
+                "title"
+            ],
+            "children": [
+                {
+                    "table": "author",
+                    "label": "authors",
+                    "columns": [
+                        "name"
+                    ]
+                }
+            ]
+        }
     }
 ]
 ```

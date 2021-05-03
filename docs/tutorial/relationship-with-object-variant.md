@@ -7,24 +7,22 @@ You can specify the relationship between a parent and child node with the `relat
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "children": [
-                    {
-                        "table": "author",
-                        "columns": [
-                            "id",
-                            "name"
-                        ],
-                        "relationship": {
-                            "variant": "object",
-                            "type": "one_to_one"
-                        },
-                    }
-                ]
-            }
-        ]
+        "node": {
+            "table": "book",
+            "children": [
+                {
+                    "table": "author",
+                    "columns": [
+                        "id",
+                        "name"
+                    ],
+                    "relationship": {
+                        "variant": "object",
+                        "type": "one_to_one"
+                    },
+                }
+            ]
+        }
     }
 ]
 ```

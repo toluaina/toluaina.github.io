@@ -34,15 +34,13 @@ We can define this JSON schema to extract the fourth element of the
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "schema": "my_book_library",
-                "columns": [
-                    "doc#>{a,b,c}->4"
-                ]
-            }
-        ]
+        "node": {
+            "table": "book",
+            "schema": "my_book_library",
+            "columns": [
+                "doc#>{a,b,c}->4"
+            ]
+        }
     }
 ]
 ```
@@ -55,15 +53,13 @@ We can define this JSON schema, to get the first array element of field `x`.
     {
         "database": "book",
         "index": "book",
-        "nodes": [
-            {
-                "table": "book",
-                "schema": "my_book_library",
-                "columns": [
-                    "doc->x->0"
-                ]
-            }
-        ]
+        "node": {
+            "table": "book",
+            "schema": "my_book_library",
+            "columns": [
+                "doc->x->0"
+            ]
+        }
     }
 ]
 ```
