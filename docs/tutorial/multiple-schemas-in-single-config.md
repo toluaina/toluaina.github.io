@@ -6,14 +6,14 @@ This can be useful for syncing multiple tables into different Elasticsearch indi
     {
         "database": "book",
         "index": "book_index",
-        "node": {
+        "nodes": {
             "table": "book"
         }
     },
     {
         "database": "book",
         "index": "author_index",
-        "node": {
+        "nodes": {
             "table": "author"
         }
     }

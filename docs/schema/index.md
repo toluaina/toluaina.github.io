@@ -9,7 +9,7 @@ Schema definition file
         "plugins": ["<Plugin A>", "<Plugin B>"...],
         "pipeline": "<pipeline>",
         "routing": "<routing>",
-        "node": {
+        "nodes": {
             "table": "<root table name>",
             "schema": "<schema name>",
             "columns": [
@@ -68,7 +68,7 @@ This is the database name
 ### `index`
 An optional Elasticsearch index (defaults to database name)
 
-### `node`
+### `nodes`
 An object node describing the Elasticsearch document
 
 ### `setting`

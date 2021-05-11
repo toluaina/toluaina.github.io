@@ -7,7 +7,7 @@ You can specify the relationship between a parent and child node with the `relat
     {
         "database": "book",
         "index": "book",
-        "node": {
+        "nodes": {
             "table": "book",
             "children": [
                 {

@@ -9,7 +9,7 @@ We can simply define this [JSON](https://jsonapi.org) schema.
     {
         "database": "book",
         "index": "book",
-        "node": {
+        "nodes": {
             "table": "book",
             "columns": [
                 "isbn",

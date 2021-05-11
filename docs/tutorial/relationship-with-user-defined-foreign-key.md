@@ -5,7 +5,7 @@ You can specify the relationship foreign key as a property on the `relationship`
     {
         "database": "book",
         "index": "book",
-        "node": {
+        "nodes": {
             "table": "book",
             "children": [
                 {

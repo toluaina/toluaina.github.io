@@ -27,7 +27,7 @@ We can simply define this [JSON](https://jsonapi.org) schema where the **_book_*
     {
         "database": "book",
         "index": "book",
-        "node": {
+        "nodes": {
             "table": "book",
             "columns": [
                 "isbn",
