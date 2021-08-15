@@ -10,6 +10,8 @@ $ export PG_USER=kermit-the-frog
 $ export PG_USER=localhost
 $ export PG_PORT=5432
 $ export PG_PASSWORD=******
+$ export ELASTICSEARCH_HOST=loalhost
+$ export ELASTICSEARCH_PORT=9200
 ```
 </div>
 
@@ -40,6 +42,10 @@ PGSync provides the following environment variables:
 | `ELASTICSEARCH_CLIENT_KEY`   |             | PEM formatted SSL client key |
 | `ELASTICSEARCH_AWS_REGION`   |             | Elasticsearch AWS Region for fully managed services |
 | `ELASTICSEARCH_AWS_HOSTED`   | False       | Elasticsearch fully managed service |
+| `ELASTICSEARCH_STREAMING_BULK`  | False       | Elasticsearch streaming bulk index |
+| `ELASTICSEARCH_MAX_RETRIES`  | 0       | The maximum number of times a document will be retried when `429` is received|
+| `ELASTICSEARCH_INITIAL_BACKOFF` | 2       | The number of seconds we should wait before the first retry |
+| `ELASTICSEARCH_MAX_BACKOFF`  | 600       | The maximum number of seconds a retry will wait |
 | `PG_HOST`                    | localhost   | Postgres database host |
 | `PG_USER`                    |             | Postgres database username (superuser) |
 | `PG_PORT`                    | 5432        | Postgres database port |
