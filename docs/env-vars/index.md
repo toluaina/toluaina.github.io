@@ -21,6 +21,7 @@ PGSync provides the following environment variables:
 | **Environment variable**     | **Default** | **Description**                  |
 | ---------------------------- | ----------- | -------------------------------- |
 | `SCHEMA`                     |             | Path to the application schema config |
+| `CHECKPOINT_PATH`            |             | Path to store the checkpoint file |
 | `QUERY_CHUNK_SIZE`           | 10000       | Database query chunk size (how many records to fetch at a time) |
 | `POLL_TIMEOUT`               | 0.1         | Poll db interval (consider reducing this duration to increase throughput) |
 | `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 180.0 | Replication slot cleanup interval (in secs) |
