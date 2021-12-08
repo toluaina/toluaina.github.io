@@ -49,6 +49,8 @@ PGSync provides the following environment variables:
 | `ELASTICSEARCH_MAX_BACKOFF`  | 600       | The maximum number of seconds a retry will wait |
 | `ELASTICSEARCH_RAISE_ON_EXCEPTION`  | True   | if ``False`` then don't propagate exceptions from call to elasticsearch |
 | `ELASTICSEARCH_RAISE_ON_ERROR`  | True       | raise ``BulkIndexError`` containing errors (as `.errors`) from the execution of the last chunk when some occur |
+| `ELASTICSEARCH_API_KEY_ID`  |       | Elasticsearch API Key ID |
+| `ELASTICSEARCH_API_KEY`  |       | Elasticsearch API Key |
 | `PG_HOST`                    | localhost   | Postgres database host |
 | `PG_USER`                    |             | Postgres database username (superuser) |
 | `PG_PORT`                    | 5432        | Postgres database port |
