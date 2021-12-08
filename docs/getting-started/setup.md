@@ -22,3 +22,10 @@
     GRANT rds_superuser TO <username>
     ```
     - Enable **logical_replication** by using the parameter group settings described [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html)
+
+
+!!! info
+    To prevent your server logs from growing too large e.g when running on cloud infrastructure where there is a cost implication.
+    You can optionally impose a ceiling on the replication slot size using [max_slot_wal_keep_size](https://www.postgresql.org/docs/13/runtime-config-replication.html)
+
+    ```max_slot_wal_keep_size = 100GB```
