@@ -16,6 +16,25 @@ $ pgsync -c schema.json
 ```
 </div>
 
+??? example "Schema"
+    ```json
+       {
+          "table": "book",
+          "columns": [
+              "isbn",
+              "title",
+              "description"
+          ],
+          "children": [
+              {
+                  "table": "author",
+                  "columns": [
+                      "name"
+                  ]
+              }
+          ]
+      }
+    ```
 
 ??? example "SQL"
     ```sql
