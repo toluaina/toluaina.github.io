@@ -25,6 +25,7 @@ PGSync provides the following environment variables:
 | `QUERY_CHUNK_SIZE`           | 10000       | Database query chunk size (how many records to fetch at a time) |
 | `POLL_TIMEOUT`               | 0.1         | Poll db interval (consider reducing this duration to increase throughput) |
 | `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 180.0 | Replication slot cleanup interval (in secs) |
+| `LOG_INTERVAL`        | 0.5 | Stdout log interval (in secs) |
 | `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch protocol |
 | `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch host |
 | `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch port |
@@ -69,3 +70,5 @@ PGSync provides the following environment variables:
 | `NEW_RELIC_APP_NAME`         |             | New Relic application name |
 | `NEW_RELIC_LOG_LEVEL`        |             | Sets the level of detail of messages sent to the log file |
 | `NEW_RELIC_LICENSE_KEY`      |             | New Relic license key |
+| `CONSOLE_LOGGING_HANDLER_MIN_LEVEL`      |             | CRITICAL, ERROR, WARNING, INFO or DEBUG |
+| `CUSTOM_LOGGING`      |             |  |
