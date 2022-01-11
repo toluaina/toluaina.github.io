@@ -12,8 +12,58 @@ $ export PG_PORT=5432
 $ export PG_PASSWORD=******
 $ export ELASTICSEARCH_HOST=loalhost
 $ export ELASTICSEARCH_PORT=9200
+$ pgsync -c schema.json
 ```
 </div>
+
+
+??? example "SQL"
+    ```sql
+    SELECT 
+           JSON_BUILD_OBJECT(
+              'isbn', book_1.isbn, 
+              'title', book_1.title, 
+              'description', book_1.description,
+              'authors', anon_1.authors
+           ) AS "JSON_BUILD_OBJECT_1",
+           book_1.id
+    FROM book AS book_1
+    LEFT OUTER JOIN
+      (SELECT 
+              JSON_AGG(anon_2.anon) AS authors,
+              book_author_1.book_isbn AS book_isbn
+       FROM book_author AS book_author_1
+       LEFT OUTER JOIN
+         (SELECT 
+                 author_1.name AS anon,
+                 author_1.id AS id
+          FROM author AS author_1) AS anon_2 ON anon_2.id = book_author_1.author_id
+       GROUP BY book_author_1.book_isbn) AS anon_1 ON anon_1.book_isbn = book_1.isbn
+    ```
+
+??? example "JSON"
+    ```json
+      [
+          {
+              "isbn": "9785811243570",
+              "title": "Charlie and the chocolate factory",
+              "description": "Willy Wonka’s famous chocolate factory is opening at last!",
+              "authors": ["Roald Dahl"]
+          },
+          {
+              "isbn": "9788374950978",
+              "title": "Kafka on the Shore",
+              "description": "Kafka on the Shore is a 2002 novel by Japanese author Haruki Murakami",
+              "authors": ["Haruki Murakami", "Philip Gabriel"]
+          },
+          {
+              "isbn": "9781471331435",
+              "title": "1984",
+              "description": "1984 was George Orwell’s chilling prophecy about the dystopian future",
+              "authors": ["George Orwell"]
+          }
+      ]
+    ```
 
 PGSync provides the following environment variables:
 

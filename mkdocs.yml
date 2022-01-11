@@ -24,19 +24,21 @@ theme:
     code: Roboto Mono
 
 markdown_extensions:
-- toc:
-    permalink: true
-- markdown.extensions.codehilite:
-    guess_lang: false
-- admonition
-- codehilite
-- extra
-- pymdownx.superfences:
-    custom_fences:
-    - name: mermaid
-      class: mermaid
-      format: !!python/name:pymdownx.superfences.fence_div_format ''
-- pymdownx.tabbed
+  - toc:
+      permalink: true
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - admonition
+  - codehilite
+  - extra
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_div_format ''
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 # Customization
 extra:
@@ -62,28 +64,28 @@ extra_javascript:
 
 # Page tree
 nav:
-- PGSync: index.md
-- Features: features/index.md
-- Getting started:
-  - getting-started/setup.md
-  - getting-started/installation.md
-  - getting-started/running.md
-- Environment variables: env-vars/index.md
-- Schema definition: schema/index.md
-- Tutorial - User Guide:
-  - tutorial/table-with-single-child-node.md
-  - tutorial/table-with-multiple-children.md
-  - tutorial/using-labels.md
-  - tutorial/selecting-schema.md
-  - tutorial/relationship-with-object-variant.md
-  - tutorial/relationship-with-scalar-variant.md
-  - tutorial/relationship-with-one-to-one-type.md
-  - tutorial/relationship-with-one-to-many-type.md
-  - tutorial/relationship-with-through-tables.md
-  - tutorial/relationship-with-user-defined-foreign-key.md
-  - tutorial/transform-nodes.md
-  - tutorial/json-fields.md
-  - tutorial/plugins.md
-  - tutorial/multiple-schemas-in-single-config.md
-- Advanced - User Guide:
-  - advanced/re-indexing.md
+  - PGSync: index.md
+  - Features: features/index.md
+  - Getting started:
+    - getting-started/setup.md
+    - getting-started/installation.md
+    - getting-started/running.md
+  - Environment variables: env-vars/index.md
+  - Schema definition: schema/index.md
+  - Tutorial - User Guide:
+    - tutorial/table-with-single-child-node.md
+    - tutorial/table-with-multiple-children.md
+    - tutorial/using-labels.md
+    - tutorial/selecting-schema.md
+    - tutorial/relationship-with-object-variant.md
+    - tutorial/relationship-with-scalar-variant.md
+    - tutorial/relationship-with-one-to-one-type.md
+    - tutorial/relationship-with-one-to-many-type.md
+    - tutorial/relationship-with-through-tables.md
+    - tutorial/relationship-with-user-defined-foreign-key.md
+    - tutorial/transform-nodes.md
+    - tutorial/json-fields.md
+    - tutorial/plugins.md
+    - tutorial/multiple-schemas-in-single-config.md
+  - Advanced - User Guide:
+    - advanced/re-indexing.md
