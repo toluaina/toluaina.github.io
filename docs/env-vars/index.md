@@ -132,7 +132,8 @@ PGSync provides the following environment variables:
 | `REDIS_PORT`                 | 6379        | Redis server port |
 | `REDIS_DB`                   | 0           | Redis database |
 | `REDIS_AUTH`                 |             | Redis password |
-| `REDIS_CHUNK_SIZE`           | 1000        | Number of items to read from Redis at a time |
+| `REDIS_READ_CHUNK_SIZE`      | 1000        | Number of items to read from Redis at a time |
+| `REDIS_WRITE_CHUNK_SIZE`     | 1000        | Number of items to write to Redis at a time |
 | `REDIS_SOCKET_TIMEOUT`       | 5           | Redis socket connection timeout |
 | `REDIS_POLL_INTERVAL`        | 0.01        | Redis poll interval |
 | `NEW_RELIC_ENVIRONMENT`      |             | New Relic environment name |
