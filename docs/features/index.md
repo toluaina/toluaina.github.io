@@ -2,7 +2,7 @@
 
 Key features of PGSync include:
 
-- Works with any PostgreSQL database (version 9.4 or later). 
+- Works with any PostgreSQL database (version 9.6 or later). 
 - Negligible impact on database performance.
 - Transactionally consistent output in Elasticsearch. This means: writes appear only when they are committed to the database, insert, update and delete operations appear in the same order as they were committed (as opposed to eventual consistency).
 - Fault-tolerant: does not lose data, even if processes crash or a network interruption occurs, etc. The process can be recovered from the last checkpoint.
