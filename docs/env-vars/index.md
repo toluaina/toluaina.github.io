@@ -95,6 +95,7 @@ PGSync provides the following environment variables:
 | `POLL_TIMEOUT`               | 0.1         | Poll db interval (consider reducing this duration to increase throughput) |
 | `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 180.0 | Replication slot cleanup interval (in secs) |
 | `LOG_INTERVAL`        | 0.5 | Stdout log interval (in secs) |
+| `NTHREADS_POLLDB`        | 1 | Number of threads to spawn for poll db |
 | `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch protocol |
 | `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch host |
 | `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch port |
