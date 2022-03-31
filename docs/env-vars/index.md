@@ -7,7 +7,7 @@ e.g
 <div class="termy">
 ```console
 $ export PG_USER=kermit-the-frog
-$ export PG_USER=localhost
+$ export PG_HOST=localhost
 $ export PG_PORT=5432
 $ export PG_PASSWORD=******
 $ export ELASTICSEARCH_HOST=loalhost
