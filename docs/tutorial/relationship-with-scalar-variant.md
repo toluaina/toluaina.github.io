@@ -1,6 +1,6 @@
 Each child node can have only one direct parent.
 
-You can specify the relationship between a parent and child node with the `relationship` property.
+You can specify the relationship between a parent and child node using the `relationship` property.
 
 ```JSON
 [

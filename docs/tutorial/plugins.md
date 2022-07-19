@@ -23,11 +23,24 @@ right before indexing.
 
 Create a "plugins" directory and add it to your `PYTHONPATH`.
 
+The `PYTHONPATH` should contain the path to the "plugins" directory excluding 
+the "plugins" directory itself.
+
+e.g:
+
+`export PYTHONPATH=$PYTHONPATH:/path/to/myplugindir`
+
+Make sure you have created an empty init module inside the "plugins" directory
+i.e `plugins/__init__.py`
+
 
 Create a plugin module - fullnameplugin.py inside the "plugins" directory and 
 add the code below:
 
 ```
+from pgsync import plugin
+
+
 class FullnamePlugin(plugin.Plugin):
     name = 'Fullname'
 
@@ -39,6 +52,12 @@ class FullnamePlugin(plugin.Plugin):
 
         return doc
 ```
+
+Your plugins directory layout should look like this:
+
+- `plugins/fullnameplugin.py`
+- `plugins/__init__.py`
+
 
 Then simply activate the plugin by adding it to the list of plugins in the schema.json
 
