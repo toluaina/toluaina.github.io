@@ -10,7 +10,7 @@ $ export PG_USER=kermit-the-frog
 $ export PG_HOST=localhost
 $ export PG_PORT=5432
 $ export PG_PASSWORD=******
-$ export ELASTICSEARCH_HOST=loalhost
+$ export ELASTICSEARCH_HOST=localhost
 $ export ELASTICSEARCH_PORT=9200
 $ pgsync -c schema.json
 ```
