@@ -66,6 +66,7 @@ extra_javascript:
 nav:
   - PGSync: index.md
   - Features: features/index.md
+  - Requirements: requirements/index.md
   - Getting started:
     - getting-started/setup.md
     - getting-started/installation.md
