@@ -72,6 +72,7 @@ nav:
     - getting-started/installation.md
     - getting-started/running.md
   - Environment variables: env-vars/index.md
+  - Command arguments: command-args/index.md
   - Schema definition: schema/index.md
   - Tutorial - User Guide:
     - tutorial/table-with-single-child-node.md

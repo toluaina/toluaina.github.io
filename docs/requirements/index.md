@@ -1,6 +1,6 @@
 # Requirements
 
-PGSync include:
+The minimum requirements for running PGSync are:
 
 - [Python](https://www.python.org) 3.7+
 - [Postgres](https://www.postgresql.org) 9.6+
