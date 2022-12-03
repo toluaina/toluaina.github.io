@@ -15,3 +15,4 @@ PGSync supports the following command arguments
 | `--nthreads_polldb`                     |    `-n`          | Number of threads to spawn for poll db |
 | `--sslrootcert`                     |            | PG_SSLROOTCERT override |
 | `--sslmode`                     |            | PG_SSLMODE override ("allow", "disable", "prefer", "require", "verify-ca" or "verify-full") |
+| `--polling`                     |            | Use polling mode |
