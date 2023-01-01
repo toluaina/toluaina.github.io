@@ -4,12 +4,15 @@
     <em>Postgres to Elasticsearch sync</em>
 </p>
 <p align="center">
-<a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
-    <img src="https://codecov.io/gh/toluaina/pgsync/branch/main/graph/badge.svg?token=cvQzYkz6CV" alt="Coverage">
-</a>
-<a href="https://badge.fury.io/py/pgsync" target="_blank">
-    <img src="https://badge.fury.io/py/pgsync.svg" alt="Package version">
-</a>
+    <a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
+        <img src="https://codecov.io/gh/toluaina/pgsync/branch/main/graph/badge.svg?token=cvQzYkz6CV" alt="Coverage">
+    </a>
+    <a href="https://badge.fury.io/py/pgsync" target="_blank">
+        <img src="https://badge.fury.io/py/pgsync.svg" alt="Package version">
+    </a>
+    <a href="https://pypi.org/project/pgsync" target="_blank">
+        <img src="https://img.shields.io/pypi/pyversions/pgsync" alt="Python versions">
+    </a>
 </p>
 
 

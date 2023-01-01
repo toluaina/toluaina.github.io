@@ -11,14 +11,15 @@ repo_url: https://github.com/toluaina/pgsync
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2023 Tolu Aina
+copyright: Copyright &copy; 2023 Tolu Aina
 
 # Configuration
 theme:
   name: material
   palette:
     scheme: slate
-    primary: orange
+    primary: pink
+    accent: deep purple
   font:
     text: Roboto
     code: Roboto Mono
