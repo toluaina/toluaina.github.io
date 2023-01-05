@@ -48,7 +48,7 @@ A **_pivot_** table indicates the root of your document.
 }
 ```
 
-To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)
+To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)/[Opensearch](https://opensearch.org/)
 
 ```JSON
 [

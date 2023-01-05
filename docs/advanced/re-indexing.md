@@ -1,6 +1,6 @@
 Re-indexing involves:
 
-- Deleting the Elasticsearch index
+- Deleting the Elasticsearch/Opensearch index
   ```
   curl -X DELETE <protocol>://<hostname>:<port>/<index>
   ```

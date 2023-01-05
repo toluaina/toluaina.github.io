@@ -98,32 +98,32 @@ PGSync provides the following environment variables:
 | `NTHREADS_POLLDB`        | 1 | Number of threads to spawn for poll db |
 | `USE_ASYNC`        | False | Enable experimental async mode |
 | `POLL_INTERVAL`        | 0.1        | db polling interval for polling mode |
-| `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch protocol |
-| `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch host |
-| `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch port |
-| `ELASTICSEARCH_USER`         |             | Elasticsearch user |
-| `ELASTICSEARCH_PASSWORD`     |             | Elasticsearch password |
+| `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch/Opensearch protocol |
+| `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch/Opensearch host |
+| `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch/Opensearch port |
+| `ELASTICSEARCH_USER`         |             | Elasticsearch/Opensearch user |
+| `ELASTICSEARCH_PASSWORD`     |             | Elasticsearch/Opensearch password |
 | `ELASTICSEARCH_TIMEOUT`      | 10          | Increase this if you are getting read request timeouts |
-| `ELASTICSEARCH_CHUNK_SIZE`   | 2000        | Elasticsearch index chunk size (how many documents to index at a time) |
-| `ELASTICSEARCH_MAX_CHUNK_BYTES`   | 104857600 | The maximum size of the Elasticsearch request in bytes (default: 100MB) |
-| `ELASTICSEARCH_THREAD_COUNT` | 4           | The size of the threadpool to use for Elasticsearch bulk requests |
+| `ELASTICSEARCH_CHUNK_SIZE`   | 2000        | Elasticsearch/Opensearch index chunk size (how many documents to index at a time) |
+| `ELASTICSEARCH_MAX_CHUNK_BYTES`   | 104857600 | The maximum size of the Elasticsearch/Opensearch request in bytes (default: 100MB) |
+| `ELASTICSEARCH_THREAD_COUNT` | 4           | The size of the threadpool to use for Elasticsearch/Opensearch bulk requests |
 | `ELASTICSEARCH_QUEUE_SIZE`   | 4           | The size of the task queue between the main thread (producing chunks to send) and the processing threads |
-| `ELASTICSEARCH_VERIFY_CERTS` | True        | Verify Elasticsearch SSL certificates |
+| `ELASTICSEARCH_VERIFY_CERTS` | True        | Verify Elasticsearch/Opensearch SSL certificates |
 | `ELASTICSEARCH_USE_SSL`      | False       | Turn on SSL |
 | `ELASTICSEARCH_SSL_SHOW_WARN`| False       | Show warnings about ssl certs verification |
 | `ELASTICSEARCH_CA_CERTS`     |             | Path to CA certs on disk |
 | `ELASTICSEARCH_CLIENT_CERT`  |             | PEM formatted SSL client certificate |
 | `ELASTICSEARCH_CLIENT_KEY`   |             | PEM formatted SSL client key |
-| `ELASTICSEARCH_AWS_REGION`   |             | Elasticsearch AWS Region for fully managed services |
-| `ELASTICSEARCH_AWS_HOSTED`   | False       | Elasticsearch fully managed service |
-| `ELASTICSEARCH_STREAMING_BULK`  | False       | Elasticsearch streaming bulk index |
+| `ELASTICSEARCH_AWS_REGION`   |             | Elasticsearch/Opensearch AWS Region for fully managed services |
+| `ELASTICSEARCH_AWS_HOSTED`   | False       | Elasticsearch/Opensearch fully managed service |
+| `ELASTICSEARCH_STREAMING_BULK`  | False       | Elasticsearch/Opensearch streaming bulk index |
 | `ELASTICSEARCH_MAX_RETRIES`  | 0       | The maximum number of times a document will be retried when `429` is received|
 | `ELASTICSEARCH_INITIAL_BACKOFF` | 2       | The number of seconds we should wait before the first retry |
 | `ELASTICSEARCH_MAX_BACKOFF`  | 600       | The maximum number of seconds a retry will wait |
 | `ELASTICSEARCH_RAISE_ON_EXCEPTION`  | True   | if ``False`` then don't propagate exceptions from call to elasticsearch |
 | `ELASTICSEARCH_RAISE_ON_ERROR`  | True       | raise ``BulkIndexError`` containing errors (as `.errors`) from the execution of the last chunk when some occur |
-| `ELASTICSEARCH_API_KEY_ID`  |       | Elasticsearch API Key ID |
-| `ELASTICSEARCH_API_KEY`  |       | Elasticsearch API Key |
+| `ELASTICSEARCH_API_KEY_ID`  |       | Elasticsearch/Opensearch API Key ID |
+| `ELASTICSEARCH_API_KEY`  |       | Elasticsearch/Opensearch API Key |
 | `PG_HOST`                    | localhost   | Postgres database host |
 | `PG_USER`                    |             | Postgres database username (superuser) |
 | `PG_PORT`                    | 5432        | Postgres database port |

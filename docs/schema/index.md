@@ -4,8 +4,8 @@ Schema definition file
 [
     {
         "database": "<Postgres database name>",
-        "index": "<Elasticsearch index name>",
-        "setting": "<Elasticsearch setting>",
+        "index": "<Elasticsearch/Opensearch index name>",
+        "setting": "<Elasticsearch/Opensearch setting>",
         "plugins": ["<Plugin A>", "<Plugin B>"...],
         "pipeline": "<pipeline>",
         "routing": "<routing>",
@@ -66,13 +66,13 @@ Schema definition file
 This is the database name
 
 ### `index`
-An optional Elasticsearch index (defaults to database name)
+An optional Elasticsearch/Opensearch index (defaults to database name)
 
 ### `nodes`
-An object node describing the Elasticsearch document
+An object node describing the Elasticsearch/Opensearch document
 
 ### `setting`
-Elasticsearch setting configuration
+Elasticsearch/Opensearch setting configuration
     ```JSON
     {
         "setting": {
@@ -111,7 +111,7 @@ Node table name
 An optional Postgres table schema (defaults to public)
 
 ### `label`
-An optional node name in Elasticsearch (defaults to table name)
+An optional node name in Elasticsearch/Opensearch (defaults to table name)
 
 ### `columns`
 An optional list of columns to display. This can be omitted in which case it selects all
@@ -167,7 +167,7 @@ rename a node column
     ```
 
 - #### `mapping`
-Specify Elasticsearch mapping
+Specify Elasticsearch/Opensearch mapping
 
     ```JSON
         "mapping": {
@@ -197,7 +197,7 @@ Optional [routing](https://www.elastic.co/guide/en/elasticsearch/reference/curre
 
 
 !!! info
-    Changing the schema effectively changes the structure of the document in Elasticsearch 
-    and this requires re-indexing Elasticsearch.
+    Changing the schema effectively changes the structure of the document in Elasticsearch/Opensearch 
+    and this requires re-indexing Elasticsearch/Opensearch.
 
     See the advanced section on re-indexing on how-to.

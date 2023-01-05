@@ -26,7 +26,7 @@ We can simply define this [JSON](https://jsonapi.org) schema.
 ]
 ```
 
-To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)
+To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)/[Opensearch](https://opensearch.org/)
 
 ```JSON
 [
@@ -47,7 +47,7 @@ To get this document structure in [Elasticsearch](https://www.elastic.co/product
 
 ### `mapping`
 
-You can specify the data type for an Elasticsearch field in the schema.
+You can specify the data type for an Elasticsearch/Opensearch field in the schema.
 
 You can find the list of supported data types [here](https://www.elastic.co/guide/en/elasticsearch/reference/current/sql-data-types.html)
 
