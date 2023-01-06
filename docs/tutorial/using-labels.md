@@ -28,7 +28,7 @@ We can simply define this [JSON](https://jsonapi.org) schema.
 ]
 ```
 
-To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)
+To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)/[Opensearch](https://opensearch.org/)
 
 ```JSON
 [
