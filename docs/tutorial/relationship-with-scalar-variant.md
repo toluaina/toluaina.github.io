@@ -26,7 +26,7 @@ You can specify the relationship between a parent and child node using the `rela
 ]
 ```
 
-To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)/[Opensearch](https://opensearch.org/)
+To get this document structure in [Elasticsearch](https://www.elastic.co/products/elastic-stack)/[OpenSearch](https://opensearch.org/)
 
 ```JSON
 [

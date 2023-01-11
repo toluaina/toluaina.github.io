@@ -1,5 +1,5 @@
 We can declare multiple schemas in the same config. 
-This can be useful for syncing multiple tables into different Elasticsearch/Opensearch indices.
+This can be useful for syncing multiple tables into different Elasticsearch/OpenSearch indices.
 
 ```JSON
 [

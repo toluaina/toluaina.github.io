@@ -8,7 +8,7 @@ Although this comes with some level of development.
 Plugins are currently supported only in the Python Language.
 
 For example, imagine you had a user profile database with `firstname` and 
-`lastname` fields and generating the Elasticsearch/Opensearch doc below.
+`lastname` fields and generating the Elasticsearch/OpenSearch doc below.
 
 ```JSON
 {
@@ -76,7 +76,7 @@ Then simply activate the plugin by adding it to the list of plugins in the schem
 ```
 
 
-To get this document in Elasticsearch/Opensearch
+To get this document in Elasticsearch/OpenSearch
 
 ```JSON
 {

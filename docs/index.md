@@ -1,7 +1,7 @@
 # PGSync
 
 <p align="center">
-    <em>Postgres to Elasticsearch/Opensearch sync</em>
+    <em>Postgres to Elasticsearch/OpenSearch sync</em>
 </p>
 <p align="center">
     <a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
@@ -16,15 +16,15 @@
 </p>
 
 
-PGSync is a middleware for syncing data from Postgres to Elasticsearch/Opensearch. 
+PGSync is a middleware for syncing data from Postgres to Elasticsearch/OpenSearch. 
 It allows you to keep Postgres as your source of truth and expose 
-structured denormalized documents in Elasticsearch/Opensearch.
+structured denormalized documents in Elasticsearch/OpenSearch.
 
 Simply describe your document structure or schema in JSON and PGSync will 
-continuously capture changes in your data and load it into Elasticsearch/Opensearch without 
+continuously capture changes in your data and load it into Elasticsearch/OpenSearch without 
 writing any code. PGSync transforms your relational data into a structured 
 document format.
 
 It allows you to take advantage of the expressive power and scalability of 
-Elasticsearch/Opensearch directly from Postgres. You don’t have to write complex queries 
+Elasticsearch/OpenSearch directly from Postgres. You don’t have to write complex queries 
 and transformation pipelines. PGSync is lightweight, fast and flexible.

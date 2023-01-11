@@ -3,7 +3,7 @@ site_name: PGSync
 site_url: https://toluaina.github.io
 site_author: Tolu Aina
 site_description: >-
-  PGSync simplifies your data pipeline by integrating Postgres into Elasticsearch/Opensearch.
+  PGSync simplifies your data pipeline by integrating Postgres into Elasticsearch/OpenSearch.
 
 # Repository
 repo_name: toluaina/pgsync
