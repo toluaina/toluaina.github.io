@@ -1,8 +1,9 @@
-# PGSync
-
 <p align="center">
-    <em>Postgres to Elasticsearch/OpenSearch sync</em>
+    <a href="https://pgsync.com">
+        <img src="assets/images/logo-no-background.svg" alt="PGSync">
+    </a>
 </p>
+
 <p align="center">
     <a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
         <img src="https://codecov.io/gh/toluaina/pgsync/branch/main/graph/badge.svg?token=cvQzYkz6CV" alt="Coverage">

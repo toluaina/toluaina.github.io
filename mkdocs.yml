@@ -23,6 +23,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+  favicon: assets/images/pgsync-website-favicon-white.png
+  logo: assets/images/pgsync-website-favicon-white.png
 
 markdown_extensions:
   - toc:
