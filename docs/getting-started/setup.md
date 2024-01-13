@@ -1,6 +1,6 @@
 # Setup
 
-=== "Non-AWS"
+=== "Self Hosted"
     - Ensure Postgres database user is a superuser (this is required to query replication slots)
       ```
        SELECT usename FROM pg_user WHERE usesuper = true

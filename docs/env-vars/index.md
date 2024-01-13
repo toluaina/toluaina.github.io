@@ -6,11 +6,11 @@ e.g
 
 <div class="termy">
 ```console
-$ export PG_USER=kermit-the-frog
+$ export PG_USER=kermit
 $ export PG_HOST=localhost
 $ export PG_PORT=5432
 $ export PG_PASSWORD=******
-$ export ELASTICSEARCH_HOST=localhost
+$ export ELASTICSEARCH_HOST=127.0.0.1
 $ export ELASTICSEARCH_PORT=9200
 $ pgsync -c schema.json
 ```
@@ -95,7 +95,7 @@ PGSync provides the following environment variables:
 | `POLL_TIMEOUT`               | 0.1         | Poll db interval (consider reducing this duration to increase throughput) |
 | `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 180.0 | Replication slot cleanup interval (in secs) |
 | `LOG_INTERVAL`        | 0.5 | Stdout log interval (in secs) |
-| `NTHREADS_POLLDB`        | 1 | Number of threads to spawn for poll db |
+| `NUM_WORKERS`        | 2 | Number of workers to spawn for handling events |
 | `USE_ASYNC`        | False | Enable experimental async mode |
 | `POLL_INTERVAL`        | 0.1        | db polling interval for polling mode |
 | `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch/OpenSearch protocol |

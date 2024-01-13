@@ -17,13 +17,13 @@ There are two modes of running PGSync
 === "Daemon"
 
     ```
-    pgsync --config /optional/path/to/schema.json --daemon
+    pgsync --config /path/to/schema.json --daemon
     ```
 
 === "Non-daemon"
 
     ```
-    pgsync --config /optional/path/to/schema.json
+    pgsync --config /path/to/schema.json
     ```
 
 !!! info

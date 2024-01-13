@@ -46,9 +46,9 @@ markdown_extensions:
 # Customization
 extra:
   social:
-    - icon: fontawesome/brands/twitter
+    - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/pgsync
-    - icon: fontawesome/brands/github
+    - icon: fontawesome/brands/github-alt
       link: https://github.com/toluaina/pgsync
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/pgsync/
@@ -94,3 +94,4 @@ nav:
     - tutorial/multiple-schemas-in-single-config.md
   - Advanced - User Guide:
     - advanced/re-indexing.md
+  - License: license/index.md
