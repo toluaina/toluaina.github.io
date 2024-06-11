@@ -64,8 +64,15 @@ You can find the list of supported data types [here](https://www.elastic.co/guid
             ],
             "transform": {
                 "mapping": {
-                    "isbn": "long",
-                    "title": "keyword"
+                    "id": {
+                        "type": "long"
+                    },
+                    "isbn": {
+                        "type": "long"
+                    },
+                    "title": {
+                        "type": "keyword"
+                    }
                 }
             }
         }
