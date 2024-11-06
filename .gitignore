@@ -5,3 +5,5 @@ __pycache__/
 
 # mkdocs documentation
 /site
+
+.DS_Store
