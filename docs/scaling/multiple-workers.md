@@ -17,5 +17,17 @@ pgsync -c schema.json --consumer
 pgsync -c schema.json --consumer
 ```
 
-
 This setup allows multiple consumers to work in parallel, improving overall throughput.
+
+
+Additionally, you can increase the number of workers used for handling requests.
+
+```
+pgsync -c schema.json -n 4
+pgsync -c schema.json --consumer -n 6
+```
+
+!!! info
+    The -n argument does not apply in the producer only mode.
+    i.e with:
+    ```pgsync -c schema.json --producer```
