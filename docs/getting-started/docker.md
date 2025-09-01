@@ -24,7 +24,7 @@ To start all services with Docker, follow these steps:
 
 Environment variable placeholders - full list [here](https://pgsync.com/env-vars):
 
-- redis_host_address — Address of the Redis server (e.g., host.docker.internal for local Docker setup)
+- redis_host_address — Address of the Redis/Valkey server (e.g., host.docker.internal for local Docker setup)
 - username — PostgreSQL username
 - password — PostgreSQL password
 - postgres_host — Host address for PostgreSQL instance (e.g., host.docker.internal)

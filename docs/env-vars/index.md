@@ -130,18 +130,18 @@ PGSync provides the following environment variables:
 | `PG_PASSWORD`                |             | Postgres database user password |
 | `PG_SSLMODE`                 |             | Postgres SSL TCP/IP connection mode ('disable', 'allow', 'prefer', 'require', 'verify-ca' or 'verify-full') |
 | `PG_SSLROOTCERT`             |             | The name of a file containing SSL certificate authority (CA) certificate(s) |
-| `REDIS_CHECKPOINT`             |     False        | Store checkpoint in redis instead of on filesystem |
+| `REDIS_CHECKPOINT`             |     False        | Store checkpoint in redis/valkey instead of on filesystem |
 | `FORMAT_WITH_COMMAS`             |     True        | Comma formatted logging |
-| `REDIS_SCHEME`               | redis       | Redis connection scheme |
-| `REDIS_HOST`                 | localhost   | Redis server host |
-| `REDIS_PORT`                 | 6379        | Redis server port |
-| `REDIS_DB`                   | 0           | Redis database |
-| `REDIS_AUTH`                 |             | Redis password |
-| `REDIS_USER`                 |             | Redis username |
-| `REDIS_READ_CHUNK_SIZE`      | 1000        | Number of items to read from Redis at a time |
-| `REDIS_WRITE_CHUNK_SIZE`     | 1000        | Number of items to write to Redis at a time |
-| `REDIS_SOCKET_TIMEOUT`       | 5           | Redis socket connection timeout |
-| `REDIS_POLL_INTERVAL`        | 0.01        | Redis poll interval |
+| `REDIS_SCHEME`               | redis       | Redis/Valkey connection scheme |
+| `REDIS_HOST`                 | localhost   | Redis/Valkey server host |
+| `REDIS_PORT`                 | 6379        | Redis/Valkey server port |
+| `REDIS_DB`                   | 0           | Redis/Valkey database |
+| `REDIS_AUTH`                 |             | Redis/Valkey password |
+| `REDIS_USER`                 |             | Redis/Valkey username |
+| `REDIS_READ_CHUNK_SIZE`      | 1000        | Number of items to read from Redis/Valkey at a time |
+| `REDIS_WRITE_CHUNK_SIZE`     | 1000        | Number of items to write to Redis/Valkey at a time |
+| `REDIS_SOCKET_TIMEOUT`       | 5           | Redis/Valkey socket connection timeout |
+| `REDIS_POLL_INTERVAL`        | 0.01        | Redis/Valkey poll interval |
 | `NEW_RELIC_ENVIRONMENT`      |             | New Relic environment name |
 | `NEW_RELIC_APP_NAME`         |             | New Relic application name |
 | `NEW_RELIC_LOG_LEVEL`        |             | Sets the level of detail of messages sent to the log file |
