@@ -20,6 +20,11 @@ theme:
     scheme: slate
     primary: pink
     accent: deep purple
+  features:
+    - content.code.copy    
+    - toc.follow           
+    - navigation.top      
+    - navigation.instant   
   font:
     text: Roboto
     code: Roboto Mono
@@ -27,6 +32,7 @@ theme:
   logo: assets/images/pgsync-website-favicon-white.png
 
 markdown_extensions:
+  - md_in_html
   - toc:
       permalink: true
   - markdown.extensions.codehilite:

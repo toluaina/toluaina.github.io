@@ -1,13 +1,37 @@
 # Features
 
-Key features of PGSync include:
+PGSync focuses on reliability, low overhead, and clean documents for search.
 
-- Works with any PostgreSQL database (version 9.6 or later). 
-- Negligible impact on database performance.
-- Transactionally consistent output in Elasticsearch/OpenSearch. This means: writes appear only when they are committed to the database, insert, update and delete operations appear in the same order as they were committed (as opposed to eventual consistency).
-- Fault-tolerant: does not lose data, even if processes crash or a network interruption occurs, etc. The process can be recovered from the last checkpoint.
-- Returns the data directly as Postgres JSON from the database for speed.
-- Supports composite primary and foreign keys.
-- Supports an arbitrary depth of nested entities i.e Tables having long chain of relationship dependencies.
-- Supports Postgres JSON data fields. This means: we can extract JSON fields in a database table as a separate field in the resulting document.
-- Customizable document structure.
+## Highlights
+
+- **PostgreSQL 9.6+** — works with any PostgreSQL database (version 9.6 or later).
+- **Low overhead** — negligible impact on database performance.
+- **Transactional consistency** — only committed writes are indexed; inserts, updates, and deletes are applied in commit order.
+- **Fault tolerant & resumable** — no data loss on crashes or network interruptions; processing resumes from the last checkpoint.
+- **Native JSON path** — returns data directly as PostgreSQL JSON for speed.
+- **Composite keys** — supports composite primary and foreign keys.
+- **Deeply nested documents** — supports arbitrary depth of related entities (tables with long chains of relationships).
+- **JSON field extraction** — extract JSON fields from a table into separate fields in the resulting document.
+- **Customizable document structure** — tailor documents to your index and query needs.
+
+## Details
+
+### Consistency
+- Only committed transactions appear in Elasticsearch/OpenSearch.
+- Operation order (insert → update → delete) is preserved based on commit order.
+
+### Reliability
+- Designed to avoid data loss if a process crashes or the network drops.
+- Recovery resumes from the last successful checkpoint.
+
+### Data modeling
+- Composite **primary** and **foreign** keys supported.
+- Arbitrary-depth relationships (one-to-one, one-to-many, through tables).
+- Extract and map PostgreSQL JSON fields to top-level document fields.
+
+### Performance
+- Builds documents directly from PostgreSQL JSON to minimize transformation overhead.
+
+### Compatibility
+- PostgreSQL **9.6 or later**.
+- Outputs to **Elasticsearch**/**OpenSearch**.

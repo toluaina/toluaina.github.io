@@ -1,6 +1,6 @@
-Parallel Sync (Experimental Feature)
+Parallel Sync
 
-Parallel Sync is an experimental feature designed to significantly improve sync speed by utilizing multiple CPUs/threads. It is particularly useful in environments with high network latency, where PostgreSQL, Elasticsearch/OpenSearch, and PGSync servers run on different networks.
+Parallel Sync is a feature designed to significantly improve sync speed by utilizing multiple CPUs/threads. It is particularly useful in environments with high network latency, where PostgreSQL, Elasticsearch/OpenSearch, and PGSync servers run on different networks.
 
 Why Use Parallel Sync?
 
