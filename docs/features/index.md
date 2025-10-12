@@ -4,7 +4,7 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 
 ## Highlights
 
-- **PostgreSQL 9.6+** — works with any PostgreSQL database (version 9.6 or later).
+- **PostgreSQL**, **MySQL**, and **MariaDB** — works with any PostgreSQL (9.6+), MySQL (5.7+), or MariaDB (10.5+) database.
 - **Low overhead** — negligible impact on database performance.
 - **Transactional consistency** — only committed writes are indexed; inserts, updates, and deletes are applied in commit order.
 - **Fault tolerant & resumable** — no data loss on crashes or network interruptions; processing resumes from the last checkpoint.
@@ -32,6 +32,11 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 ### Performance
 - Builds documents directly from PostgreSQL JSON to minimize transformation overhead.
 
+
 ### Compatibility
-- PostgreSQL **9.6 or later**.
-- Outputs to **Elasticsearch**/**OpenSearch**.
+
+- :simple-postgresql: PostgreSQL **9.6+ or later**
+- :simple-mysql: MySQL **8.0+ or later**
+- :simple-mariadb: MariaDB **10.3+ or later**
+- :simple-elasticsearch: Elasticsearch 6.3.1+
+- :simple-opensearch: OpenSearch 1.3.7+

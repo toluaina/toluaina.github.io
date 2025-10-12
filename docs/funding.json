@@ -6,7 +6,7 @@
     "role": "owner",
     "name": "Tolu Aina",
     "email": "tolu@pgsync.com",
-    "description": "Maintainer of PGSync, an open-source tool that syncs PostgreSQL to Elasticsearch and OpenSearch. Funding supports maintenance, docs, feature development (CDC/backfills/schema tooling), user support, and CI/test infra.",
+    "description": "Maintainer of PGSync, an open-source tool that syncs PostgreSQL/MySQL/MariaDB to Elasticsearch and OpenSearch. Funding supports maintenance, docs, feature development (CDC/backfills/schema tooling), user support, and CI/test infra.",
     "webpageUrl": {
       "url": "https://pgsync.com"
     }
@@ -15,7 +15,7 @@
     {
       "guid": "pgsync",
       "name": "PGSync",
-      "description": "PGSync moves data from PostgreSQL to Elasticsearch/OpenSearch with live syncing, bulk backfills, and minimal load on the primary DB.",
+      "description": "PGSync moves data from PostgreSQL/MySQL/MariaDB to Elasticsearch/OpenSearch with live syncing, bulk backfills, and minimal load on the primary DB.",
       "webpageUrl": {
         "url": "https://pgsync.com"
       },
@@ -27,14 +27,14 @@
       ],
       "tags": [
         "postgresql",
+        "mysql",
+        "mariadb",
         "elasticsearch",
         "opensearch",
         "cdc",
         "etl",
         "data-pipeline",
         "python",
-        "streaming",
-        "replication",
         "devtools"
       ]
     }

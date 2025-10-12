@@ -24,7 +24,7 @@ hide:
 
 <div align="center" markdown>
 
-PGSync keeps **PostgreSQL** as your source of truth and publishes **denormalized documents** to **Elasticsearch/OpenSearch**—continuously and transactionally.
+PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and publishes **denormalized documents** to **Elasticsearch/OpenSearch**—continuously and transactionally.
 
 [Get started](getting-started/installation.md){ .md-button .md-button--primary }
 [GitHub](https://github.com/toluaina/pgsync){ .md-button }
@@ -37,10 +37,10 @@ PGSync keeps **PostgreSQL** as your source of truth and publishes **denormalized
 
 ## What is PGSync?
 
-PGSync is a lightweight middleware that captures changes from PostgreSQL and writes structured documents to your search cluster. Describe your **document schema** once (in JSON) and PGSync takes care of change capture, ordering, and delivery—no custom ETL code.
+PGSync is a lightweight middleware that captures changes from PostgreSQL/MySQL/MariaDB and writes structured documents to your search cluster. Describe your **document schema** once (in JSON) and PGSync takes care of change capture, ordering, and delivery—no custom ETL code.
 
 - Transactionally consistent output (only committed writes; commit order preserved)
-- Low overhead on PostgreSQL
+- Low overhead on PostgreSQL/MySQL/MariaDB 
 - Flexible mapping from relational data to nested documents
 
 ---
