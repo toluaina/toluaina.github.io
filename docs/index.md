@@ -26,10 +26,9 @@ hide:
 
 PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and publishes **denormalized documents** to **Elasticsearch/OpenSearch**—continuously and transactionally.
 
-[Get started](getting-started/installation.md){ .md-button .md-button--primary }
-[GitHub](https://github.com/toluaina/pgsync){ .md-button }
-[PyPI](https://pypi.org/project/pgsync/){ .md-button }
-[Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
+[:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
+[:material-package-variant: PyPI](https://pypi.org/project/pgsync/){ .md-button }
+[:material-docker: Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
 
 </div>
 
