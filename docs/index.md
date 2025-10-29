@@ -24,11 +24,13 @@ hide:
 
 <div align="center" markdown>
 
-PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and publishes **denormalized documents** to **Elasticsearch/OpenSearch**—continuously and transactionally.
+PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and publishes **denormalized documents** to **Elasticsearch/OpenSearch** continuously and transactionally.
 
-[:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
-[:material-package-variant: PyPI](https://pypi.org/project/pgsync/){ .md-button }
-[:material-docker: Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
+
+:material-github:{ aria-hidden="true" } [GitHub](https://github.com/toluaina/pgsync){ target=_blank rel="noopener" } •
+:material-package-variant:{ aria-hidden="true" } [PyPI](https://pypi.org/project/pgsync/){ target=_blank rel="noopener" } •
+:material-docker:{ aria-hidden="true" } [Docker](https://hub.docker.com/r/toluaina1/pgsync){ target=_blank rel="noopener" }
+
 
 </div>
 
@@ -43,3 +45,16 @@ PGSync is a lightweight middleware that captures changes from PostgreSQL/MySQL/M
 - Flexible mapping from relational data to nested documents
 
 ---
+
+<p>PGSync is supported by <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=pgsync" rel="sponsored noopener noreferrer">DigitalOcean</a>.</p>
+<p>
+  <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=pgsync" rel="sponsored noopener noreferrer">
+    <img
+      src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg"
+      alt="DigitalOcean"
+      width="201"
+      loading="lazy"
+      decoding="async"
+    >
+  </a>
+</p>
