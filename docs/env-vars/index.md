@@ -96,7 +96,7 @@ PGSync provides the following environment variables:
 | `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 180.0 | Replication slot cleanup interval (in secs) |
 | `LOG_INTERVAL`        | 0.5 | Stdout log interval (in secs) |
 | `NUM_WORKERS`        | 2 | Number of workers to spawn for handling events |
-| `USE_ASYNC`        | False | Enable experimental async mode |
+| `USE_ASYNC`        | False | Enable async mode |
 | `POLL_INTERVAL`        | 0.1        | db polling interval for polling mode |
 | `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch/OpenSearch protocol |
 | `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch/OpenSearch host |
