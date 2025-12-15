@@ -30,7 +30,7 @@ PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and pu
 :material-github:{ aria-hidden="true" } [GitHub](https://github.com/toluaina/pgsync){ target=_blank rel="noopener" } •
 :material-package-variant:{ aria-hidden="true" } [PyPI](https://pypi.org/project/pgsync/){ target=_blank rel="noopener" } •
 :material-docker:{ aria-hidden="true" } [Docker](https://hub.docker.com/r/toluaina1/pgsync){ target=_blank rel="noopener" }
-
+:simple-digitalocean:{ aria-hidden="true" } [DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync){ target=_blank rel="noopener" }
 
 </div>
 

@@ -60,6 +60,9 @@ extra:
       link: https://hub.docker.com/r/toluaina1/pgsync
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/pgsync/
+    - icon: fontawesome/brands/digital-ocean
+      link: https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync
+      name: DigitalOcean Marketplace
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/pgsync
     - icon: fontawesome/brands/github-alt
