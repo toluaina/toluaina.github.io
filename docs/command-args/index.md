@@ -16,4 +16,5 @@ PGSync supports the following command arguments
 | `--sslrootcert`                     |            | PG_SSLROOTCERT override |
 | `--sslmode`                     |            | PG_SSLMODE override ("allow", "disable", "prefer", "require", "verify-ca" or "verify-full") |
 | `--polling`                     |            | Use polling mode |
-| `--bootstrap`                     |    `-b`         | First bootstrap before running pgsync process |
+| `--bootstrap`                     |    `-b`         | Bootstrap before running pgsync process |
+| `--wal`                     |    `-w`         | WAL consumer mode only (no Redis required) |

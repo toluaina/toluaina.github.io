@@ -8,7 +8,7 @@ PGSync has a small set of runtime dependencies. Versions shown are **minimum sup
 |---:|---|---:|---|
 | :simple-python: | Python | **3.9+** | Use a virtual environment for isolation. |
 | :simple-postgresql: :simple-mysql: :simple-mariadb: | PostgreSQL or MySQL or MariaDB | **PostgreSQL 12+** • **MySQL 5.7+** • **MariaDB 10.5+** | Use any one SQL database. Network access required; JSON/JSONB support recommended. |
-| :simple-redis: :material-key-variant: | Redis **or** Valkey | **Redis 3.1.0+** **or** **Valkey 7.2.0+** | Choose one key-value store. |
+| :simple-redis: :material-key-variant: | Redis **or** Valkey | **Redis 3.1.0+** **or** **Valkey 7.2.0+** | Choose one key-value store (Optional in wal mode). |
 | :simple-elasticsearch::simple-opensearch: | Elasticsearch **or** OpenSearch | **Elasticsearch 6.3.1+** **or** **OpenSearch 1.3.7+** | Choose one search backend. |
 | :simple-sqlalchemy: | SQLAlchemy (Python) | **1.3.4+** | Installed as a Python dependency. |
 

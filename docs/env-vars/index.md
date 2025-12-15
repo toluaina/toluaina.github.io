@@ -97,7 +97,9 @@ PGSync provides the following environment variables:
 | `LOG_INTERVAL`        | 0.5 | Stdout log interval (in secs) |
 | `NUM_WORKERS`        | 2 | Number of workers to spawn for handling events |
 | `USE_ASYNC`        | False | Enable async mode |
-| `POLL_INTERVAL`        | 0.1        | db polling interval for polling mode |
+| `POLL_INTERVAL`        | 0.1        | db polling interval for  polling mode |
+| `POLLING`        | False        | polling mode |
+| `WAL`        | False        | WAL consumer mode |
 | `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch/OpenSearch protocol |
 | `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch/OpenSearch host |
 | `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch/OpenSearch port |
