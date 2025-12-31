@@ -1,31 +1,41 @@
 # Setup
 
-=== "Self Hosted"
-    - Ensure Postgres database user is a superuser (this is required to query replication slots)
-      ```
-       SELECT usename FROM pg_user WHERE usesuper = true
-      ```
-    - Enable logical decoding in [postgres.conf](https://www.postgresql.org/docs/current/config-setting.html)
+=== ":simple-postgresql: Self Hosted"
 
-      ```
-      wal_level = logical
-      ```
+    **1. Ensure database user is a superuser** (required to query replication slots):
 
-    - Ensure there is at least one replication slot defined in [postgres.conf](https://www.postgresql.org/docs/current/config-setting.html)
-      ```
-      max_replication_slots = 1
-      ```
-
-=== "AWS"
-    - Ensure Postgres database user is a superuser
+    ```sql
+    SELECT usename FROM pg_user WHERE usesuper = true
     ```
+
+    **2. Enable logical decoding** in [postgres.conf](https://www.postgresql.org/docs/current/config-setting.html):
+
+    ```ini
+    wal_level = logical
+    ```
+
+    **3. Configure replication slots** in [postgres.conf](https://www.postgresql.org/docs/current/config-setting.html):
+
+    ```ini
+    max_replication_slots = 1
+    ```
+
+    !!! tip "Restart Required"
+        After changing `postgres.conf`, restart PostgreSQL for changes to take effect.
+
+=== ":material-aws: AWS RDS/Aurora"
+
+    **1. Grant superuser privileges:**
+
+    ```sql
     GRANT rds_superuser TO <username>
     ```
-    - Enable **logical_replication** by using the parameter group settings described [here](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html)
 
+    **2. Enable logical replication** via parameter groups. See [AWS documentation](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Replication.Logical.html).
 
-!!! info
-    To prevent your server logs from growing too large e.g when running on cloud infrastructure where there is a cost implication.
-    You can optionally impose a ceiling on the replication slot size using [max_slot_wal_keep_size](https://www.postgresql.org/docs/13/runtime-config-replication.html)
+!!! warning "Prevent Log Growth"
+    On cloud infrastructure, replication slots can cause WAL logs to grow indefinitely. Set a ceiling using [max_slot_wal_keep_size](https://www.postgresql.org/docs/13/runtime-config-replication.html):
 
-    ```max_slot_wal_keep_size = 100GB```
+    ```ini
+    max_slot_wal_keep_size = 100GB
+    ```

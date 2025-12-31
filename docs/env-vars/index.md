@@ -1,153 +1,147 @@
-PGSync uses the [dotenv](https://github.com/theskumar/python-dotenv) module for reading a .env file.
-You can declare environment variables in a .env file located at the root of your application.
+# :material-cog: Environment Variables
 
-Alternatively, you can set environment variables manually.
-e.g 
+PGSync uses the [dotenv](https://github.com/theskumar/python-dotenv) module for reading environment variables from a `.env` file.
 
-<div class="termy">
-```console
-$ export PG_USER=kermit
-$ export PG_HOST=localhost
-$ export PG_PORT=5432
-$ export PG_PASSWORD=******
-$ export ELASTICSEARCH_HOST=127.0.0.1
-$ export ELASTICSEARCH_PORT=9200
-$ pgsync -c schema.json
+```bash title=".env"
+PG_HOST=localhost
+PG_USER=postgres
+PG_PASSWORD=secret
+ELASTICSEARCH_HOST=localhost
 ```
-</div>
 
-??? example "Schema"
-    ```json
-       {
-          "table": "book",
-          "columns": [
-              "isbn",
-              "title",
-              "description"
-          ],
-          "children": [
-              {
-                  "table": "author",
-                  "columns": [
-                      "name"
-                  ]
-              }
-          ]
-      }
-    ```
+Or set them manually:
 
-??? example "SQL"
-    ```sql
-    SELECT 
-           JSON_BUILD_OBJECT(
-              'isbn', book_1.isbn, 
-              'title', book_1.title, 
-              'description', book_1.description,
-              'authors', anon_1.authors
-           ) AS "JSON_BUILD_OBJECT_1",
-           book_1.id
-    FROM book AS book_1
-    LEFT OUTER JOIN
-      (SELECT 
-              JSON_AGG(anon_2.anon) AS authors,
-              book_author_1.book_isbn AS book_isbn
-       FROM book_author AS book_author_1
-       LEFT OUTER JOIN
-         (SELECT 
-                 author_1.name AS anon,
-                 author_1.id AS id
-          FROM author AS author_1) AS anon_2 ON anon_2.id = book_author_1.author_id
-       GROUP BY book_author_1.book_isbn) AS anon_1 ON anon_1.book_isbn = book_1.isbn
-    ```
+```bash
+export PG_HOST=localhost
+export ELASTICSEARCH_HOST=localhost
+pgsync -c schema.json
+```
 
-??? example "JSON"
-    ```json
-      [
-          {
-              "isbn": "9785811243570",
-              "title": "Charlie and the chocolate factory",
-              "description": "Willy Wonka’s famous chocolate factory is opening at last!",
-              "authors": ["Roald Dahl"]
-          },
-          {
-              "isbn": "9788374950978",
-              "title": "Kafka on the Shore",
-              "description": "Kafka on the Shore is a 2002 novel by Japanese author Haruki Murakami",
-              "authors": ["Haruki Murakami", "Philip Gabriel"]
-          },
-          {
-              "isbn": "9781471331435",
-              "title": "1984",
-              "description": "1984 was George Orwell’s chilling prophecy about the dystopian future",
-              "authors": ["George Orwell"]
-          }
-      ]
-    ```
+---
 
-PGSync provides the following environment variables:
+## General
 
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `SCHEMA` | | Path to the application schema config |
+| `CHECKPOINT_PATH` | | Path to store the checkpoint file |
+| `QUERY_CHUNK_SIZE` | 10000 | Records to fetch per database query |
+| `POLL_TIMEOUT` | 0.1 | Poll interval (reduce to increase throughput) |
+| `POLL_INTERVAL` | 0.1 | Polling interval for polling mode |
+| `POLLING` | False | Enable polling mode |
+| `WAL` | False | WAL consumer mode |
+| `REPLICATION_SLOT_CLEANUP_INTERVAL` | 180.0 | Replication slot cleanup interval (seconds) |
+| `LOG_INTERVAL` | 0.5 | Stdout log interval (seconds) |
+| `NUM_WORKERS` | 2 | Number of workers for handling events |
+| `USE_ASYNC` | False | Enable experimental async mode |
 
-| **Environment variable**     | **Default** | **Description**                  |
-| ---------------------------- | ----------- | -------------------------------- |
-| `SCHEMA`                     |             | Path to the application schema config |
-| `CHECKPOINT_PATH`            |             | Path to store the checkpoint file |
-| `QUERY_CHUNK_SIZE`           | 10000       | Database query chunk size (how many records to fetch at a time) |
-| `POLL_TIMEOUT`               | 0.1         | Poll db interval (consider reducing this duration to increase throughput) |
-| `REPLICATION_SLOT_CLEANUP_INTERVAL`        | 180.0 | Replication slot cleanup interval (in secs) |
-| `LOG_INTERVAL`        | 0.5 | Stdout log interval (in secs) |
-| `NUM_WORKERS`        | 2 | Number of workers to spawn for handling events |
-| `USE_ASYNC`        | False | Enable async mode |
-| `POLL_INTERVAL`        | 0.1        | db polling interval for  polling mode |
-| `POLLING`        | False        | polling mode |
-| `WAL`        | False        | WAL consumer mode |
-| `ELASTICSEARCH_SCHEME`       | http        | Elasticsearch/OpenSearch protocol |
-| `ELASTICSEARCH_HOST`         | localhost   | Elasticsearch/OpenSearch host |
-| `ELASTICSEARCH_PORT`         | 9200        | Elasticsearch/OpenSearch port |
-| `ELASTICSEARCH_USER`         |             | Elasticsearch/OpenSearch user |
-| `ELASTICSEARCH_PASSWORD`     |             | Elasticsearch/OpenSearch password |
-| `ELASTICSEARCH_TIMEOUT`      | 10          | Increase this if you are getting read request timeouts |
-| `ELASTICSEARCH_CHUNK_SIZE`   | 2000        | Elasticsearch/OpenSearch index chunk size (how many documents to index at a time) |
-| `ELASTICSEARCH_MAX_CHUNK_BYTES`   | 104857600 | The maximum size of the Elasticsearch/OpenSearch request in bytes (default: 100MB) |
-| `ELASTICSEARCH_THREAD_COUNT` | 4           | The size of the threadpool to use for Elasticsearch/OpenSearch bulk requests |
-| `ELASTICSEARCH_QUEUE_SIZE`   | 4           | The size of the task queue between the main thread (producing chunks to send) and the processing threads |
-| `ELASTICSEARCH_VERIFY_CERTS` | True        | Verify Elasticsearch/OpenSearch SSL certificates |
-| `ELASTICSEARCH_USE_SSL`      | False       | Turn on SSL |
-| `ELASTICSEARCH_SSL_SHOW_WARN`| False       | Show warnings about ssl certs verification |
-| `ELASTICSEARCH_CA_CERTS`     |             | Path to CA certs on disk |
-| `ELASTICSEARCH_CLIENT_CERT`  |             | PEM formatted SSL client certificate |
-| `ELASTICSEARCH_CLIENT_KEY`   |             | PEM formatted SSL client key |
-| `ELASTICSEARCH_AWS_REGION`   |             | Elasticsearch/OpenSearch AWS Region for fully managed services |
-| `ELASTICSEARCH_AWS_HOSTED`   | False       | Elasticsearch/OpenSearch fully managed service |
-| `ELASTICSEARCH_STREAMING_BULK`  | False       | Elasticsearch/OpenSearch streaming bulk index |
-| `ELASTICSEARCH_MAX_RETRIES`  | 0       | The maximum number of times a document will be retried when `429` is received|
-| `ELASTICSEARCH_INITIAL_BACKOFF` | 2       | The number of seconds we should wait before the first retry |
-| `ELASTICSEARCH_MAX_BACKOFF`  | 600       | The maximum number of seconds a retry will wait |
-| `ELASTICSEARCH_RAISE_ON_EXCEPTION`  | True   | if ``False`` then don't propagate exceptions from call to elasticsearch |
-| `ELASTICSEARCH_RAISE_ON_ERROR`  | True       | raise ``BulkIndexError`` containing errors (as `.errors`) from the execution of the last chunk when some occur |
-| `ELASTICSEARCH_API_KEY_ID`  |       | Elasticsearch/OpenSearch API Key ID |
-| `ELASTICSEARCH_API_KEY`  |       | Elasticsearch/OpenSearch API Key |
-| `PG_HOST`                    | localhost   | Postgres database host |
-| `PG_USER`                    |             | Postgres database username (superuser) |
-| `PG_PORT`                    | 5432        | Postgres database port |
-| `PG_PASSWORD`                |             | Postgres database user password |
-| `PG_SSLMODE`                 |             | Postgres SSL TCP/IP connection mode ('disable', 'allow', 'prefer', 'require', 'verify-ca' or 'verify-full') |
-| `PG_SSLROOTCERT`             |             | The name of a file containing SSL certificate authority (CA) certificate(s) |
-| `PG_DRIVER`             |             | The database driver psycopg2 or pymysql |
-| `REDIS_CHECKPOINT`             |     False        | Store checkpoint in redis/valkey instead of on filesystem |
-| `FORMAT_WITH_COMMAS`             |     True        | Comma formatted logging |
-| `REDIS_SCHEME`               | redis       | Redis/Valkey connection scheme |
-| `REDIS_HOST`                 | localhost   | Redis/Valkey server host |
-| `REDIS_PORT`                 | 6379        | Redis/Valkey server port |
-| `REDIS_DB`                   | 0           | Redis/Valkey database |
-| `REDIS_AUTH`                 |             | Redis/Valkey password |
-| `REDIS_USER`                 |             | Redis/Valkey username |
-| `REDIS_READ_CHUNK_SIZE`      | 1000        | Number of items to read from Redis/Valkey at a time |
-| `REDIS_WRITE_CHUNK_SIZE`     | 1000        | Number of items to write to Redis/Valkey at a time |
-| `REDIS_SOCKET_TIMEOUT`       | 5           | Redis/Valkey socket connection timeout |
-| `REDIS_POLL_INTERVAL`        | 0.01        | Redis/Valkey poll interval |
-| `NEW_RELIC_ENVIRONMENT`      |             | New Relic environment name |
-| `NEW_RELIC_APP_NAME`         |             | New Relic application name |
-| `NEW_RELIC_LOG_LEVEL`        |             | Sets the level of detail of messages sent to the log file |
-| `NEW_RELIC_LICENSE_KEY`      |             | New Relic license key |
-| `CONSOLE_LOGGING_HANDLER_MIN_LEVEL`      |             | CRITICAL, ERROR, WARNING, INFO or DEBUG |
-| `CUSTOM_LOGGING`      |             |  |
+---
+
+## :simple-postgresql: Database
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PG_HOST` | localhost | Database host |
+| `PG_PORT` | 5432 | Database port |
+| `PG_USER` | | Database username (superuser) |
+| `PG_PASSWORD` | | Database password |
+| `PG_DRIVER` | | Driver: `psycopg2` (PostgreSQL) or `pymysql` (MySQL/MariaDB) |
+| `PG_SSLMODE` | | SSL mode: `disable`, `allow`, `prefer`, `require`, `verify-ca`, `verify-full` |
+| `PG_SSLROOTCERT` | | Path to CA certificate file |
+
+---
+
+## :simple-elasticsearch: Elasticsearch / OpenSearch
+
+### Connection
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ELASTICSEARCH_SCHEME` | http | Protocol (`http` or `https`) |
+| `ELASTICSEARCH_HOST` | localhost | Host address |
+| `ELASTICSEARCH_PORT` | 9200 | Port |
+| `ELASTICSEARCH_USER` | | Username |
+| `ELASTICSEARCH_PASSWORD` | | Password |
+| `ELASTICSEARCH_TIMEOUT` | 10 | Request timeout (seconds) |
+
+### SSL/TLS
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ELASTICSEARCH_USE_SSL` | False | Enable SSL |
+| `ELASTICSEARCH_VERIFY_CERTS` | True | Verify SSL certificates |
+| `ELASTICSEARCH_SSL_SHOW_WARN` | False | Show SSL verification warnings |
+| `ELASTICSEARCH_CA_CERTS` | | Path to CA certs |
+| `ELASTICSEARCH_CLIENT_CERT` | | PEM formatted client certificate |
+| `ELASTICSEARCH_CLIENT_KEY` | | PEM formatted client key |
+
+### Performance
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ELASTICSEARCH_CHUNK_SIZE` | 2000 | Documents to index per batch |
+| `ELASTICSEARCH_MAX_CHUNK_BYTES` | 104857600 | Max request size (bytes, default 100MB) |
+| `ELASTICSEARCH_THREAD_COUNT` | 4 | Threadpool size for bulk requests |
+| `ELASTICSEARCH_QUEUE_SIZE` | 4 | Task queue size |
+| `ELASTICSEARCH_STREAMING_BULK` | False | Enable streaming bulk indexing |
+
+### Retry & Error Handling
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ELASTICSEARCH_MAX_RETRIES` | 0 | Max retries on `429` errors |
+| `ELASTICSEARCH_INITIAL_BACKOFF` | 2 | Initial retry backoff (seconds) |
+| `ELASTICSEARCH_MAX_BACKOFF` | 600 | Max retry backoff (seconds) |
+| `ELASTICSEARCH_RAISE_ON_EXCEPTION` | True | Propagate exceptions |
+| `ELASTICSEARCH_RAISE_ON_ERROR` | True | Raise `BulkIndexError` on failures |
+
+### AWS
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ELASTICSEARCH_AWS_HOSTED` | False | Using AWS managed service |
+| `ELASTICSEARCH_AWS_REGION` | | AWS region |
+
+### API Key Authentication
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `ELASTICSEARCH_API_KEY_ID` | | API Key ID |
+| `ELASTICSEARCH_API_KEY` | | API Key |
+
+---
+
+## :simple-redis: Redis / Valkey
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `REDIS_CHECKPOINT` | False | Store checkpoint in Redis instead of filesystem |
+| `REDIS_SCHEME` | redis | Connection scheme |
+| `REDIS_HOST` | localhost | Host address |
+| `REDIS_PORT` | 6379 | Port |
+| `REDIS_DB` | 0 | Database number |
+| `REDIS_USER` | | Username |
+| `REDIS_AUTH` | | Password |
+| `REDIS_SOCKET_TIMEOUT` | 5 | Socket timeout (seconds) |
+| `REDIS_POLL_INTERVAL` | 0.01 | Poll interval |
+| `REDIS_READ_CHUNK_SIZE` | 1000 | Items to read per batch |
+| `REDIS_WRITE_CHUNK_SIZE` | 1000 | Items to write per batch |
+
+---
+
+## :material-chart-line: Logging & Monitoring
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `CONSOLE_LOGGING_HANDLER_MIN_LEVEL` | | Log level: `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` |
+| `CUSTOM_LOGGING` | | Path to custom logging configuration file |
+| `FORMAT_WITH_COMMAS` | True | Comma formatted logging output |
+
+### New Relic
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `NEW_RELIC_ENVIRONMENT` | | Environment name |
+| `NEW_RELIC_APP_NAME` | | Application name |
+| `NEW_RELIC_LOG_LEVEL` | | Log level |
+| `NEW_RELIC_LICENSE_KEY` | | License key |

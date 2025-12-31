@@ -1,9 +1,11 @@
+# JSON Fields
+
 PGSync supports Postgres JSON and JSONB operators.
 This allows you to extract data within JSON fields.
 
 These operators are defined [here](https://www.postgresql.org/docs/current/functions-json.html)
 
-For example. Given a Postgres JSON field called `doc`
+For example, given a Postgres JSON field called `doc`
 
 ```JSON
 {
@@ -26,8 +28,7 @@ For example. Given a Postgres JSON field called `doc`
 ```
 
 
-We can define this JSON schema to extract the fourth element of the 
-`{a, b, c}` path, we can define this schema
+To extract the fourth element of the `{a, b, c}` path, define this schema
 
 ```JSON
 [

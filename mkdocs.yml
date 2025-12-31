@@ -11,7 +11,7 @@ repo_url: https://github.com/toluaina/pgsync
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2025 Tolu Aina
+copyright: Copyright &copy; 2026 Tolu Aina
 
 # Configuration
 theme:
@@ -21,15 +21,21 @@ theme:
     primary: pink
     accent: deep purple
   features:
-    - content.code.copy    
-    - toc.follow           
-    - navigation.top      
-    - navigation.instant   
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - toc.follow
+    - navigation.top
+    - navigation.instant
+    - search.highlight
+    - search.share
   font:
     text: Roboto
     code: Roboto Mono
   favicon: assets/images/pgsync-website-favicon-white.png
-  logo: assets/images/pgsync-website-favicon-white.png
+  logo: assets/images/pgsync_logo_transparent.svg
+  icon:
+    repo: fontawesome/brands/github
 
 markdown_extensions:
   - md_in_html
@@ -55,29 +61,36 @@ markdown_extensions:
 
 # Customization
 extra:
+  generator: false
   social:
-    - icon: fontawesome/brands/docker
-      link: https://hub.docker.com/r/toluaina1/pgsync
+    - icon: fontawesome/brands/github
+      link: https://github.com/toluaina/pgsync
+      name: GitHub
     - icon: fontawesome/brands/python
       link: https://pypi.org/project/pgsync/
+      name: PyPI
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/toluaina1/pgsync
+      name: Docker Hub
     - icon: fontawesome/brands/digital-ocean
       link: https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync
       name: DigitalOcean Marketplace
     - icon: fontawesome/brands/x-twitter
       link: https://twitter.com/pgsync
-    - icon: fontawesome/brands/github-alt
-      link: https://github.com/toluaina/pgsync
+      name: Twitter
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/company/pgsync/
-    - icon: fontawesome/brands/instagram
-      link: https://www.instagram.com/pgsync2
-    - icon: fontawesome/solid/at
-      link: mailto:tolu@pgsync.com
+      name: LinkedIn
     - icon: fontawesome/brands/medium
       link: https://medium.com/@toluaina/real-time-integration-of-postgresql-with-elasticsearch-with-pgsync-9425ffa9b4e9
+      name: Medium
+    - icon: fontawesome/solid/envelope
+      link: mailto:tolu@pgsync.com
+      name: Email
 
 extra_css:
 - css/termynal.css
+- css/custom.css
 extra_javascript:
 - js/termynal.js
 - js/custom.js

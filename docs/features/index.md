@@ -4,39 +4,41 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 
 ## Highlights
 
-- **PostgreSQL**, **MySQL**, and **MariaDB** — works with any PostgreSQL (9.6+), MySQL (5.7+), or MariaDB (10.5+) database.
-- **Low overhead** — negligible impact on database performance.
-- **Transactional consistency** — only committed writes are indexed; inserts, updates, and deletes are applied in commit order.
-- **Fault tolerant & resumable** — no data loss on crashes or network interruptions; processing resumes from the last checkpoint.
-- **Native JSON path** — returns data directly as PostgreSQL JSON for speed.
-- **Composite keys** — supports composite primary and foreign keys.
-- **Deeply nested documents** — supports arbitrary depth of related entities (tables with long chains of relationships).
-- **JSON field extraction** — extract JSON fields from a table into separate fields in the resulting document.
-- **Customizable document structure** — tailor documents to your index and query needs.
+| Feature | Description |
+|---------|-------------|
+| :material-database-check: **Multi-Database Support** | Works with PostgreSQL (9.6+), MySQL (5.7+), or MariaDB (10.5+) |
+| :material-lightning-bolt: **Low Overhead** | Negligible impact on database performance |
+| :material-sync: **Transactional Consistency** | Only committed writes indexed; operations applied in commit order |
+| :material-shield-check: **Fault Tolerant** | No data loss on crashes; resumes from last checkpoint |
+| :material-code-json: **Native JSON Path** | Returns data directly as PostgreSQL JSON for speed |
+| :material-key-chain: **Composite Keys** | Supports composite primary and foreign keys |
+| :material-file-tree: **Deeply Nested Documents** | Arbitrary depth of related entities supported |
+| :material-cog: **Customizable Structure** | Tailor documents to your index and query needs |
 
 ## Details
 
-### Consistency
-- Only committed transactions appear in Elasticsearch/OpenSearch.
-- Operation order (insert → update → delete) is preserved based on commit order.
+### :material-check-circle: Consistency
+- Only committed transactions appear in Elasticsearch/OpenSearch
+- Operation order (insert → update → delete) is preserved based on commit order
 
-### Reliability
-- Designed to avoid data loss if a process crashes or the network drops.
-- Recovery resumes from the last successful checkpoint.
+### :material-shield: Reliability
+- Designed to avoid data loss if a process crashes or the network drops
+- Recovery resumes from the last successful checkpoint
 
-### Data modeling
-- Composite **primary** and **foreign** keys supported.
-- Arbitrary-depth relationships (one-to-one, one-to-many, through tables).
-- Extract and map PostgreSQL JSON fields to top-level document fields.
+### :material-database: Data Modeling
+- Composite **primary** and **foreign** keys supported
+- Arbitrary-depth relationships (one-to-one, one-to-many, through tables)
+- Extract and map PostgreSQL JSON fields to top-level document fields
 
-### Performance
-- Builds documents directly from PostgreSQL JSON to minimize transformation overhead.
+### :material-speedometer: Performance
+- Builds documents directly from PostgreSQL JSON to minimize transformation overhead
 
+### :material-check-all: Compatibility
 
-### Compatibility
-
-- :simple-postgresql: PostgreSQL **9.6+ or later**
-- :simple-mysql: MySQL **8.0+ or later**
-- :simple-mariadb: MariaDB **10.3+ or later**
-- :simple-elasticsearch: Elasticsearch 6.3.1+
-- :simple-opensearch: OpenSearch 1.3.7+
+| Database/Service | Minimum Version |
+|------------------|-----------------|
+| :simple-postgresql: PostgreSQL | **9.6+** |
+| :simple-mysql: MySQL | **5.7+** |
+| :simple-mariadb: MariaDB | **10.5+** |
+| :simple-elasticsearch: Elasticsearch | **6.3.1+** |
+| :simple-opensearch: OpenSearch | **1.3.7+** |

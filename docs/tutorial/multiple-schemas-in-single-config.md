@@ -1,5 +1,6 @@
-We can declare multiple schemas in the same config. 
-This can be useful for syncing multiple tables into different Elasticsearch/OpenSearch indices.
+# Multiple Schemas in a Single Config
+
+You can declare multiple schemas in the same config file to sync multiple tables into different Elasticsearch/OpenSearch indices.
 
 ```JSON
 [

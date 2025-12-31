@@ -1,4 +1,6 @@
-What if we added a new table `publisher`
+# Table with Multiple Children
+
+What if we added a new table `publisher`?
 
 **Publisher**
 

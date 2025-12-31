@@ -1,203 +1,199 @@
-Schema definition file
+# :material-file-code: Schema Definition
 
-```JSON
+The schema file defines how to map your database tables to Elasticsearch/OpenSearch documents.
+
+## Basic Example
+
+```json
 [
-    {
-        "database": "<Postgres database name>",
-        "index": "<Elasticsearch/OpenSearch index name>",
-        "setting": "<Elasticsearch/OpenSearch setting>",
-        "plugins": ["<Plugin A>", "<Plugin B>"...],
-        "pipeline": "<pipeline>",
-        "routing": "<routing>",
-        "nodes": {
-            "table": "<root table name>",
-            "schema": "<schema name>",
-            "columns": [
-                "<column 1>",
-                "<column 2>",
-                ...
-            ],
-            "children": [
-                {
-                    "table": "<child table name>",
-                    "columns": [
-                        "<column 1>",
-                        "<column 2>",
-                        ...
-                    ],
-                    "label": "<document label name>",
-                    "relationship": {
-                        "variant": "object" | "scalar",
-                        "type": "one_to_one" | "one_to_many",
-                        "through_tables": [
-                            "<through table name>"
-                        ]
-                    },
-                    "children": [],
-                    "transform": {
-                        "rename": {
-                            "<old column 1>": "<new column 1>",
-                            "<old column 2>": "<new column 2>",
-                            ...
-                        },
-                        "mapping": {
-                            "<new column 1>": {"<data type>"},
-                            "<new column 2>": {"<data type>"},
-                            ...
-                        },
-                        "concat": {
-                            "columns": ["column 1", "column 2" ...],
-                            "destination": "<new column 1>",
-                            "delimiter": "<char>"
-                        }
-                    }
-                },
-                ...
-            ]
+  {
+    "database": "mydb",
+    "index": "books",
+    "nodes": {
+      "table": "book",
+      "columns": ["isbn", "title"],
+      "children": [
+        {
+          "table": "author",
+          "columns": ["name"]
         }
+      ]
     }
+  }
 ]
 ```
 
-
-## Document and node structure:
-
-### `database`
-This is the database name
-
-### `index`
-An optional Elasticsearch/OpenSearch index (defaults to database name)
-
-### `nodes`
-An object node describing the Elasticsearch/OpenSearch document
-
-### `setting`
-Elasticsearch/OpenSearch setting configuration
-    ```JSON
-    {
-        "setting": {
-            "analysis": {
-                "analyzer": {
-                    "ngram_analyzer": {
-                        "filter": [
-                            "lowercase"
-                        ],
-                        "type": "custom",
-                        "tokenizer": "ngram_tokenizer"
-                    }
-                },
-                "tokenizer": {
-                    "ngram_tokenizer": {
-                        "token_chars": [
-                            "letter",
-                            "digit",
-                            "punctuation",
-                            "symbol"
-                        ],
-                        "min_gram": "9",
-                        "type": "nGram",
-                        "max_gram": "10"
-                    }
-                }
+??? abstract "Full Schema Reference"
+    ```json
+    [
+      {
+        "database": "<database name>",
+        "index": "<index name>",
+        "setting": { },
+        "plugins": ["<Plugin A>", "<Plugin B>"],
+        "pipeline": "<pipeline>",
+        "routing": "<routing>",
+        "nodes": {
+          "table": "<table name>",
+          "schema": "<schema name>",
+          "columns": ["<column 1>", "<column 2>"],
+          "label": "<label>",
+          "children": [
+            {
+              "table": "<child table>",
+              "columns": ["<column>"],
+              "label": "<label>",
+              "relationship": {
+                "variant": "object | scalar",
+                "type": "one_to_one | one_to_many",
+                "through_tables": ["<junction table>"]
+              },
+              "transform": {
+                "rename": { },
+                "mapping": { },
+                "concat": { }
+              }
             }
+          ]
         }
+      }
+    ]
+    ```
+
+---
+
+## Root Properties
+
+| Property | Required | Description |
+|----------|----------|-------------|
+| `database` | Yes | Database name |
+| `index` | No | Elasticsearch/OpenSearch index name (defaults to database name) |
+| `nodes` | Yes | Root node defining the document structure |
+| `plugins` | No | List of plugins to apply |
+| `pipeline` | No | Elasticsearch [ingest pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html) |
+| `routing` | No | Elasticsearch [routing field](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-routing-field.html) |
+| `setting` | No | Elasticsearch index settings |
+
+??? example "Index Settings"
+    ```json
+    {
+      "setting": {
+        "analysis": {
+          "analyzer": {
+            "ngram_analyzer": {
+              "filter": ["lowercase"],
+              "type": "custom",
+              "tokenizer": "ngram_tokenizer"
+            }
+          },
+          "tokenizer": {
+            "ngram_tokenizer": {
+              "token_chars": ["letter", "digit"],
+              "min_gram": "2",
+              "max_gram": "10",
+              "type": "ngram"
+            }
+          }
+        }
+      }
     }
     ```
 
-### `table`
-Node table name
+---
 
-### `schema`
-An optional Postgres table schema (defaults to public)
+## Node Properties
 
-### `label`
-An optional node name in Elasticsearch/OpenSearch (defaults to table name)
+| Property | Required | Description |
+|----------|----------|-------------|
+| `table` | Yes | Database table name |
+| `schema` | No | Database schema (defaults to `public`) |
+| `columns` | No | Columns to include (defaults to all) |
+| `label` | No | Field name in output document (defaults to table name) |
+| `children` | No | Child nodes (nested documents) |
+| `transform` | No | Transform operations |
+| `relationship` | No | Relationship configuration (for child nodes) |
 
-### `columns`
-An optional list of columns to display. This can be omitted in which case it selects all
-columns.
+---
 
-### `children`
-An optional list of child nodes if any.
-This has the same structure as a parent node.
+## Relationship
 
-### `relationship`
-Describes the relationship between parent and child.
+Defines how parent and child nodes are related.
 
-- #### `variant`
-variant can be `object` or `scalar`
+| Property | Values | Description |
+|----------|--------|-------------|
+| `variant` | `object`, `scalar` | Output format |
+| `type` | `one_to_one`, `one_to_many` | Relationship cardinality |
+| `through_tables` | `["table_name"]` | Junction tables for many-to-many |
 
-    - #### `object`
+### Variant Examples
 
-        ```JSON
-        {
-            "name": "Oxford Press",
-            "id": 1,
-            "is_active": false
-        }
-        ```
-
-    - #### `scalar`
-
-        ```JSON
-        ["Haruki Murakami", "Philip Gabriel"]
-        ```
-
-- #### `type`
-type can be `one_to_one` or `one_to_many` depending on the relationship type between 
-parent and child
-
-- #### `through_tables`
-This is the intermediate table that connects the parent to the child
-
-
-### `transform`
-
-This allows transforming some node properties.
-For now, the only operation supported is the `rename` transform.
-
-- #### `rename`
-rename a node column
-
-    ```JSON
-        "rename": {
-            "<old column name 1>": "<new column name 1>",
-            "<old column name 2>": "<new column name 2>",
-        }
+=== "object"
+    Returns the full object:
+    ```json
+    {
+      "author": {
+        "id": 1,
+        "name": "George Orwell"
+      }
+    }
     ```
 
-- #### `mapping`
-Specify Elasticsearch/OpenSearch mapping
-
-    ```JSON
-        "mapping": {
-             "book_id": {
-                "type": "long"
-            },
-            "book_isbn": {
-                "type": "long",
-                "fields":{
-                    "ngram": {
-                        "type": "text",
-                        "analyzer": "ngram_analyzer",
-                        "search_analyzer": "ngram_analyzer",
-                        "fielddata": true
-                    }
-                }
-            }
-        }
+=== "scalar"
+    Returns only the value(s):
+    ```json
+    {
+      "author": ["George Orwell", "Aldous Huxley"]
+    }
     ```
 
-### `pipeline`
-Optional injest [pipeline](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html)
+---
 
+## Transform
 
-### `routing`
-Optional [routing](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-routing-field.html) field
+Transform operations modify the output document.
 
+### `rename`
 
-!!! info
-    Changing the schema effectively changes the structure of the document in Elasticsearch/OpenSearch 
-    and this requires re-indexing Elasticsearch/OpenSearch.
+Rename columns in the output:
 
-    See the advanced section on re-indexing on how-to.
+```json
+"transform": {
+  "rename": {
+    "isbn": "book_isbn",
+    "title": "book_title"
+  }
+}
+```
+
+### `mapping`
+
+Specify Elasticsearch field mappings:
+
+```json
+"transform": {
+  "mapping": {
+    "isbn": { "type": "keyword" },
+    "title": { "type": "text" },
+    "price": { "type": "float" }
+  }
+}
+```
+
+### `concat`
+
+Concatenate columns into a new field:
+
+```json
+"transform": {
+  "concat": {
+    "columns": ["first_name", "last_name"],
+    "destination": "full_name",
+    "delimiter": " "
+  }
+}
+```
+
+---
+
+!!! warning "Re-indexing Required"
+    Changing the schema changes the document structure. You must [re-index](../advanced/re-indexing.md) after schema changes.

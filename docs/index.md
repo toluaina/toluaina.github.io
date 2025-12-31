@@ -6,7 +6,7 @@ hide:
 
 <p align="center">
   <a href="https://pgsync.com">
-    <img src="assets/images/logo-no-background.svg" alt="PGSync" width="280">
+    <img src="assets/images/logo-no-background.svg" alt="PGSync" width="300">
   </a>
 </p>
 
@@ -20,17 +20,20 @@ hide:
   <a href="https://pypi.org/project/pgsync/" target="_blank">
     <img src="https://img.shields.io/pypi/pyversions/pgsync" alt="Python versions">
   </a>
+  <a href="https://github.com/toluaina/pgsync" target="_blank">
+    <img src="https://img.shields.io/github/stars/toluaina/pgsync?style=social" alt="GitHub stars">
+  </a>
 </p>
 
 <div align="center" markdown>
 
-PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and publishes **denormalized documents** to **Elasticsearch/OpenSearch** continuously and transactionally.
+Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** to **Elasticsearch** and **OpenSearch**—continuously and transactionally.
 
-
-:material-github:{ aria-hidden="true" } [GitHub](https://github.com/toluaina/pgsync){ target=_blank rel="noopener" } •
-:material-package-variant:{ aria-hidden="true" } [PyPI](https://pypi.org/project/pgsync/){ target=_blank rel="noopener" } •
-:material-docker:{ aria-hidden="true" } [Docker](https://hub.docker.com/r/toluaina1/pgsync){ target=_blank rel="noopener" }
-:simple-digitalocean:{ aria-hidden="true" } [DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync){ target=_blank rel="noopener" }
+[:material-rocket-launch: Get Started](getting-started/setup.md){ .md-button .md-button--primary }
+[:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
+[:material-package-variant: PyPI](https://pypi.org/project/pgsync/){ .md-button }
+[:material-docker: Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
+[:simple-digitalocean: DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync){ .md-button }
 
 </div>
 
@@ -38,11 +41,37 @@ PGSync keeps **PostgreSQL**/**MySQL**/**MariaDB** as your source of truth and pu
 
 ## What is PGSync?
 
-PGSync is a lightweight middleware that captures changes from PostgreSQL/MySQL/MariaDB and writes structured documents to your search cluster. Describe your **document schema** once (in JSON) and PGSync takes care of change capture, ordering, and delivery—no custom ETL code.
+PGSync is a **lightweight middleware** that captures changes from your relational database and writes structured, denormalized documents to your search cluster.
 
-- Transactionally consistent output (only committed writes; commit order preserved)
-- Low overhead on PostgreSQL/MySQL/MariaDB 
-- Flexible mapping from relational data to nested documents
+Define your **document schema once** in JSON, and PGSync handles change capture, ordering, and delivery automatically—no custom ETL code required.
+
+- :material-sync: **Change Data Capture** — Automatically captures INSERT, UPDATE, and DELETE using logical replication
+- :material-lightning-bolt: **Low Overhead** — Minimal impact on database performance
+- :material-shield-check: **Fault Tolerant** — Resumes from last checkpoint after crashes
+- :material-file-tree: **Nested Documents** — Transform relational data into deeply nested JSON
+
+---
+
+## Quick Start
+
+```bash
+pip install pgsync
+```
+
+```json
+{
+  "database": "mydb",
+  "index": "books",
+  "nodes": {
+    "table": "book",
+    "children": [{ "table": "author" }]
+  }
+}
+```
+
+```bash
+pgsync --config schema.json --daemon
+```
 
 ---
 

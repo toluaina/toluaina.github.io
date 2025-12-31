@@ -1,7 +1,6 @@
-Labels are used to control the output of the document node.
+# Using Labels
 
-
-We can simply define this [JSON](https://jsonapi.org) schema.
+Labels are used to control the output of the document node. Define this [JSON](https://jsonapi.org) schema:
 
 ```JSON
 [

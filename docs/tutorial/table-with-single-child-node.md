@@ -1,3 +1,5 @@
+# Table with Single Child Node
+
 Consider this example of a Book library database.
 
 **Book**

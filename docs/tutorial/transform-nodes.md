@@ -1,4 +1,6 @@
-Transform nodes allow you to change the output of the document type
+# Transform Nodes
+
+Transform nodes allow you to change the output of the document type.
 
 ### `rename`
 
@@ -56,7 +58,7 @@ You can find the list of supported data types [here](https://www.elastic.co/guid
     {
         "database": "book",
         "index": "book",
-        "node": {
+        "nodes": {
             "table": "book",
             "columns": [
                 "isbn",
@@ -89,7 +91,7 @@ You can concatenate multiple columns into a single field with an optional delimi
     {
         "database": "book",
         "index": "book",
-        "node": {
+        "nodes": {
             "table": "book",
             "columns": [
                 "title",

@@ -1,9 +1,6 @@
-Plugins allow you to alter a document right before indexing.
+# Plugins
 
-This can be useful for applying transformations to documents 
-and offers greater flexibility.
-
-Although this comes with some level of development.
+Plugins allow you to alter a document right before indexing. This is useful for applying custom transformations and offers greater flexibility, though it requires some development effort.
 
 Plugins are currently supported only in the Python Language.
 
@@ -23,8 +20,7 @@ right before indexing.
 
 Create a "plugins" directory and add it to your `PYTHONPATH`.
 
-The `PYTHONPATH` should contain the path to the "plugins" directory excluding 
-the "plugins" directory itself.
+The `PYTHONPATH` should point to the parent directory containing your "plugins" folder.
 
 e.g:
 
@@ -37,7 +33,7 @@ i.e `plugins/__init__.py`
 Create a plugin module - fullnameplugin.py inside the "plugins" directory and 
 add the code below:
 
-```
+```python
 from pgsync import plugin
 
 
@@ -45,11 +41,9 @@ class FullnamePlugin(plugin.Plugin):
     name = 'Fullname'
 
     def transform(self, doc, **kwargs):
-
-        firstname = doc['firstname'] 
-        lastname = doc['lastname'] 
-        doc['fullname'] = f'{firstname}{lastname}'
-
+        firstname = doc['firstname']
+        lastname = doc['lastname']
+        doc['fullname'] = f'{firstname} {lastname}'
         return doc
 ```
 

@@ -1,90 +1,106 @@
 # Requirements
 
-PGSync has a small set of runtime dependencies. Versions shown are **minimum supported**.
+PGSync has a small set of runtime dependencies.
 
-## Minimum versions
+## Overview
 
-|  | Component | Version (min) | Notes |
-|---:|---|---:|---|
-| :simple-python: | Python | **3.9+** | Use a virtual environment for isolation. |
-| :simple-postgresql: :simple-mysql: :simple-mariadb: | PostgreSQL or MySQL or MariaDB | **PostgreSQL 12+** • **MySQL 5.7+** • **MariaDB 10.5+** | Use any one SQL database. Network access required; JSON/JSONB support recommended. |
-| :simple-redis: :material-key-variant: | Redis **or** Valkey | **Redis 3.1.0+** **or** **Valkey 7.2.0+** | Choose one key-value store (Optional in wal mode). |
-| :simple-elasticsearch::simple-opensearch: | Elasticsearch **or** OpenSearch | **Elasticsearch 6.3.1+** **or** **OpenSearch 1.3.7+** | Choose one search backend. |
-| :simple-sqlalchemy: | SQLAlchemy (Python) | **1.3.4+** | Installed as a Python dependency. |
+| Component | Minimum Version | Required |
+|-----------|-----------------|----------|
+| :simple-python: **Python** | 3.9+ | Yes |
 
+### Source Database (choose one)
 
-## Select your database driver
+| Option | Minimum Version |
+|--------|-----------------|
+| :simple-postgresql: PostgreSQL | 9.6+ |
+| :simple-mysql: MySQL | 5.7+ |
+| :simple-mariadb: MariaDB | 10.5+ |
 
-=== ":simple-postgresql:{ .tab-icon .icon-postgresql } PostgreSQL"
-    Set the driver to psycopg2.
+### Search Backend (choose one)
+
+| Option | Minimum Version |
+|--------|-----------------|
+| :simple-elasticsearch: Elasticsearch | 6.3.1+ |
+| :simple-opensearch: OpenSearch | 1.3.7+ |
+
+### Key-Value Store (choose one)
+
+| Option | Minimum Version |
+|--------|-----------------|
+| :simple-redis: Redis | 3.1.0+ |
+| :material-key-variant: Valkey | 7.2.0+ |
+
+---
+
+## Configuration
+
+### Database Driver
+
+=== ":simple-postgresql: PostgreSQL"
 
     ```bash
     export PG_DRIVER=psycopg2
-    # Windows (PowerShell):
-    # $env:PG_DRIVER = "psycopg2"
     ```
 
-    **Quick check**
-    ```bash
-    import os
-    print("PG_DRIVER =", os.getenv("PG_DRIVER"))
-    import psycopg2
-    print("psycopg2 import OK")
-    ```
+    ??? example "Verify installation"
+        ```python
+        import psycopg2
+        print("psycopg2 OK")
+        ```
 
-=== ":simple-mariadb:{ .tab-icon .icon-mariadb } MariaDB / :simple-mysql:{ .tab-icon } MySQL"
-    Set the driver to PyMySQL.
+=== ":simple-mysql: MySQL / :simple-mariadb: MariaDB"
 
     ```bash
     export PG_DRIVER=pymysql
-    # Windows (PowerShell):
-    # $env:PG_DRIVER = "pymysql"
     ```
 
-    **Quick check**
-    ```bash
-    import os
-    print("PG_DRIVER =", os.getenv("PG_DRIVER"))
-    import pymysql
-    print("PyMySQL import OK")
-    ```
+    ??? example "Verify installation"
+        ```python
+        import pymysql
+        print("PyMySQL OK")
+        ```
 
-    !!! tip
-    This only selects the Python DB driver; your connection URL/envs stay the same.
-    Supported databases: PostgreSQL 9.6+, MySQL 8.0+, MariaDB 10.3+.
+### Search Backend
 
+=== ":simple-elasticsearch: Elasticsearch"
 
+    Ensure the cluster is reachable from where PGSync runs.
 
-## Choose your search backend
-
-=== ":simple-elasticsearch:{ .tab-icon .icon-elasticsearch } Elasticsearch"
-    - Version **6.3.1+**
-    - Ensure the cluster is reachable from where PGSync runs.
-
-    **Quick check**
     ```bash
     curl -s http://localhost:9200 | jq .
-    # or
-    elasticsearch --version
     ```
 
-=== ":simple-opensearch:{ .tab-icon .icon-opensearch } OpenSearch"
-    - Version **1.3.7+**
-    - Ensure the cluster is reachable from where PGSync runs.
+=== ":simple-opensearch: OpenSearch"
 
-    **Quick check**
+    Ensure the cluster is reachable from where PGSync runs.
+
     ```bash
     curl -s http://localhost:9200 | jq .
-    # or
-    opensearch --version
     ```
 
-## Quick checks
+---
 
-Verify the basics on the host that will run PGSync:
+## Verify Installation
+
+Run these commands to verify your environment:
 
 ```bash
+# Python
 python3 --version
-psql --version
-redis-cli --version      # or: valkey-cli --version
+
+# Database client
+psql --version          # PostgreSQL
+mysql --version         # MySQL/MariaDB
+
+# Key-value store
+redis-cli --version     # Redis
+valkey-cli --version    # Valkey
 ```
+
+!!! tip "Virtual Environment"
+    Always use a virtual environment to isolate PGSync dependencies:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install pgsync
+    ```
