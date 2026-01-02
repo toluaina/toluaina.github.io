@@ -1,0 +1,131 @@
+{
+  "$schema": "https://floss.fund/schema/v1.0.0/funding.schema.json#",
+  "version": "v1.0.0",
+  "entity": {
+    "type": "individual",
+    "role": "owner",
+    "name": "Tolu Aina",
+    "email": "tolu@pgsync.com",
+    "description": "Maintainer of PGSync, an open-source tool that syncs PostgreSQL/MySQL/MariaDB to Elasticsearch and OpenSearch. Funding supports maintenance, docs, feature development (CDC/backfills/schema tooling), user support, and CI/test infra.",
+    "webpageUrl": {
+      "url": "https://pgsync.com"
+    }
+  },
+  "projects": [
+    {
+      "guid": "pgsync",
+      "name": "PGSync",
+      "description": "PGSync moves data from PostgreSQL/MySQL/MariaDB to Elasticsearch/OpenSearch with live syncing, bulk backfills, and minimal load on the primary DB.",
+      "webpageUrl": {
+        "url": "https://pgsync.com"
+      },
+      "repositoryUrl": {
+        "url": "https://github.com/toluaina/pgsync"
+      },
+      "licenses": [
+        "spdx:MIT"
+      ],
+      "tags": [
+        "postgresql",
+        "mysql",
+        "mariadb",
+        "elasticsearch",
+        "opensearch",
+        "cdc",
+        "etl",
+        "data-pipeline",
+        "python",
+        "devtools"
+      ]
+    }
+  ],
+  "funding": {
+    "channels": [
+      {
+        "guid": "github-sponsors",
+        "type": "payment-provider",
+        "address": "https://github.com/sponsors/toluaina",
+        "description": "Recurring or one-time support via GitHub Sponsors."
+      },
+      {
+        "guid": "opencollective",
+        "type": "payment-provider",
+        "address": "https://opencollective.com/tolu-aina1",
+        "description": "For companies and individuals preferring Open Collective."
+      },
+      {
+        "guid": "paypal",
+        "type": "payment-provider",
+        "address": "https://www.paypal.me/toluaina",
+        "description": "One-time donations via PayPal."
+      },
+      {
+        "guid": "patreon",
+        "type": "payment-provider",
+        "address": "https://www.patreon.com/toluaina",
+        "description": "Recurring support via Patreon."
+      },
+      {
+        "guid": "kofi",
+        "type": "payment-provider",
+        "address": "https://ko-fi.com/toluaina",
+        "description": "One-time donations via Ko-fi."
+      },
+      {
+        "guid": "bank-transfer",
+        "type": "bank",
+        "address": "",
+        "description": "Invoice + wire transfer available; email for details."
+      }
+    ],
+    "plans": [
+      {
+        "guid": "supporter",
+        "status": "active",
+        "name": "Supporter",
+        "description": "For individuals who use PGSync and want to keep the lights on—bug fixes, docs, and small improvements.",
+        "amount": 10,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective",
+          "patreon",
+          "paypal",
+          "kofi"
+        ]
+      },
+      {
+        "guid": "sponsor",
+        "status": "active",
+        "name": "Team Sponsor",
+        "description": "For small teams relying on PGSync in production; helps fund CI minutes, test clusters, and prioritized issue triage.",
+        "amount": 99,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective",
+          "patreon",
+          "paypal",
+          "kofi",
+          "bank-transfer"
+        ]
+      },
+      {
+        "guid": "enterprise",
+        "status": "active",
+        "name": "Enterprise Sponsor",
+        "description": "For companies depending on PGSync at scale; funds maintenance, security updates, and roadmap work (feature development & backfills).",
+        "amount": 1500,
+        "currency": "USD",
+        "frequency": "monthly",
+        "channels": [
+          "github-sponsors",
+          "opencollective",
+          "bank-transfer"
+        ]
+      }
+    ]
+  }
+}
