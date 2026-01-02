@@ -17,9 +17,18 @@ copyright: Copyright &copy; 2026 Tolu Aina
 theme:
   name: material
   palette:
-    scheme: slate
-    primary: pink
-    accent: deep purple
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   features:
     - content.code.copy
     - content.code.annotate
@@ -27,8 +36,10 @@ theme:
     - toc.follow
     - navigation.top
     - navigation.instant
+    - navigation.instant.progress
     - search.highlight
     - search.share
+    - search.suggest
   font:
     text: Roboto
     code: Roboto Mono

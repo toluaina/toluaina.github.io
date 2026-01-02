@@ -6,7 +6,8 @@ hide:
 
 <p align="center">
   <a href="https://pgsync.com">
-    <img src="assets/images/logo-no-background.svg" alt="PGSync" width="300">
+    <img src="assets/images/logo-no-background.svg#only-dark" alt="PGSync" width="300">
+    <img src="assets/images/logo-no-background-dark.svg#only-light" alt="PGSync" width="300">
   </a>
 </p>
 
