@@ -6,7 +6,7 @@ PGSync has a small set of runtime dependencies.
 
 | Component | Minimum Version | Required |
 |-----------|-----------------|----------|
-| :simple-python: **Python** | 3.9+ | Yes |
+| :simple-python: **Python** | 3.10+ | Yes |
 
 ### Source Database (choose one)
 
