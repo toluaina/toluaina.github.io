@@ -109,3 +109,47 @@ You can concatenate multiple columns into a single field with an optional delimi
     }
 ]
 ```
+
+### `replace`
+
+The replace transform allows you to find and replace substrings within field values. It supports:
+
+- **Simple string replacements**: Replace a single substring with another
+- **Multiple replacements per field**: Apply several replacements to the same field
+- **Nested fields**: Target fields within nested objects
+- **Lists of strings**: Automatically applies replacements to each item in a list
+
+```JSON
+[
+    {
+        "database": "book",
+        "index": "book",
+        "nodes": {
+            "table": "book",
+            "columns": [
+                "code",
+                "publisher"
+            ],
+            "transform": {
+                "replace": {
+                    "code": {
+                        "-": "=",
+                        "_": " "
+                    },
+                    "publisher": {
+                        "name": {
+                            "Inc.": "Incorporated"
+                        }
+                    }
+                },
+                "rename": {
+                    "code": "product_code"
+                }
+            }
+        }
+    }
+]
+```
+
+!!! note "Transform Order"
+    Transforms are applied in the following order: **replace → rename → concat**. This ensures you can use original field names in your replace config before they get renamed.
