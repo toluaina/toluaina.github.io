@@ -49,6 +49,17 @@ pgsync [OPTIONS]
 
 ---
 
+## Scaling
+
+Split the sync into separate producer and consumer processes to scale throughput across processes or machines. See [Multiple Workers](../scaling/multiple-workers.md).
+
+| Argument | Description |
+|----------|-------------|
+| `--producer` | Run as a producer only |
+| `--consumer` | Run as a consumer only |
+
+---
+
 ## Examples
 
 **First-time setup:**
@@ -78,5 +89,8 @@ pgsync -c schema.json --polling -n 4 -d
 
 **WAL consumer mode:**
 ```bash
-pgsync -c schema.json --wal -d
+pgsync -c schema.json --wal
 ```
+
+!!! note
+    `--wal` runs continuously on its own and is mutually exclusive with `--daemon` (`-d`) and `--polling`. Don't combine them.
