@@ -63,31 +63,37 @@ Split the sync into separate producer and consumer processes to scale throughput
 ## Examples
 
 **First-time setup:**
+
 ```bash
 pgsync --config schema.json --bootstrap
 ```
 
 **Run as daemon:**
+
 ```bash
 pgsync -c schema.json --daemon
 ```
 
 **Single sync pass:**
+
 ```bash
 pgsync -c schema.json
 ```
 
 **With database credentials:**
+
 ```bash
 pgsync -c schema.json -h localhost -u postgres --password -d
 ```
 
 **Polling mode with threads:**
+
 ```bash
 pgsync -c schema.json --polling -n 4 -d
 ```
 
 **WAL consumer mode:**
+
 ```bash
 pgsync -c schema.json --wal
 ```

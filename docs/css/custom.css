@@ -1,13 +1,22 @@
 /* Sleeker header styling */
 
-/* Logo sizing and glow effect */
+/* Logo sizing and gentle hover */
 .md-header__button.md-logo img {
-  height: 1.8rem;
+  height: 1.6rem;
   width: auto;
-  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 16px rgba(99, 102, 241, 0.3));
+  transition: transform 0.25s ease;
 }
 
-/* Site title - cleaner font weight */
+.md-header__button.md-logo:hover img {
+  transform: scale(1.06);
+}
+
+/* Site title - the wordmark logo carries the brand, so hide the static
+   site name; the current page title still slides in on scroll */
+.md-header__topic:first-child {
+  display: none;
+}
+
 .md-header__title {
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -16,13 +25,6 @@
 /* Header overall - slightly tighter */
 .md-header {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-}
-
-/* Navigation tabs - sleeker */
-.md-tabs__link {
-  font-weight: 400;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
 }
 
 /* Search bar - rounder */

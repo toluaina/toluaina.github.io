@@ -43,6 +43,7 @@ PGSync has a small set of runtime dependencies.
     ```
 
     ??? example "Verify installation"
+
         ```python
         import psycopg2
         print("psycopg2 OK")
@@ -55,6 +56,7 @@ PGSync has a small set of runtime dependencies.
     ```
 
     ??? example "Verify installation"
+
         ```python
         import pymysql
         print("PyMySQL OK")
@@ -99,6 +101,7 @@ valkey-cli --version    # Valkey
 
 !!! tip "Virtual Environment"
     Always use a virtual environment to isolate PGSync dependencies:
+
     ```bash
     python3 -m venv venv
     source venv/bin/activate

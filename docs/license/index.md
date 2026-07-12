@@ -8,16 +8,18 @@
     - :material-close-circle:{ .red } **No warranty** — the software is provided *as is*; authors are not liable
 
 !!! tip "Copy-paste headers for your source files"
+
     ```text
     SPDX-License-Identifier: MIT
-    Copyright (c) 2016–2025 Tolu Aina
+    Copyright (c) 2016–2026 Tolu Aina
     ```
 
 ???+ note "Full text (authoritative)"
+
     ```text
     MIT License
 
-    Copyright © 2016-2025 Tolu Aina
+    Copyright © 2016-2026 Tolu Aina
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

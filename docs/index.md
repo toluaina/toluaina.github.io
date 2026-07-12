@@ -46,18 +46,49 @@ PGSync is a **lightweight middleware** that captures changes from your relationa
 
 Define your **document schema once** in JSON, and PGSync handles change capture, ordering, and delivery automatically—no custom ETL code required.
 
-- :material-sync: **Change Data Capture** — Automatically captures INSERT, UPDATE, and DELETE using logical replication
-- :material-lightning-bolt: **Low Overhead** — Minimal impact on database performance
-- :material-shield-check: **Fault Tolerant** — Resumes from last checkpoint after crashes
-- :material-file-tree: **Nested Documents** — Transform relational data into deeply nested JSON
+<div class="grid cards" markdown>
+
+-   :material-sync:{ .lg .middle } **Change Data Capture**
+
+    ---
+
+    Automatically captures INSERT, UPDATE, and DELETE using logical replication
+
+-   :material-lightning-bolt:{ .lg .middle } **Low Overhead**
+
+    ---
+
+    Minimal impact on database performance
+
+-   :material-shield-check:{ .lg .middle } **Fault Tolerant**
+
+    ---
+
+    Resumes from last checkpoint after crashes
+
+-   :material-file-tree:{ .lg .middle } **Nested Documents**
+
+    ---
+
+    Transform relational data into deeply nested JSON
+
+</div>
 
 ---
 
 ## Quick Start
 
-```bash
-pip install pgsync
+<div class="termy">
+
+```console
+$ pip install pgsync
+---> 100%
+Successfully installed pgsync
 ```
+
+</div>
+
+Define your schema in JSON:
 
 ```json
 {
@@ -70,9 +101,15 @@ pip install pgsync
 }
 ```
 
-```bash
-pgsync --config schema.json --daemon
+Then start syncing:
+
+<div class="termy">
+
+```console
+$ pgsync --config schema.json --daemon
 ```
+
+</div>
 
 ---
 

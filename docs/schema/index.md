@@ -24,6 +24,7 @@ The schema file defines how to map your database tables to Elasticsearch/OpenSea
 ```
 
 ??? abstract "Full Schema Reference"
+
     ```json
     [
       {
@@ -75,6 +76,7 @@ The schema file defines how to map your database tables to Elasticsearch/OpenSea
 | `setting` | No | Elasticsearch index settings |
 
 ??? example "Index Settings"
+
     ```json
     {
       "setting": {
@@ -129,6 +131,7 @@ Defines how parent and child nodes are related.
 
 === "object"
     Returns the full object:
+
     ```json
     {
       "author": {
@@ -140,6 +143,7 @@ Defines how parent and child nodes are related.
 
 === "scalar"
     Returns only the value(s):
+
     ```json
     {
       "author": ["George Orwell", "Aldous Huxley"]

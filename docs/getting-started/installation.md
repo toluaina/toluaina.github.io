@@ -7,6 +7,7 @@ pip install pgsync
 ```
 
 ??? tip "Using a virtual environment"
+
     ```bash
     python3 -m venv venv
     source venv/bin/activate  # Linux/macOS

@@ -1,6 +1,6 @@
 # Project information
 site_name: PGSync
-site_url: https://toluaina.github.io
+site_url: https://pgsync.com
 site_author: Tolu Aina
 site_description: >-
   PGSync simplifies your data pipeline by integrating Postgres/MySQL/MariaDB into Elasticsearch/OpenSearch.
@@ -16,24 +16,32 @@ copyright: Copyright &copy; 2026 Tolu Aina
 # Configuration
 theme:
   name: material
+  variant: classic
   palette:
-    - scheme: slate
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       primary: indigo
       accent: cyan
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-    - scheme: default
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
       primary: indigo
       accent: cyan
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Switch to system preference
   features:
     - content.code.copy
     - content.code.annotate
     - content.tabs.link
     - toc.follow
+    - navigation.footer
     - navigation.top
     - navigation.instant
     - navigation.instant.progress
@@ -44,7 +52,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: assets/images/pgsync-website-favicon-white.png
-  logo: assets/images/pgsync_logo_transparent.svg
+  logo: assets/images/pgsync-header-logo.svg
   icon:
     repo: fontawesome/brands/github
 
@@ -55,20 +63,18 @@ markdown_extensions:
   - markdown.extensions.codehilite:
       guess_lang: false
   - admonition
-  - codehilite
-  - extra
+  - abbr
+  - def_list
+  - footnotes
+  - tables
   - pymdownx.details
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.superfences:
-      custom_fences:
-      - name: mermaid
-        class: mermaid
-        format: !!python/name:pymdownx.superfences.fence_div_format ''
+      emoji_index: !!python/name:zensical.extensions.emoji.twemoji
+      emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
+  - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
 
 # Customization
 extra:
