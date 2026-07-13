@@ -1,4 +1,4 @@
-# :material-language-python: Django integration
+# :simple-django: Django integration
 
 [django-pgsync](https://github.com/toluaina/django-pgsync) is the official
 Django integration for PGSync. Declare search indexes from your Django
