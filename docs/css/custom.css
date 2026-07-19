@@ -64,3 +64,349 @@
   font-size: 0.7rem;
   opacity: 0.7;
 }
+
+/* Persistent "PGSync Pro" CTA button in the header (injected by custom.js) */
+.pgsync-pro-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: center;
+  margin: 0 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff !important;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.pgsync-pro-cta__spark {
+  color: var(--md-accent-fg-color, #00d0e0);
+  font-size: 0.8em;
+}
+.pgsync-pro-cta__pro {
+  color: var(--md-accent-fg-color, #00d0e0);
+  font-weight: 700;
+}
+.pgsync-pro-cta:hover {
+  border-color: var(--md-accent-fg-color, #00d0e0);
+  background: rgba(0, 208, 224, 0.12);
+  box-shadow: 0 0 0 3px rgba(0, 208, 224, 0.12);
+}
+@media screen and (max-width: 60em) {
+  .pgsync-pro-cta { display: none; }
+}
+
+/* ============ Homepage hero action buttons ============ */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.7rem auto 0.4rem;
+}
+.hero-actions .md-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--md-default-fg-color--lighter, #3a4763);
+  background: transparent;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.hero-actions .md-button svg {
+  width: 1.02em;
+  height: 1.02em;
+  fill: currentColor;
+}
+.hero-actions .md-button:hover {
+  color: var(--md-default-fg-color);
+  border-color: var(--md-default-fg-color--light);
+  background: color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
+}
+
+/* primary "Get Started" — flat solid indigo, no glow */
+.hero-actions .md-button--primary {
+  border-color: transparent;
+  color: #fff;
+  background: var(--md-primary-fg-color, #3f51b5);
+}
+.hero-actions .md-button--primary:hover {
+  border-color: transparent;
+  color: #fff;
+  background: color-mix(in srgb, var(--md-primary-fg-color, #3f51b5) 85%, #fff);
+}
+
+/* PGSync Pro flow diagram (hero on the Pro page) */
+.pgpro-flow {
+  margin: 2rem auto 0.4rem;
+  max-width: 34rem;
+}
+.pgpro-flow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* Two-column hero on the Pro page: pitch left, diagram right */
+.pgpro-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 2.4rem;
+  align-items: center;
+  margin: 0.6rem 0 0.4rem;
+}
+.pgpro-hero__text h1 {
+  margin-top: 0.2rem;
+}
+.pgpro-hero .pgpro-flow {
+  margin: 0;
+  max-width: none;
+}
+@media screen and (max-width: 60em) {
+  .pgpro-hero { grid-template-columns: 1fr; gap: 1rem; }
+  .pgpro-hero__text { text-align: center; }
+}
+
+/* ============ How-it-works animated pipeline ============ */
+.pl {
+  max-width: 52rem;
+  margin: 2rem auto 0.5rem;
+  background: #0d1424;
+  border: 1px solid var(--md-default-fg-color--lightest, #28324a);
+  border-radius: 18px;
+  padding: 1.6rem 1.8rem 2rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+.pl-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+.pl-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--md-default-fg-color--light);
+  background: transparent;
+  border: 1px solid var(--md-default-fg-color--lightest, #28324a);
+  border-radius: 2rem;
+  padding: 0.35rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.pl-step .pl-num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  background: var(--md-default-fg-color--lightest, #28324a);
+  color: var(--md-default-fg-color--light);
+  font-size: 0.66rem;
+}
+.pl-step:hover { color: var(--md-default-fg-color); }
+/* active-pill colours live in the flow-rail block below (per-step --pl-accent) */
+
+.pl-stage { position: relative; min-height: 320px; }
+.pl-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(14px);
+  transition: opacity 0.5s, transform 0.5s, visibility 0s 0.5s;
+  pointer-events: none;
+}
+.pl-panel.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity 0.5s, transform 0.5s, visibility 0s 0s;
+}
+.pl-cap {
+  text-align: center;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.95rem;
+  margin: 0 auto 1.2rem;
+  max-width: 40rem;
+}
+
+/* tables */
+.pl-tables { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+.pl-table {
+  border: 1px solid #28324a;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 15rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.76rem;
+}
+.pl-th {
+  background: #182238;
+  color: #7fb2e0;
+  padding: 0.4rem 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.pl-tr { display: flex; justify-content: space-between; gap: 1rem; padding: 0.34rem 0.8rem; border-top: 1px solid #1b2740; }
+.pl-tr span:first-child { color: #7a86a3; }
+.pl-tr span:last-child { color: #dfe5f2; }
+
+/* code (sql + json) */
+.pl-code {
+  background: #0a1020;
+  border: 1px solid #1e2b45;
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.55;
+  color: #c8d0e0;
+  max-width: 40rem;
+  margin: 0 auto;
+  overflow-x: auto;
+}
+.pl-code .k { color: #7c9dff; }
+.pl-code .s { color: #6fe0b0; }
+.pl-code .key { color: #5ee7f5; }
+.pl-code .p { color: #8a95af; }
+
+/* embed */
+.pl-embed-src, .pl-query {
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.82rem;
+  color: #cdd6e6;
+  border: 1px solid #28324a;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+.pl-query { font-family: var(--md-text-font, "Roboto"); font-size: 1.1rem; font-style: italic; color: #eef2fb; }
+.pl-flow-down { text-align: center; margin: 0.9rem 0; color: #7a86a3; font-family: "Roboto Mono", monospace; font-size: 0.7rem; }
+.pl-flow-down span {
+  display: block; width: 2px; height: 26px; margin: 0 auto 6px;
+  background: linear-gradient(#5ea8ff, #22d3ee); border-radius: 2px;
+  position: relative; overflow: hidden;
+}
+.pl-flow-down span::after {
+  content: ""; position: absolute; left: -1px; width: 4px; height: 8px;
+  background: #e8fbff; border-radius: 2px; animation: pl-drop 1.3s linear infinite;
+}
+@keyframes pl-drop { from { top: -8px; } to { top: 28px; } }
+.pl-vec {
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.82rem;
+  color: #7fe9f5;
+  background: rgba(0, 208, 224, 0.08);
+  border: 1px solid rgba(0, 208, 224, 0.3);
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+.pl-vec .pl-dim { color: #5c7a86; margin-left: 0.6rem; font-size: 0.72rem; }
+.pl-note { text-align: center; color: var(--md-default-fg-color--light); font-size: 0.82rem; max-width: 38rem; margin: 1.1rem auto 0; }
+.pl-note b { color: var(--md-default-fg-color); }
+
+/* result */
+.pl-result {
+  border: 1px solid rgba(0, 208, 224, 0.35);
+  background: #111a2e;
+  border-radius: 12px;
+  padding: 1rem 1.3rem;
+  max-width: 34rem;
+  margin: 0 auto;
+}
+.pl-result-title { font-family: var(--md-text-font, "Roboto"); font-size: 1.25rem; font-weight: 600; color: #fff; }
+.pl-result-meta { font-family: "Roboto Mono", monospace; font-size: 0.76rem; color: #8a95af; margin: 0.3rem 0 0.7rem; }
+.pl-result-meta b { color: #dfe5f2; }
+.pl-pill {
+  display: inline-block;
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--md-accent-fg-color, #00d0e0);
+  background: rgba(0, 208, 224, 0.12);
+  border-radius: 2rem;
+  padding: 0.25rem 0.7rem;
+}
+
+/* ---- pipeline flow rail: per-step colour, travelling packet, progress ---- */
+.pl { --pl-accent: #00d0e0; }
+.pl-steps { position: relative; z-index: 1; }
+.pl-line {
+  position: absolute; top: 50%; left: 6%; right: 6%; height: 2px;
+  background: #26314c; transform: translateY(-50%); z-index: 0;
+}
+.pl-packet {
+  position: absolute; top: 50%; left: 0; width: 11px; height: 11px;
+  margin-left: -5.5px; transform: translateY(-50%); border-radius: 50%;
+  background: var(--pl-accent);
+  box-shadow: 0 0 14px 3px var(--pl-accent);
+  opacity: 0;
+  transition: left 0.55s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s, opacity 0.3s;
+  z-index: 3;
+}
+/* comet tail trailing the packet as it advances left-to-right */
+.pl-packet::before {
+  content: ""; position: absolute; right: 50%; top: 50%;
+  width: 2.4rem; height: 3px; transform: translateY(-50%);
+  background: linear-gradient(270deg, var(--pl-accent), transparent);
+  border-radius: 3px; opacity: 0.55; pointer-events: none;
+}
+.pl-step { position: relative; z-index: 1; background: #0d1424; }
+.pl-step.is-active {
+  color: #06202a;
+  background: var(--pl-accent);
+  border-color: var(--pl-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--pl-accent) 18%, transparent);
+}
+.pl-step.is-active .pl-num { background: #06202a; color: var(--pl-accent); }
+
+.pl-progress {
+  height: 3px; margin: 1rem 6% 0.2rem;
+  background: #1c2740; border-radius: 3px; overflow: hidden;
+}
+.pl-fill {
+  display: block; width: 0; height: 100%;
+  background: var(--pl-accent); border-radius: 3px;
+  animation: pl-progress var(--pl-dur, 4.6s) linear;
+}
+@keyframes pl-progress { from { width: 0; } to { width: 100%; } }
+.pl:hover .pl-fill { animation-play-state: paused; }
+
+/* tie the panel accents to the active step colour */
+.pl-vec {
+  color: var(--pl-accent);
+  background: color-mix(in srgb, var(--pl-accent) 8%, transparent);
+  border-color: color-mix(in srgb, var(--pl-accent) 35%, transparent);
+}
+.pl-result { border-color: color-mix(in srgb, var(--pl-accent) 40%, transparent); }
+.pl-pill {
+  color: var(--pl-accent);
+  background: color-mix(in srgb, var(--pl-accent) 14%, transparent);
+}
+.pl-flow-down span { background: linear-gradient(#5ea8ff, var(--pl-accent)); }

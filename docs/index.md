@@ -30,13 +30,22 @@ hide:
 
 Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** to **Elasticsearch** and **OpenSearch**—continuously and transactionally.
 
+<div class="hero-actions" markdown>
+
 [:material-rocket-launch: Get Started](getting-started/setup.md){ .md-button .md-button--primary }
 [:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
 [:material-package-variant: PyPI](https://pypi.org/project/pgsync/){ .md-button }
 [:material-docker: Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
-[:simple-digitalocean: DigitalOcean Marketplace](https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync){ .md-button }
+[:simple-digitalocean: DigitalOcean](https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync){ .md-button }
 
 </div>
+
+</div>
+
+!!! tip "New · PGSync Pro"
+    Real-time **semantic & hybrid search** on top of PGSync — vectors kept fresh
+    by change data capture, re-embedded only when *meaning* changes.
+    [Explore PGSync Pro :material-arrow-right:](pro/index.md)
 
 ---
 
@@ -108,6 +117,38 @@ Then start syncing:
 ```console
 $ pgsync --config schema.json --daemon
 ```
+
+</div>
+
+---
+
+## Editions
+
+PGSync is free and open source. **PGSync Pro** builds on it to add real-time
+semantic and hybrid search — with change-guard economics that keep it
+affordable at scale.
+
+<div class="grid cards" markdown>
+
+-   :material-database-sync:{ .lg .middle } **PGSync · Community**
+
+    ---
+
+    Free & MIT. Real-time sync from PostgreSQL / MySQL / MariaDB to
+    Elasticsearch / OpenSearch — change data capture, denormalized documents,
+    and the Django integration.
+
+    [:material-rocket-launch: Get started](getting-started/setup.md)
+
+-   :material-brain:{ .lg .middle } **PGSync · Pro**
+
+    ---
+
+    Everything in Community, plus **semantic & hybrid search** that re-embeds
+    only when meaning changes, hosted embedding providers, and an MCP server for
+    AI agents.
+
+    [:material-star-four-points: Explore PGSync Pro](pro/index.md)
 
 </div>
 
