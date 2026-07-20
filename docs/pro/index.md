@@ -2,7 +2,6 @@
 title: PGSync Pro
 hide:
   - toc
-  - navigation
 ---
 
 <div class="pgpro-hero" markdown>
@@ -111,39 +110,6 @@ in lock-step, and only pays to embed when *meaning* actually changes.
 
 ---
 
-## Under the hood
-
-=== ":material-clock-fast: Always fresh"
-
-    Change data capture streams every insert, update and delete straight from
-    PostgreSQL. Your vector index tracks the database in real time — no nightly
-    reindex, no stale results, no drift between what's stored and what search
-    returns.
-
-=== ":material-cash-remove: Only pay for meaning"
-
-    Embeddings are the expensive part. PGSync Pro fingerprints only the fields
-    your vector is built from, so a **price edit reuses the cached vector at zero
-    cost**, while a description rewrite regenerates **exactly one** embedding.
-    Your bill tracks *meaningful change*, not write volume — the difference
-    between a rounding error and a runaway invoice at scale.
-
-=== ":material-vector-combine: Semantic + hybrid"
-
-    Search by intent, not keywords. Vector kNN captures meaning, BM25 captures
-    exact terms, and reciprocal rank fusion blends them — ranked inside the
-    engine so it scales. *"a rebellion against a watchful state"* finds
-    **Nineteen Eighty-Four**, even though the words never appear in it.
-
-=== ":material-server-security: Your infrastructure"
-
-    With local `sentence-transformers`, text is embedded on your own machines and
-    never leaves your environment — no vendor-hosted component, no telemetry.
-    Prefer hosted? OpenAI, Cohere and Voyage are one line of config away. An MCP
-    server exposes the same search to AI agents like Claude.
-
----
-
 ## What you get
 
 <div class="grid cards" markdown>
@@ -183,42 +149,25 @@ in lock-step, and only pays to embed when *meaning* actually changes.
     An MCP server exposes search to Claude Desktop, Claude Code, or your own
     agent — retrieval over live data.
 
--   :material-swap-horizontal:{ .lg .middle } **Safe model upgrades**
+-   :material-check-decagram:{ .lg .middle } **Preflight checks**
 
     ---
 
-    Alias-based reindex swaps embedding models with zero downtime.
+    `pgsync-pro validate` verifies your schema and connections before indexing —
+    catching mistakes with actionable errors.
 
 </div>
 
----
-
-## Open core vs. Pro
-
 PGSync and django-pgsync stay free and MIT forever. Pro adds the semantic layer
-and the economics that make it affordable at scale.
-
-| | Open core (MIT) | **PGSync Pro** |
-|---|:---:|:---:|
-| Real-time sync to Elasticsearch / OpenSearch | :material-check: | :material-check: |
-| Denormalized documents from your schema | :material-check: | :material-check: |
-| Semantic (vector) search | :material-close: | :material-check: |
-| Hybrid search (vector + BM25) | :material-close: | :material-check: |
-| The change-guard (re-embed only on meaning change) | :material-close: | :material-check: |
-| Hosted providers (OpenAI / Cohere / Voyage) | :material-close: | :material-check: |
-| MCP server for AI agents | :material-close: | :material-check: |
-| Zero-downtime model reindex | :material-close: | :material-check: |
-| Support & updates | Community | :material-check: |
+on top — the same `schema.json` and CLI, plus an `embedding` block.
 
 ---
 
 <div align="center" markdown>
 
-## Ready to try it?
+**Next:** see the whole pipeline animated, then the plans.
 
-See the tiers and start a free trial — or reach out and we'll walk you through it.
-
-[:material-tag: See pricing](../pricing/index.md){ .md-button .md-button--primary }
-[:material-calendar: Book a call](mailto:tolu@pgsync.com){ .md-button }
+[:material-play-circle: How it works](../how-it-works/index.md){ .md-button .md-button--primary }
+[:material-tag: See pricing](../pricing/index.md){ .md-button }
 
 </div>

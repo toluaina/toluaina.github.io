@@ -37,6 +37,7 @@ theme:
     - toc.follow
     - navigation.footer
     - navigation.top
+    - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
     - search.highlight
@@ -110,9 +111,11 @@ extra_javascript:
 nav:
   - PGSync: index.md
   - Features: features/index.md
-  - PGSync Pro: pro/index.md
-  - How it works: how-it-works/index.md
-  - Pricing: pricing/index.md
+  - PGSync Pro:
+    - pro/index.md
+    - How it works: how-it-works/index.md
+    - Pricing: pricing/index.md
+    - FAQ: pro/faq.md
   - Requirements: requirements/index.md
   - Getting started:
     - getting-started/setup.md

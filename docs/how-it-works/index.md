@@ -2,7 +2,6 @@
 title: How it works
 hide:
   - toc
-  - navigation
 ---
 
 <div align="center" markdown>

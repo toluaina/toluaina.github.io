@@ -1,7 +1,5 @@
 ---
 title: Pricing
-hide:
-  - toc
 ---
 
 <div align="center" markdown>
@@ -9,7 +7,7 @@ hide:
 # Pricing
 
 Simple, per-organization pricing. Start free, upgrade when you need search that
-understands *meaning*.
+understands *meaning*. No per-seat counting.
 
 </div>
 
@@ -37,7 +35,8 @@ understands *meaning*.
 
     ---
 
-    **$99 / month** · billed annually, per organization
+    **$49 / month** · billed annually, per organization
+    <br><small>or **$59 / month**, billed monthly — cancel anytime</small>
 
     Everything semantic, self-serve. Install from a private index the moment you
     subscribe.
@@ -48,91 +47,63 @@ understands *meaning*.
     - MCP agent server
     - Email support & all updates
 
-    [:material-rocket-launch: Start a free trial](mailto:tolu@pgsync.com?subject=PGSync%20Pro%20trial){ .md-button .md-button--primary }
-
--   ### Enterprise
-
-    ---
-
-    **Custom** · invoiced
-
-    For teams running search on the critical path.
-
-    - Everything in Pro
-    - Priority support & SLA
-    - Onboarding & architecture review
-    - Private index / air-gapped install
-    - Security & procurement review
-
-    [:material-email: Talk to us](mailto:tolu@pgsync.com?subject=PGSync%20Pro%20Enterprise){ .md-button }
+    [:material-rocket-launch: Get PGSync Pro](mailto:tolu@pgsync.com?subject=PGSync%20Pro){ .md-button .md-button--primary }
 
 </div>
 
-<small>Prices are indicative during launch. A 14-day trial is available — no card
-up front.</small>
+<small>:material-star-four-points: **Founding price** — the first teams lock
+**$49/mo for life**. Launch pricing; the list price rises as we add features.</small>
+
+<small>Need an SLA, air-gapped install, or procurement review?
+[Talk to us about a custom plan](mailto:tolu@pgsync.com?subject=PGSync%20Pro%20custom%20plan).</small>
+
+??? note "Compare all features"
+
+    | | Community | Pro |
+    |---|:--:|:--:|
+    | Real-time change-data-capture sync | ✓ | ✓ |
+    | Postgres / MySQL / MariaDB → Elasticsearch / OpenSearch | ✓ | ✓ |
+    | Denormalized nested documents | ✓ | ✓ |
+    | Django integration | ✓ | ✓ |
+    | **Semantic (vector) search** | — | ✓ |
+    | **Hybrid search** (kNN + BM25) | — | ✓ |
+    | **Change-guard** — re-embed only when meaning changes | — | ✓ |
+    | On-device embeddings (local / FastEmbed) | — | ✓ |
+    | Hosted embeddings (OpenAI / Cohere / Voyage) | — | ✓ |
+    | MCP server for AI agents | — | ✓ |
+    | Zero-downtime model reindex | — | ✓ |
+    | Search dashboard & reference demo | — | ✓ |
+    | Product updates & new features | — | ✓ |
+    | Support | Community | Email · business-day |
 
 ---
 
 ## How buying works
 
-<div class="grid cards" markdown>
+:material-numeric-1-circle:{ .lg .middle } **Subscribe** — check out in a minute.
+Per-organization subscription, monthly or annual — no per-seat counting.
 
--   :material-numeric-1-circle:{ .lg .middle } **Subscribe**
+:material-numeric-2-circle:{ .lg .middle } **Get your token** — we issue a private
+package-index credential to your inbox automatically.
 
-    ---
+:material-numeric-3-circle:{ .lg .middle } **Install** —
 
-    Check out in a minute. Per-organization annual subscription — no per-seat
-    counting.
-
--   :material-numeric-2-circle:{ .lg .middle } **Get your token**
-
-    ---
-
-    We issue a private package-index credential to your inbox automatically.
-
--   :material-numeric-3-circle:{ .lg .middle } **Install**
-
-    ---
-
-    ```bash
-    pip install pgsync-pro       # from your private index
-    pgsync-pro validate --config schema.json
-    pgsync-pro bootstrap --config schema.json
-    ```
-
-</div>
+```bash
+pip install pgsync-pro       # from your private index
+pgsync-pro validate --config schema.json
+pgsync-pro bootstrap --config schema.json
+```
 
 It's the same `schema.json` and CLI you already know from PGSync — Pro just adds
 an `embedding` block.
-
----
-
-## FAQ
-
-**Is my data safe?**
-With the default local provider, text is embedded on your own machines and never
-leaves your environment. PGSync Pro runs entirely in your infrastructure — no
-vendor-hosted component, no telemetry.
-
-**What am I licensed for?**
-A per-organization commercial subscription: use it across your own
-infrastructure, no redistribution. Full terms in the license agreement.
-
-**What happens if I cancel?**
-The software keeps running; you stop receiving updates and new installs from the
-private index when the subscription lapses.
-
-**Do I need a kNN-capable search engine?**
-For production, yes (OpenSearch ships the plugin bundled; Elasticsearch 8+ is
-native). For evaluation, Pro can rank vectors without one.
 
 <div align="center" markdown>
 
 ---
 
-### Keep your search fresh — without re-embedding the world.
+**Questions about licensing, cancelling, or your data?**
 
-[:material-rocket-launch: Start a free trial](mailto:tolu@pgsync.com?subject=PGSync%20Pro%20trial){ .md-button .md-button--primary }
-[:material-book-open-variant: Why PGSync Pro](../pro/index.md){ .md-button }
+[:material-frequently-asked-questions: Read the FAQ](../pro/faq.md){ .md-button .md-button--primary }
+[:material-email: Talk to us](mailto:tolu@pgsync.com?subject=PGSync%20Pro){ .md-button }
 
 </div>
