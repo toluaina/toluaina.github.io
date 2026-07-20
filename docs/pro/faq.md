@@ -23,8 +23,8 @@ and maintain that, and it keeps your data in your own infrastructure.
 
 **Why not a hosted vector DB (Pinecone / Weaviate / Qdrant) or Algolia?**
 Those are separate services your data is copied into, priced by usage that grows
-with scale. PGSync Pro keeps Postgres as the source of truth, runs in your infra,
-and embeddings can run on-device — nothing leaves your environment.
+with scale. PGSync Pro keeps your database as the source of truth, runs in your
+infra, and embeddings can run on-device — nothing leaves your environment.
 
 ## Pricing & billing
 

@@ -16,7 +16,9 @@ when *meaning* changes.
 [:material-play-circle: See how it works](../how-it-works/index.md){ .md-button }
 
 Your database stays the source of truth — PGSync Pro keeps a fresh vector index
-in lock-step, and only pays to embed when *meaning* actually changes.
+in lock-step, and only pays to embed when *meaning* actually changes. Built on
+PGSync, which syncs **PostgreSQL, MySQL and MariaDB** to Elasticsearch /
+OpenSearch.
 
 </div>
 <div class="pgpro-flow">
@@ -118,7 +120,7 @@ in lock-step, and only pays to embed when *meaning* actually changes.
 
     ---
 
-    Vectors stay in sync with PostgreSQL via CDC. No nightly reindex jobs, no
+    Vectors stay in sync with your database via CDC. No nightly reindex jobs, no
     stale search results.
 
 -   :material-shield-key:{ .lg .middle } **The change-guard**
