@@ -51,11 +51,7 @@ understands *meaning*. No per-seat counting.
 
 </div>
 
-<small>:material-star-four-points: **Founding price** — the first teams lock
-**$49/mo for life**. Launch pricing; the list price rises as we add features.</small>
-
-<small>Need an SLA, air-gapped install, or procurement review?
-[Talk to us about a custom plan](mailto:tolu@pgsync.com?subject=PGSync%20Pro%20custom%20plan).</small>
+<small>:material-tag: Launch pricing — the list price rises as we add features.</small>
 
 ??? note "Compare all features"
 

@@ -411,3 +411,14 @@
   background: color-mix(in srgb, var(--pl-accent) 14%, transparent);
 }
 .pl-flow-down span { background: linear-gradient(#5ea8ff, var(--pl-accent)); }
+
+/* Grid cards: lay each card out as a column and push its button (the last
+   paragraph) to the bottom, so CTAs line up across cards of differing height
+   — e.g. the Pricing page's "Get it on GitHub" vs "Get PGSync Pro". */
+.md-typeset .grid.cards > :is(ul, ol) > li {
+  display: flex;
+  flex-direction: column;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li > p:last-child {
+  margin-top: auto;
+}

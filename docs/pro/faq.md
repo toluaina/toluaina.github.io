@@ -30,8 +30,7 @@ infra, and embeddings can run on-device — nothing leaves your environment.
 
 **How much is it?**
 **$49/mo billed annually**, or **$59/mo month-to-month**, per organization.
-Early adopters lock **$49/mo for life**. Need an SLA, air-gapped install, or
-procurement review? [Ask about a custom plan](mailto:tolu@pgsync.com?subject=PGSync%20Pro%20custom%20plan).
+Launch pricing — the list price rises as we add features.
 
 **What is an "organization"?**
 One legal entity and the infrastructure it operates (wholly-owned subsidiaries
@@ -69,10 +68,6 @@ Keep the token out of shell history — use `PIP_EXTRA_INDEX_URL` or `pip.conf`.
 **Can I use the token in CI and multiple environments?**
 Yes — one token covers your organization's dev, CI, and production installs.
 Don't publish it; if it leaks, tell us and we'll rotate it.
-
-**Do you support air-gapped / offline installs?**
-Yes, on a custom plan — we provide a signed offline wheel for environments that
-can't reach the private index at build time.
 
 **Do I need a kNN-capable search engine?**
 For production, yes (OpenSearch ships the plugin bundled; Elasticsearch 8+ is
