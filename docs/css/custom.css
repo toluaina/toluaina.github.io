@@ -225,10 +225,11 @@
 .pl-step:hover { color: var(--md-default-fg-color); }
 /* active-pill colours live in the flow-rail block below (per-step --pl-accent) */
 
-.pl-stage { position: relative; min-height: 320px; }
+/* Stage stacks every panel into one grid cell, so it grows to the TALLEST
+   panel (Search/Embed run past a fixed height and used to spill the border). */
+.pl-stage { display: grid; min-height: 320px; }
 .pl-panel {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
   opacity: 0;
   visibility: hidden;
   transform: translateY(14px);
