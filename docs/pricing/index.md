@@ -47,7 +47,7 @@ understands *meaning*. No per-seat counting.
     - MCP agent server
     - Email support & all updates
 
-    [:material-rocket-launch: Get PGSync Pro](mailto:tolu@pgsync.com?subject=PGSync%20Pro){ .md-button .md-button--primary }
+    [:material-rocket-launch: Get PGSync Pro](https://buy.polar.sh/polar_cl_OaZCuL1ePBerK2Y8hfHPZMPhOZEayiCJ7BeZU129pqk){ .md-button .md-button--primary }
 
 </div>
 
@@ -100,6 +100,6 @@ an `embedding` block.
 **Questions about licensing, cancelling, or your data?**
 
 [:material-frequently-asked-questions: Read the FAQ](../pro/faq.md){ .md-button .md-button--primary }
-[:material-email: Talk to us](mailto:tolu@pgsync.com?subject=PGSync%20Pro){ .md-button }
+[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
 
 </div>

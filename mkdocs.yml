@@ -11,7 +11,7 @@ repo_url: https://github.com/toluaina/pgsync
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2026 Tolu Aina
+copyright: Copyright &copy; 2026 Tolu Aina &middot; <a href="/terms/">Terms</a> &middot; <a href="/privacy/">Privacy</a>
 
 # Configuration
 theme:
@@ -96,9 +96,6 @@ extra:
     - icon: fontawesome/brands/medium
       link: https://medium.com/@toluaina/real-time-integration-of-postgresql-with-elasticsearch-with-pgsync-9425ffa9b4e9
       name: Medium
-    - icon: fontawesome/solid/envelope
-      link: mailto:tolu@pgsync.com
-      name: Email
 
 extra_css:
 - css/termynal.css
@@ -106,6 +103,7 @@ extra_css:
 extra_javascript:
 - js/termynal.js
 - js/custom.js
+- js/mail.js
 
 # Page tree
 nav:

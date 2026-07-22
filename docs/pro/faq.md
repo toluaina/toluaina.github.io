@@ -5,7 +5,7 @@ title: PGSync Pro — FAQ
 # PGSync Pro — FAQ
 
 Common questions about buying, licensing, and running PGSync Pro. Can't find an
-answer? [Email us](mailto:tolu@pgsync.com).
+answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" }.
 
 ## The product
 
@@ -82,7 +82,7 @@ and nothing leaves your environment. If you opt into a hosted provider
 provider, under their terms.
 
 **Do you collect telemetry?**
-No. PGSync Pro sends us no usage data.
+No. PGSync Pro sends us no usage data. See our [Privacy Policy](../privacy.md).
 
 **Can I get a DPA?**
 Yes, on request — and because embeddings run in your infrastructure, it's a
@@ -93,6 +93,6 @@ short, favorable document.
 ---
 
 [:material-tag: See pricing](../pricing/index.md){ .md-button .md-button--primary }
-[:material-email: Talk to us](mailto:tolu@pgsync.com){ .md-button }
+[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" }
 
 </div>
