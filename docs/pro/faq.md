@@ -5,7 +5,7 @@ title: PGSync Pro — FAQ
 # PGSync Pro — FAQ
 
 Common questions about buying, licensing, and running PGSync Pro. Can't find an
-answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" }.
+answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro — question" }.
 
 ## The product
 
@@ -93,6 +93,6 @@ short, favorable document.
 ---
 
 [:material-tag: See pricing](../pricing/index.md){ .md-button .md-button--primary }
-[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" }
+[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
 
 </div>

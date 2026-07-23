@@ -21,7 +21,7 @@ Nothing after a few minutes? Email <span class="eml" data-u="tolu" data-d="pgsyn
 sort it out — include your reference below.
 
 [:material-book-open-variant: Read the docs](pro/index.md){ .md-button .md-button--primary }
-[:material-email: Contact support](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" }
+[:material-email: Contact support](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro — support" }
 
 <small id="order-ref" style="display:block;margin-top:1.5rem;opacity:.6"></small>
 
