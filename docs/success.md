@@ -9,8 +9,8 @@ hide:
 
 Your **PGSync Pro** subscription is active.
 
-**Check your inbox** — we're sending your private-index token and the one-line
-install command. It usually arrives within a few minutes. Once you have it:
+**Check your inbox** — we're sending your license token and install
+instructions. It usually arrives within a few minutes. Once you have it:
 
 ```bash
 pip install "pgsync-pro[local]" --extra-index-url <your private index URL>

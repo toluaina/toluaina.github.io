@@ -34,8 +34,9 @@ To sell and support the Software we process:
 - **Support correspondence** — anything you send us when you contact support.
 
 We use this only to provide, bill for, and support the Software, and we do not
-sell it. Sub-processors: **Polar** (payments / checkout) and **Gemfury** (private
-package index).
+sell it. Sub-processors: **Polar** (payments / checkout), **Cloudflare**
+(private package-index hosting), and **Resend** (delivery of your token /
+onboarding email).
 
 ## Your rights
 

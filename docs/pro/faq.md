@@ -61,7 +61,7 @@ Yes, through the billing portal; changes are prorated.
 ## Installation & use
 
 **How do I install it?**
-After subscribing you receive a private-index deploy token and install with
+After subscribing you receive a private-index install token and install with
 `pip install "pgsync-pro[local]" --extra-index-url <your private index URL>`.
 Keep the token out of shell history — use `PIP_EXTRA_INDEX_URL` or `pip.conf`.
 
