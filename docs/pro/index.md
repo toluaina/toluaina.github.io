@@ -134,7 +134,7 @@ OpenSearch.
     ---
 
     Re-embed only when the embedded text changes. Unrelated column updates are
-    free — the moat, and your bill.
+    free — and easy on your embedding bill.
 
 -   :material-vector-combine:{ .lg .middle } **Semantic + hybrid**
 
