@@ -13,7 +13,7 @@ Your **PGSync Pro** subscription is active.
 instructions. It usually arrives within a few minutes. Once you have it:
 
 ```bash
-pip install "pgsync-pro[local]" --extra-index-url <your private index URL>
+pip install "pgsync-pro[local,demo]" --extra-index-url <your private index URL>
 pgsync-pro init      # scaffold the starter + demo, then read README.md
 ```
 
