@@ -65,6 +65,14 @@ After subscribing you receive a private-index install token and install with
 `pip install "pgsync-pro[local,demo]" --extra-index-url <your private index URL>`.
 Keep the token out of shell history — use `PIP_EXTRA_INDEX_URL` or `pip.conf`.
 
+**What do I need running first?**
+PostgreSQL (or MySQL / MariaDB) with your data, and a search engine —
+Elasticsearch, or OpenSearch with the k-NN plugin — reachable at
+`ELASTICSEARCH_URL` (set `OPENSEARCH=true` for OpenSearch). PGSync Pro syncs
+*into* your existing engine; it doesn't install one. Native vector search (kNN)
+uses the engine's own vector index where available and falls back to backend
+cosine otherwise.
+
 **Can I use the token in CI and multiple environments?**
 Yes — one token covers your organization's dev, CI, and production installs.
 Don't publish it; if it leaks, tell us and we'll rotate it.
