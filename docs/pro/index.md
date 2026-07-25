@@ -12,8 +12,11 @@ hide:
 Real-time **semantic & hybrid search** for PostgreSQL — that only re-embeds
 when *meaning* changes.
 
-[:material-tag: See pricing](../pricing/index.md){ .md-button .md-button--primary }
-[:material-play-circle: See how it works](../how-it-works/index.md){ .md-button }
+<div class="hero-actions hero-actions--fill" markdown>
+[:material-monitor-dashboard: Demo](https://demo.pgsync.com){ .md-button .md-button--primary target="_blank" rel="noopener" }
+[:material-tag: Pricing](../pricing/index.md){ .md-button }
+[:material-play-circle: How it works](../how-it-works/index.md){ .md-button }
+</div>
 
 Your database stays the source of truth — PGSync Pro keeps a fresh vector index
 in lock-step, and only pays to embed when *meaning* actually changes. Built on
@@ -118,6 +121,15 @@ OpenSearch.
 
 ---
 
+!!! example "See it live — no signup"
+
+    Type an *idea*, not keywords. On the live demo, searching **“a rebellion
+    against a watchful state”** returns **Nineteen Eighty-Four** — a book that
+    shares none of those words. That's the difference between matching *words* and
+    matching *meaning*, kept in sync with the database in real time.
+
+    [:material-monitor-dashboard: Try the live demo](https://demo.pgsync.com){ .md-button .md-button--primary target="_blank" rel="noopener" }
+
 ## What you get
 
 <div class="grid cards" markdown>
@@ -173,9 +185,12 @@ on top — the same `schema.json` and CLI, plus an `embedding` block.
 
 <div align="center" markdown>
 
-**Next:** see the whole pipeline animated, then the plans.
+**Next:** try the live demo, watch the pipeline animated, then pick a plan.
 
-[:material-play-circle: How it works](../how-it-works/index.md){ .md-button .md-button--primary }
+<div class="hero-actions" markdown>
+[:material-monitor-dashboard: Try the live demo](https://demo.pgsync.com){ .md-button .md-button--primary target="_blank" rel="noopener" }
+[:material-play-circle: How it works](../how-it-works/index.md){ .md-button }
 [:material-tag: See pricing](../pricing/index.md){ .md-button }
+</div>
 
 </div>

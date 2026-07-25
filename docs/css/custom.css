@@ -108,6 +108,16 @@
   gap: 0.6rem;
   margin: 1.7rem auto 0.4rem;
 }
+/* md_in_html wraps the button links in a <p>; dissolve it so the
+   buttons are direct flex items and the gap/justify actually apply */
+.hero-actions > p {
+  display: contents;
+}
+/* equal-width buttons that fill the row (used on the Pro hero) */
+.hero-actions--fill .md-button {
+  flex: 1 1 0;
+  justify-content: center;
+}
 .hero-actions .md-button {
   display: inline-flex;
   align-items: center;
@@ -171,6 +181,11 @@
 .pgpro-hero__text h1 {
   margin-top: 0.2rem;
 }
+/* hero buttons: left-aligned beside the diagram on desktop */
+.pgpro-hero__text .hero-actions {
+  justify-content: flex-start;
+  margin: 1.5rem 0 0.4rem;
+}
 .pgpro-hero .pgpro-flow {
   margin: 0;
   max-width: none;
@@ -178,6 +193,7 @@
 @media screen and (max-width: 60em) {
   .pgpro-hero { grid-template-columns: 1fr; gap: 1rem; }
   .pgpro-hero__text { text-align: center; }
+  .pgpro-hero__text .hero-actions { justify-content: center; }
 }
 
 /* ============ How-it-works animated pipeline ============ */
