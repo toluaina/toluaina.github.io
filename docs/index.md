@@ -33,6 +33,7 @@ Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** t
 <div class="hero-actions" markdown>
 
 [:material-rocket-launch: Get Started](getting-started/setup.md){ .md-button .md-button--primary }
+[:material-monitor-dashboard: Demo](https://demo.pgsync.com){ .md-button target="_blank" rel="noopener" }
 [:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
 [:material-package-variant: PyPI](https://pypi.org/project/pgsync/){ .md-button }
 [:material-docker: Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
