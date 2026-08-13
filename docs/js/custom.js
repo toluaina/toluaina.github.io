@@ -108,29 +108,40 @@ function setupTermynal() {
 
 setupTermynal();
 
-// Persistent "PGSync Pro" CTA in the header — the always-visible jump from the
+// Persistent "PGSync Pro" CTA in the header, the always-visible jump from the
 // Community docs to the commercial offering. Injected here because zensical
 // has no Material header override. A MutationObserver re-adds it after instant
 // navigation swaps the header.
 (function () {
-  function injectProCTA() {
-    var inner = document.querySelector(".md-header__inner");
-    if (!inner || inner.querySelector(".pgsync-pro-cta")) return;
-    var cta = document.createElement("a");
-    cta.className = "pgsync-pro-cta";
-    cta.href = "/pro/";
-    cta.setAttribute("title", "PGSync Pro — semantic & hybrid search");
-    cta.innerHTML =
-      '<span class="pgsync-pro-cta__spark" aria-hidden="true">✦</span>' +
-      'PGSync&nbsp;<span class="pgsync-pro-cta__pro">Pro</span>';
-    var source = inner.querySelector(".md-header__source");
-    if (source) inner.insertBefore(cta, source);
-    else inner.appendChild(cta);
+  function makeCTA(cls, href, title, html) {
+    return function () {
+      var inner = document.querySelector(".md-header__inner");
+      if (!inner || inner.querySelector("." + cls)) return;
+      var cta = document.createElement("a");
+      cta.className = cls;
+      cta.href = href;
+      cta.setAttribute("title", title);
+      cta.innerHTML = html;
+      var source = inner.querySelector(".md-header__source");
+      if (source) inner.insertBefore(cta, source);
+      else inner.appendChild(cta);
+    };
   }
+  var injectPro = makeCTA(
+    "pgsync-pro-cta", "/pro/", "PGSync Pro, semantic & hybrid search",
+    '<span class="pgsync-pro-cta__spark" aria-hidden="true">✦</span>' +
+    'PGSync&nbsp;<span class="pgsync-pro-cta__pro">Pro</span>'
+  );
+  var injectCh = makeCTA(
+    "pgsync-ch-cta", "/clickhouse/", "PGSync ClickHouse, real-time Postgres → ClickHouse",
+    '<span class="pgsync-ch-cta__spark" aria-hidden="true">✦</span>' +
+    'PGSync&nbsp;<span class="pgsync-ch-cta__name">ClickHouse</span>'
+  );
+  function inject() { injectPro(); injectCh(); }
   function boot() {
-    injectProCTA();
+    inject();
     var header = document.querySelector(".md-header");
-    if (header) new MutationObserver(injectProCTA).observe(header, { childList: true, subtree: true });
+    if (header) new MutationObserver(inject).observe(header, { childList: true, subtree: true });
   }
   if (document.readyState !== "loading") boot();
   else document.addEventListener("DOMContentLoaded", boot);

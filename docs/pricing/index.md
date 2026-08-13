@@ -35,8 +35,9 @@ understands *meaning*. No per-seat counting.
 
     ---
 
-    **$49 / month** · billed annually, per organization
-    <br><small>or **$59 / month**, billed monthly — cancel anytime</small>
+    **$29 / month** · billed annually, per organization
+    <br><small>or **$39 / month**, billed monthly, cancel anytime</small>
+    <br><small>:material-tag: Launch pricing, rises as we add features</small>
 
     Everything semantic, self-serve. Install from a private index the moment you
     subscribe.
@@ -51,8 +52,6 @@ understands *meaning*. No per-seat counting.
 
 </div>
 
-<small>:material-tag: Launch pricing — the list price rises as we add features.</small>
-
 ??? note "Compare all features"
 
     | | Community | Pro |
@@ -61,28 +60,28 @@ understands *meaning*. No per-seat counting.
     | Postgres / MySQL / MariaDB → Elasticsearch / OpenSearch | ✓ | ✓ |
     | Denormalized nested documents | ✓ | ✓ |
     | Django integration | ✓ | ✓ |
-    | **Semantic (vector) search** | — | ✓ |
-    | **Hybrid search** (kNN + BM25) | — | ✓ |
-    | **Change-guard** — re-embed only when meaning changes | — | ✓ |
-    | On-device embeddings (local / FastEmbed) | — | ✓ |
-    | Hosted embeddings (OpenAI / Cohere / Voyage) | — | ✓ |
-    | MCP server for AI agents | — | ✓ |
-    | Zero-downtime model reindex | — | ✓ |
-    | Search dashboard & reference demo | — | ✓ |
-    | Product updates & new features | — | ✓ |
+    | **Semantic (vector) search** |  | ✓ |
+    | **Hybrid search** (kNN + BM25) |  | ✓ |
+    | **Change-guard**, re-embed only when meaning changes |  | ✓ |
+    | On-device embeddings (local / FastEmbed) |  | ✓ |
+    | Hosted embeddings (OpenAI / Cohere / Voyage) |  | ✓ |
+    | MCP server for AI agents |  | ✓ |
+    | Zero-downtime model reindex |  | ✓ |
+    | Search dashboard & reference demo |  | ✓ |
+    | Product updates & new features |  | ✓ |
     | Support | Community | Email · business-day |
 
 ---
 
 ## How buying works
 
-:material-numeric-1-circle:{ .lg .middle } **Subscribe** — check out in a minute.
-Per-organization subscription, monthly or annual — no per-seat counting.
+:material-numeric-1-circle:{ .lg .middle } **Subscribe**, check out in a minute.
+Per-organization subscription, monthly or annual, no per-seat counting.
 
-:material-numeric-2-circle:{ .lg .middle } **Get your token** — we issue a private
+:material-numeric-2-circle:{ .lg .middle } **Get your token**, we issue a private
 package-index credential to your inbox automatically.
 
-:material-numeric-3-circle:{ .lg .middle } **Install** —
+:material-numeric-3-circle:{ .lg .middle } **Install**:
 
 ```bash
 pip install pgsync-pro       # from your private index
@@ -90,7 +89,7 @@ pgsync-pro validate --config schema.json
 pgsync-pro bootstrap --config schema.json
 ```
 
-It's the same `schema.json` and CLI you already know from PGSync — Pro just adds
+It's the same `schema.json` and CLI you already know from PGSync, Pro just adds
 an `embedding` block.
 
 <div align="center" markdown>
@@ -101,5 +100,57 @@ an `embedding` block.
 
 [:material-frequently-asked-questions: Read the FAQ](../pro/faq.md){ .md-button .md-button--primary }
 [:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
+
+</div>
+
+---
+
+<!-- DRAFT (branch ta_pgsync_clickhouse): PGSync ClickHouse pricing.
+     Price set: $19/mo annual · $24 monthly. TODO: Polar buy link.
+     NOTE: update the Polar PRODUCT prices too, Pro reduced to $29/$39, and
+     create the ClickHouse $19/$24 product. Framing = mirror free / denorm paid. -->
+
+<div align="center" markdown>
+
+## PGSync ClickHouse
+
+Real-time **PostgreSQL → ClickHouse** sync. Mirror a table for free; pay only for
+denormalized wide tables. [Learn more](../clickhouse/index.md).
+
+</div>
+
+<div class="grid cards" markdown>
+
+-   ### Mirror
+
+    ---
+
+    **Free**
+
+    One PostgreSQL table → one ClickHouse `ReplacingMergeTree` table, in real time.
+
+    - Versioned upserts + tombstone deletes
+    - Full native type mapping + `<table>_live` view
+    - Exactly-once on replay
+
+    [:material-book-open-variant: Get started](../clickhouse/index.md){ .md-button }
+
+-   ### Denormalized
+
+    ---
+
+    **$19 / month** · billed annually, per organization
+    <br><small>or **$24 / month**, billed monthly, cancel anytime</small>
+    <br><small>:material-tag: Launch pricing, rises as we add features</small>
+
+    A whole relational tree → one wide ClickHouse table.
+
+    - One-to-one children flattened into typed columns
+    - One-to-many as native `Array(Tuple(...))`
+    - Recursive grandchild folding + per-table engine control
+    - Email support & all updates
+
+    [:material-rocket-launch: Get PGSync ClickHouse](#){ .md-button .md-button--primary }
+    <!-- TODO: Polar buy link -->
 
 </div>

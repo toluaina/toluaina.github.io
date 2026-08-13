@@ -100,6 +100,36 @@
   .pgsync-pro-cta { display: none; }
 }
 
+/* PGSync ClickHouse header CTA, mirrors the Pro CTA with a ClickHouse accent */
+.pgsync-ch-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  align-self: center;
+  margin: 0 0.5rem 0 0;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff !important;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.pgsync-ch-cta__spark { color: #ffcf34; font-size: 0.8em; }
+.pgsync-ch-cta__name { color: #ffcf34; font-weight: 700; }
+.pgsync-ch-cta:hover {
+  border-color: #ffcf34;
+  background: rgba(255, 207, 52, 0.12);
+  box-shadow: 0 0 0 3px rgba(255, 207, 52, 0.12);
+}
+/* two CTAs need room, drop the ClickHouse pill a bit sooner than the Pro one */
+@media screen and (max-width: 76em) {
+  .pgsync-ch-cta { display: none; }
+}
+
 /* ============ Homepage hero action buttons ============ */
 .hero-actions {
   display: flex;
@@ -145,7 +175,7 @@
   background: color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
 }
 
-/* primary "Get Started" — flat solid indigo, no glow */
+/* primary "Get Started", flat solid indigo, no glow */
 .hero-actions .md-button--primary {
   border-color: transparent;
   color: #fff;
@@ -194,6 +224,33 @@
   .pgpro-hero { grid-template-columns: 1fr; gap: 1rem; }
   .pgpro-hero__text { text-align: center; }
   .pgpro-hero__text .hero-actions { justify-content: center; }
+}
+
+/* ============ PGSync ClickHouse hero + flow (mirrors the Pro hero) ============ */
+.pgch-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 2.4rem;
+  align-items: center;
+  margin: 0.6rem 0 0.4rem;
+}
+.pgch-hero__text h1 { margin-top: 0.2rem; }
+.pgch-hero__text .hero-actions {
+  justify-content: flex-start;
+  margin: 1.5rem 0 0.4rem;
+}
+.pgch-flow { margin: 0; max-width: none; }
+.pgch-flow svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+@media screen and (max-width: 60em) {
+  .pgch-hero { grid-template-columns: 1fr; gap: 1rem; }
+  .pgch-hero__text { text-align: center; }
+  .pgch-hero__text .hero-actions { justify-content: center; }
 }
 
 /* ============ How-it-works animated pipeline ============ */
@@ -429,8 +486,7 @@
 .pl-flow-down span { background: linear-gradient(#5ea8ff, var(--pl-accent)); }
 
 /* Grid cards: lay each card out as a column and push its button (the last
-   paragraph) to the bottom, so CTAs line up across cards of differing height
-   — e.g. the Pricing page's "Get it on GitHub" vs "Get PGSync Pro". */
+   paragraph) to the bottom, so CTAs line up across cards of differing height, e.g. the Pricing page's "Get it on GitHub" vs "Get PGSync Pro". */
 .md-typeset .grid.cards > :is(ul, ol) > li {
   display: flex;
   flex-direction: column;

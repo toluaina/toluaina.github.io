@@ -28,7 +28,7 @@ hide:
 
 <div align="center" markdown>
 
-Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** to **Elasticsearch** and **OpenSearch**—continuously and transactionally.
+Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** to **Elasticsearch** and **OpenSearch**, continuously and transactionally.
 
 <div class="hero-actions" markdown>
 
@@ -44,9 +44,14 @@ Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** t
 </div>
 
 !!! tip "New · PGSync Pro"
-    Real-time **semantic & hybrid search** on top of PGSync — vectors kept fresh
+    Real-time **semantic & hybrid search** on top of PGSync, vectors kept fresh
     by change data capture, re-embedded only when *meaning* changes.
     [Explore PGSync Pro :material-arrow-right:](pro/index.md)
+
+!!! tip "New · PGSync ClickHouse"
+    Stream **PostgreSQL → ClickHouse** in real time for analytics, mirror a table
+    for free, or denormalize a whole relational tree into one wide table.
+    [Explore PGSync ClickHouse :material-arrow-right:](clickhouse/index.md)
 
 ---
 
@@ -54,7 +59,7 @@ Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** t
 
 PGSync is a **lightweight middleware** that captures changes from your relational database and writes structured, denormalized documents to your search cluster.
 
-Define your **document schema once** in JSON, and PGSync handles change capture, ordering, and delivery automatically—no custom ETL code required.
+Define your **document schema once** in JSON, and PGSync handles change capture, ordering, and delivery automatically, no custom ETL code required.
 
 <div class="grid cards" markdown>
 
@@ -123,11 +128,11 @@ $ pgsync --config schema.json --daemon
 
 ---
 
-## Editions
+## The PGSync family
 
-PGSync is free and open source. **PGSync Pro** builds on it to add real-time
-semantic and hybrid search — with change-guard economics that keep it
-affordable at scale.
+PGSync is free and open source. **PGSync Pro** adds real-time semantic & hybrid
+search; **PGSync ClickHouse** streams your data into ClickHouse for real-time
+analytics. Same `schema.json`, same CLI.
 
 <div class="grid cards" markdown>
 
@@ -136,7 +141,7 @@ affordable at scale.
     ---
 
     Free & MIT. Real-time sync from PostgreSQL / MySQL / MariaDB to
-    Elasticsearch / OpenSearch — change data capture, denormalized documents,
+    Elasticsearch / OpenSearch, change data capture, denormalized documents,
     and the Django integration.
 
     [:material-rocket-launch: Get started](getting-started/setup.md)
@@ -150,6 +155,16 @@ affordable at scale.
     AI agents.
 
     [:material-star-four-points: Explore PGSync Pro](pro/index.md)
+
+-   :material-database-arrow-right:{ .lg .middle } **PGSync · ClickHouse**
+
+    ---
+
+    Real-time **PostgreSQL → ClickHouse** for analytics. **Mirror** a table free,
+    or **denormalize** a whole relational tree into one wide table (paid), on
+    `ReplacingMergeTree`, always fresh.
+
+    [:material-database-arrow-right: Explore PGSync ClickHouse](clickhouse/index.md)
 
 </div>
 

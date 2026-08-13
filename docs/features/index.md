@@ -42,3 +42,11 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 | :simple-mariadb: MariaDB | **10.5+** |
 | :simple-elasticsearch: Elasticsearch | **6.3.1+** |
 | :simple-opensearch: OpenSearch | **1.3.7+** |
+
+---
+
+!!! tip "More destinations"
+    Beyond search: **[PGSync ClickHouse](../clickhouse/index.md)** streams
+    PostgreSQL into ClickHouse for real-time analytics, and
+    **[PGSync Pro](../pro/index.md)** adds semantic & hybrid search, the same
+    `schema.json` and CLI.
