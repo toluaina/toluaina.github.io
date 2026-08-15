@@ -4,10 +4,6 @@ hide:
   - toc
 ---
 
-<!-- DRAFT (branch ta_pgsync_clickhouse). Placeholders marked TODO: Polar buy
-     link and private-index host. Price set: $19/mo annual · $24 monthly.
-     Framing: mirror free, denormalized paid; see PUBLISHING_SPEC.md §1. -->
-
 <div class="pgch-hero" markdown>
 <div class="pgch-hero__text" markdown>
 

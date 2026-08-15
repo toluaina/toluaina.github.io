@@ -105,11 +105,6 @@ an `embedding` block.
 
 ---
 
-<!-- DRAFT (branch ta_pgsync_clickhouse): PGSync ClickHouse pricing.
-     Price set: $19/mo annual · $24 monthly. TODO: Polar buy link.
-     NOTE: update the Polar PRODUCT prices too, Pro reduced to $29/$39, and
-     create the ClickHouse $19/$24 product. Framing = mirror free / denorm paid. -->
-
 <div align="center" markdown>
 
 ## PGSync ClickHouse
@@ -150,7 +145,6 @@ denormalized wide tables. [Learn more](../clickhouse/index.md).
     - Recursive grandchild folding + per-table engine control
     - Email support & all updates
 
-    [:material-rocket-launch: Get PGSync ClickHouse](#){ .md-button .md-button--primary }
-    <!-- TODO: Polar buy link -->
+    [:material-rocket-launch: Get PGSync ClickHouse](https://buy.polar.sh/polar_cl_6gXbcYmmlC4IKUCYNHgCT01R6KFS5cWdmMW7w2F5UWk){ .md-button .md-button--primary }
 
 </div>
