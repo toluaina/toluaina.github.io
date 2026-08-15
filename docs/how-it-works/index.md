@@ -95,7 +95,7 @@ From relational rows to search-by-meaning — the whole pipeline, one step at a 
 
 Not a single word of the query appears in the book — yet it ranks first.
 
-[:material-tag: See pricing](../pricing/index.md){ .md-button .md-button--primary }
+[:material-tag: See pricing](../pro/pricing.md){ .md-button .md-button--primary }
 [:material-book-open-variant: Why PGSync Pro](../pro/index.md){ .md-button }
 
 </div>

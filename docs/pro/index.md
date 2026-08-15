@@ -14,7 +14,7 @@ when *meaning* changes.
 
 <div class="hero-actions hero-actions--fill" markdown>
 [:material-monitor-dashboard: Demo](https://demo.pgsync.com){ .md-button .md-button--primary target="_blank" rel="noopener" }
-[:material-tag: Pricing](../pricing/index.md){ .md-button }
+[:material-tag: Pricing](pricing.md){ .md-button }
 [:material-play-circle: How it works](../how-it-works/index.md){ .md-button }
 </div>
 
@@ -198,7 +198,7 @@ on top, the same `schema.json` and CLI, plus an `embedding` block.
 <div class="hero-actions" markdown>
 [:material-monitor-dashboard: Try the live demo](https://demo.pgsync.com){ .md-button .md-button--primary target="_blank" rel="noopener" }
 [:material-play-circle: How it works](../how-it-works/index.md){ .md-button }
-[:material-tag: See pricing](../pricing/index.md){ .md-button }
+[:material-tag: See pricing](pricing.md){ .md-button }
 </div>
 
 </div>

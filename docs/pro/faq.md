@@ -13,7 +13,7 @@ answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro
 PGSync (MIT) does the real-time change-data-capture sync to Elasticsearch /
 OpenSearch. Pro adds **semantic + hybrid search**, the **change-guard economics**,
 the embedding providers, the MCP agent server, and the search dashboard. See the
-[full comparison](../pricing/index.md).
+[full comparison](pricing.md).
 
 **Why not just build it on pgvector myself?**
 You can, and you'll then own the change-data-capture, the denormalization, the
@@ -99,7 +99,7 @@ short, favorable document.
 
 ---
 
-[:material-tag: See pricing](../pricing/index.md){ .md-button .md-button--primary }
+[:material-tag: See pricing](pricing.md){ .md-button .md-button--primary }
 [:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
 
 </div>

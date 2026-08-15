@@ -13,7 +13,7 @@ Real-time **PostgreSQL → ClickHouse** that keeps an analytics store in lock-st
 with your database, with **no ETL**.
 
 <div class="hero-actions hero-actions--fill" markdown>
-[:material-tag: Pricing](../pricing/index.md#pgsync-clickhouse){ .md-button .md-button--primary }
+[:material-tag: Pricing](pricing.md){ .md-button .md-button--primary }
 [:material-rocket-launch: Get started](#get-started){ .md-button }
 [:material-database-arrow-right: Query examples](#query-clickhouse){ .md-button }
 </div>
@@ -220,7 +220,7 @@ WHERE _is_deleted = 0;
 **Ready to keep ClickHouse in sync with Postgres?**
 
 <div class="hero-actions" markdown>
-[:material-tag: See pricing](../pricing/index.md#pgsync-clickhouse){ .md-button .md-button--primary }
+[:material-tag: See pricing](pricing.md){ .md-button .md-button--primary }
 [:material-star-four-points: PGSync Pro](../pro/index.md){ .md-button }
 </div>
 

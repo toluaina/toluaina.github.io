@@ -41,7 +41,7 @@ mode reads the replication slot directly.
 **How much is it?**
 **Mirror mode is free.** Denormalized mode is **$19/mo billed annually** (or
 $24/mo month-to-month), per organization. Launch pricing; see the
-[pricing page](../pricing/index.md#pgsync-clickhouse).
+[pricing page](pricing.md).
 
 **What is an "organization"?**
 One legal entity and the infrastructure it operates (wholly-owned subsidiaries
@@ -108,7 +108,7 @@ derivable from the primary key, since deletes are PK-only tombstones.)
 
 ---
 
-[:material-tag: See pricing](../pricing/index.md#pgsync-clickhouse){ .md-button .md-button--primary }
+[:material-tag: See pricing](pricing.md){ .md-button .md-button--primary }
 [:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync ClickHouse" }
 
 </div>

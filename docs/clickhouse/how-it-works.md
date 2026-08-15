@@ -114,7 +114,7 @@ so the wide row stays in sync automatically.
 **Same `schema.json`, same CLI, a ClickHouse sink instead of Elasticsearch.**
 
 <div class="hero-actions" markdown>
-[:material-tag: See pricing](../pricing/index.md#pgsync-clickhouse){ .md-button .md-button--primary }
+[:material-tag: See pricing](pricing.md){ .md-button .md-button--primary }
 [:material-database-arrow-right: PGSync ClickHouse](index.md){ .md-button }
 [:material-frequently-asked-questions: FAQ](faq.md){ .md-button }
 </div>

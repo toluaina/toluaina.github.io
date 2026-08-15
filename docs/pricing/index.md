@@ -6,8 +6,8 @@ title: Pricing
 
 # Pricing
 
-Simple, per-organization pricing. Start free, upgrade when you need search that
-understands *meaning*. No per-seat counting.
+Per-organization pricing across the PGSync family. Start free, upgrade when you
+need it. No per-seat counting. Pick the product you're pricing:
 
 </div>
 
@@ -15,136 +15,45 @@ understands *meaning*. No per-seat counting.
 
 <div class="grid cards" markdown>
 
--   ### Community
+-   ### :material-magnify: Search
 
     ---
 
-    **Free** · MIT
+    **PGSync** + **PGSync Pro**
 
-    The sync engine. Real-time PostgreSQL / MySQL / MariaDB →
-    Elasticsearch / OpenSearch, forever.
+    Real-time sync to **Elasticsearch / OpenSearch**, with optional semantic and
+    hybrid search.
 
-    - Change data capture
-    - Denormalized documents
-    - Django integration
-    - Community support
+    - **Community**, free (MIT), the sync engine
+    - **Pro**, from **$29/mo**, semantic + hybrid search
 
-    [:material-github: Get it on GitHub](https://github.com/toluaina/pgsync){ .md-button }
+    [:material-tag: See Pro pricing](../pro/pricing.md){ .md-button .md-button--primary }
+    [:material-book-open-variant: Learn about Pro](../pro/index.md){ .md-button }
 
--   ### Pro
+-   ### :material-database-arrow-right: Analytics
 
     ---
 
-    **$29 / month** · billed annually, per organization
-    <br><small>or **$39 / month**, billed monthly, cancel anytime</small>
-    <br><small>:material-tag: Launch pricing, rises as we add features</small>
+    **PGSync ClickHouse**
 
-    Everything semantic, self-serve. Install from a private index the moment you
-    subscribe.
+    Real-time sync to **ClickHouse**, mirror a table free or build denormalized
+    wide tables.
 
-    - Semantic + hybrid search
-    - The change-guard economics
-    - Every embedding provider
-    - MCP agent server
-    - Email support & all updates
+    - **Mirror**, free, one table to one `ReplacingMergeTree`
+    - **Denormalized**, from **$19/mo**, a whole tree to one wide table
 
-    [:material-rocket-launch: Get PGSync Pro](https://buy.polar.sh/polar_cl_OaZCuL1ePBerK2Y8hfHPZMPhOZEayiCJ7BeZU129pqk){ .md-button .md-button--primary }
+    [:material-tag: See ClickHouse pricing](../clickhouse/pricing.md){ .md-button .md-button--primary }
+    [:material-book-open-variant: Learn about ClickHouse](../clickhouse/index.md){ .md-button }
 
 </div>
-
-??? note "Compare all features"
-
-    | | Community | Pro |
-    |---|:--:|:--:|
-    | Real-time change-data-capture sync | ✓ | ✓ |
-    | Postgres / MySQL / MariaDB → Elasticsearch / OpenSearch | ✓ | ✓ |
-    | Denormalized nested documents | ✓ | ✓ |
-    | Django integration | ✓ | ✓ |
-    | **Semantic (vector) search** |  | ✓ |
-    | **Hybrid search** (kNN + BM25) |  | ✓ |
-    | **Change-guard**, re-embed only when meaning changes |  | ✓ |
-    | On-device embeddings (local / FastEmbed) |  | ✓ |
-    | Hosted embeddings (OpenAI / Cohere / Voyage) |  | ✓ |
-    | MCP server for AI agents |  | ✓ |
-    | Zero-downtime model reindex |  | ✓ |
-    | Search dashboard & reference demo |  | ✓ |
-    | Product updates & new features |  | ✓ |
-    | Support | Community | Email · business-day |
-
----
-
-## How buying works
-
-:material-numeric-1-circle:{ .lg .middle } **Subscribe**, check out in a minute.
-Per-organization subscription, monthly or annual, no per-seat counting.
-
-:material-numeric-2-circle:{ .lg .middle } **Get your token**, we issue a private
-package-index credential to your inbox automatically.
-
-:material-numeric-3-circle:{ .lg .middle } **Install**:
-
-```bash
-pip install pgsync-pro       # from your private index
-pgsync-pro validate --config schema.json
-pgsync-pro bootstrap --config schema.json
-```
-
-It's the same `schema.json` and CLI you already know from PGSync, Pro just adds
-an `embedding` block.
 
 <div align="center" markdown>
 
 ---
 
-**Questions about licensing, cancelling, or your data?**
+All paid plans are per-organization, cancel-anytime on the monthly option, and
+install from a private package index the moment you subscribe.
 
-[:material-frequently-asked-questions: Read the FAQ](../pro/faq.md){ .md-button .md-button--primary }
-[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
-
-</div>
-
----
-
-<div align="center" markdown>
-
-## PGSync ClickHouse
-
-Real-time **PostgreSQL → ClickHouse** sync. Mirror a table for free; pay only for
-denormalized wide tables. [Learn more](../clickhouse/index.md).
-
-</div>
-
-<div class="grid cards" markdown>
-
--   ### Mirror
-
-    ---
-
-    **Free**
-
-    One PostgreSQL table → one ClickHouse `ReplacingMergeTree` table, in real time.
-
-    - Versioned upserts + tombstone deletes
-    - Full native type mapping + `<table>_live` view
-    - Exactly-once on replay
-
-    [:material-book-open-variant: Get started](../clickhouse/index.md){ .md-button }
-
--   ### Denormalized
-
-    ---
-
-    **$19 / month** · billed annually, per organization
-    <br><small>or **$24 / month**, billed monthly, cancel anytime</small>
-    <br><small>:material-tag: Launch pricing, rises as we add features</small>
-
-    A whole relational tree → one wide ClickHouse table.
-
-    - One-to-one children flattened into typed columns
-    - One-to-many as native `Array(Tuple(...))`
-    - Recursive grandchild folding + per-table engine control
-    - Email support & all updates
-
-    [:material-rocket-launch: Get PGSync ClickHouse](https://buy.polar.sh/polar_cl_6gXbcYmmlC4IKUCYNHgCT01R6KFS5cWdmMW7w2F5UWk){ .md-button .md-button--primary }
+[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync pricing" }
 
 </div>
