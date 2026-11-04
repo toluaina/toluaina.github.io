@@ -1,5 +1,7 @@
 ---
 title: Pricing
+hide:
+  - navigation
 ---
 
 <div align="center" markdown>

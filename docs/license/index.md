@@ -1,11 +1,11 @@
-# :material-license: License
+# License
 
-**MIT License** — a short, permissive license that allows commercial use, modification, distribution, private use, and sublicensing.
+**MIT License**: a short, permissive license that allows commercial use, modification, distribution, private use, and sublicensing.
 
 !!! info "TL;DR (not legal advice)"
-    - :material-check-circle:{ .green } **Can** — use, copy, modify, merge, publish, distribute, sublicense, and sell copies
-    - :material-alert-circle:{ .orange } **Must** — keep the copyright notice and permission notice in all copies
-    - :material-close-circle:{ .red } **No warranty** — the software is provided *as is*; authors are not liable
+    - :material-check-circle:{ .green } **Can**: use, copy, modify, merge, publish, distribute, sublicense, and sell copies
+    - :material-alert-circle:{ .orange } **Must**: keep the copyright notice and permission notice in all copies
+    - :material-close-circle:{ .red } **No warranty**: the software is provided *as is*; authors are not liable
 
 !!! tip "Copy-paste headers for your source files"
 

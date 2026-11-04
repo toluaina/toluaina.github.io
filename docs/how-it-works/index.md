@@ -8,7 +8,7 @@ hide:
 
 # How PGSync Pro works
 
-From relational rows to search-by-meaning — the whole pipeline, one step at a time.
+From relational rows to search-by-meaning: the whole pipeline, one step at a time.
 
 </div>
 
@@ -44,7 +44,7 @@ From relational rows to search-by-meaning — the whole pipeline, one step at a 
     </div>
 
     <div class="pl-panel" data-i="1">
-      <p class="pl-cap">PGSync writes the SQL that stitches them into one document — automatically.</p>
+      <p class="pl-cap">PGSync writes the SQL that stitches them into one document, automatically.</p>
       <pre class="pl-code"><span class="k">SELECT</span> jsonb_build_object(
     <span class="s">'title'</span>,       book.title,
     <span class="s">'description'</span>, book.description,
@@ -73,12 +73,12 @@ From relational rows to search-by-meaning — the whole pipeline, one step at a 
       <div class="pl-embed-src">title · description · genre · author</div>
       <div class="pl-flow-down"><span></span></div>
       <div class="pl-vec">[ 0.021, −0.104, 0.087, 0.033, −0.061, 0.112, −0.047, … ]<span class="pl-dim">384-dim</span></div>
-      <p class="pl-note">Edit the <b>price</b> and the cached vector is reused — <b>zero cost</b>. Edit the
+      <p class="pl-note">Edit the <b>price</b> and the cached vector is reused at <b>zero cost</b>. Edit the
       <b>description</b> and exactly <b>one</b> embedding regenerates. That's the change-guard.</p>
     </div>
 
     <div class="pl-panel" data-i="4">
-      <p class="pl-cap">Users search by <em>meaning</em> — not keywords.</p>
+      <p class="pl-cap">Users search by <em>meaning</em>, not keywords.</p>
       <div class="pl-query">“a rebellion against a watchful state”</div>
       <div class="pl-flow-down"><span></span><em>embed · nearest neighbour</em></div>
       <div class="pl-result">
@@ -93,7 +93,7 @@ From relational rows to search-by-meaning — the whole pipeline, one step at a 
 
 <div align="center" markdown>
 
-Not a single word of the query appears in the book — yet it ranks first.
+Not a single word of the query appears in the book, yet it ranks first.
 
 [:material-tag: See pricing](../pro/pricing.md){ .md-button .md-button--primary }
 [:material-book-open-variant: Why PGSync Pro](../pro/index.md){ .md-button }

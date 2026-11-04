@@ -108,51 +108,12 @@ function setupTermynal() {
 
 setupTermynal();
 
-// Persistent "PGSync Pro" CTA in the header, the always-visible jump from the
-// Community docs to the commercial offering. Injected here because zensical
-// has no Material header override. A MutationObserver re-adds it after instant
-// navigation swaps the header.
-(function () {
-  function makeCTA(cls, href, title, html) {
-    return function () {
-      var inner = document.querySelector(".md-header__inner");
-      if (!inner || inner.querySelector("." + cls)) return;
-      var cta = document.createElement("a");
-      cta.className = cls;
-      cta.href = href;
-      cta.setAttribute("title", title);
-      cta.innerHTML = html;
-      var source = inner.querySelector(".md-header__source");
-      if (source) inner.insertBefore(cta, source);
-      else inner.appendChild(cta);
-    };
-  }
-  var injectPro = makeCTA(
-    "pgsync-pro-cta", "/pro/", "PGSync Pro, semantic & hybrid search",
-    '<span class="pgsync-pro-cta__spark" aria-hidden="true">✦</span>' +
-    'PGSync&nbsp;<span class="pgsync-pro-cta__pro">Pro</span>'
-  );
-  var injectCh = makeCTA(
-    "pgsync-ch-cta", "/clickhouse/", "PGSync ClickHouse, real-time Postgres → ClickHouse",
-    '<span class="pgsync-ch-cta__spark" aria-hidden="true">✦</span>' +
-    'PGSync&nbsp;<span class="pgsync-ch-cta__name">ClickHouse</span>'
-  );
-  function inject() { injectPro(); injectCh(); }
-  function boot() {
-    inject();
-    var header = document.querySelector(".md-header");
-    if (header) new MutationObserver(inject).observe(header, { childList: true, subtree: true });
-  }
-  if (document.readyState !== "loading") boot();
-  else document.addEventListener("DOMContentLoaded", boot);
-})();
-
 // How-it-works animated pipeline: auto-advance the steps, clickable, robust to
 // instant navigation (a MutationObserver re-inits when the element appears).
 (function () {
-  // per-step accent, matching the circular diagram: postgres, pgsync, pgsync,
+  // per-step accent in muted graphite tones: postgres, pgsync, pgsync,
   // pgsync-pro, elasticsearch.
-  var COLORS = ["#7fb2e0", "#aeb8ff", "#9db4f2", "#5ee7f5", "#4fddc0"];
+  var COLORS = ["#8fa3bf", "#a3b4c8", "#b4c3d6", "#9db8ac", "#c9d3e0"];
   // per-step hold; the two code-dense steps (SQL, JSON) get longer to read.
   var DURATIONS = ["4.6s", "6.6s", "6.6s", "5.2s", "5.2s"];
   function initPipeline() {
@@ -180,7 +141,7 @@ setupTermynal();
     }
     function show(n) {
       i = (n + panels.length) % panels.length;
-      pl.style.setProperty("--pl-accent", COLORS[i] || "#00d0e0");
+      pl.style.setProperty("--pl-accent", COLORS[i] || "#8fa3bf");
       pl.style.setProperty("--pl-dur", DURATIONS[i] || "4.6s");
       steps.forEach(function (s, k) { s.classList.toggle("is-active", k === i); });
       panels.forEach(function (p, k) { p.classList.toggle("is-active", k === i); });

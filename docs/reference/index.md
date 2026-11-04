@@ -1,4 +1,4 @@
-# :material-link-variant: References
+# References
 
 ---
 

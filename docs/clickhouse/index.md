@@ -30,61 +30,61 @@ Built on [PGSync](../index.md); the same `schema.json` and CLI.
   <desc id="chf-d">PostgreSQL streams changes through PGSync ClickHouse into ClickHouse in real time.</desc>
   <defs>
     <linearGradient id="ch-card" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#18223c"/>
-      <stop offset="100%" stop-color="#0f1626"/>
+      <stop offset="0%" style="stop-color:var(--dg-2b2d31, #2b2d31)"/>
+      <stop offset="100%" style="stop-color:var(--dg-232528, #232528)"/>
     </linearGradient>
     <linearGradient id="ch-wire1" gradientUnits="userSpaceOnUse" x1="310" y1="150" x2="310" y2="256">
-      <stop offset="0%" stop-color="#5b93c9"/><stop offset="100%" stop-color="#22d3ee"/>
+      <stop offset="0%" style="stop-color:var(--dg-8a9cb5, #8a9cb5)"/><stop offset="100%" style="stop-color:var(--dg-9db0ca, #9db0ca)"/>
     </linearGradient>
     <linearGradient id="ch-wire2" gradientUnits="userSpaceOnUse" x1="310" y1="360" x2="310" y2="466">
-      <stop offset="0%" stop-color="#22d3ee"/><stop offset="100%" stop-color="#ffcf34"/>
+      <stop offset="0%" style="stop-color:var(--dg-9db0ca, #9db0ca)"/><stop offset="100%" style="stop-color:var(--dg-cfc29a, #cfc29a)"/>
     </linearGradient>
     <filter id="ch-soft" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="9"/>
     </filter>
   </defs>
 
-  <rect x="0" y="0" width="620" height="578" rx="22" fill="#0b1120"/>
+  <rect x="0" y="0" width="620" height="578" rx="22" style="fill:var(--dg-1d1f22, #1d1f22)"/>
 
   <!-- connectors with directional arrowheads: Postgres -> PGSync -> ClickHouse -->
   <line x1="310" y1="150" x2="310" y2="246" stroke="url(#ch-wire1)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 12">
     <animate attributeName="stroke-dashoffset" values="44;0" dur="1.4s" repeatCount="indefinite"/>
   </line>
-  <path d="M300,242 L320,242 L310,256 Z" fill="#22d3ee"/>
-  <text x="332" y="206" fill="#8296bb" font-family="Roboto Mono, monospace" font-size="12">WAL changes</text>
+  <path d="M300,242 L320,242 L310,256 Z" style="fill:var(--dg-9db0ca, #9db0ca)"/>
+  <text x="332" y="206" font-family="JetBrains Mono, monospace" font-size="12" style="fill:var(--dg-989ba0, #989ba0)">WAL changes</text>
 
   <line x1="310" y1="360" x2="310" y2="456" stroke="url(#ch-wire2)" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 12">
     <animate attributeName="stroke-dashoffset" values="44;0" dur="1.4s" repeatCount="indefinite"/>
   </line>
-  <path d="M300,452 L320,452 L310,466 Z" fill="#ffcf34"/>
-  <text x="332" y="416" fill="#8296bb" font-family="Roboto Mono, monospace" font-size="12">upserts · tombstones</text>
+  <path d="M300,452 L320,452 L310,466 Z" style="fill:var(--dg-cfc29a, #cfc29a)"/>
+  <text x="332" y="416" font-family="JetBrains Mono, monospace" font-size="12" style="fill:var(--dg-989ba0, #989ba0)">upserts · tombstones</text>
 
   <!-- PostgreSQL -->
   <g>
-    <rect x="150" y="54" width="320" height="96" rx="16" fill="#2f6fb0" opacity="0.18" filter="url(#ch-soft)"/>
-    <rect x="150" y="54" width="320" height="96" rx="16" fill="url(#ch-card)" stroke="#2f6fb0" stroke-opacity="0.55"/>
-    <rect x="150" y="54" width="6" height="96" rx="3" fill="#4f8fd0"/>
-    <text x="182" y="94" fill="#e8eefc" font-family="Roboto, sans-serif" font-size="22" font-weight="700">PostgreSQL</text>
-    <text x="182" y="122" fill="#9fb2d4" font-family="Roboto Mono, monospace" font-size="13">source of truth · WAL</text>
+    <rect x="150" y="54" width="320" height="96" rx="16" opacity="0.18" filter="url(#ch-soft)" style="fill:var(--dg-6f8199, #6f8199)"/>
+    <rect x="150" y="54" width="320" height="96" rx="16" fill="url(#ch-card)" stroke-opacity="0.55" style="stroke:var(--dg-6f8199, #6f8199)"/>
+    <rect x="150" y="54" width="6" height="96" rx="3" style="fill:var(--dg-8a9cb5, #8a9cb5)"/>
+    <text x="182" y="94" font-family="Inter, sans-serif" font-size="22" font-weight="700" style="fill:var(--dg-e7e8e9, #e7e8e9)">PostgreSQL</text>
+    <text x="182" y="122" font-family="JetBrains Mono, monospace" font-size="13" style="fill:var(--dg-b4b7bc, #b4b7bc)">source of truth · WAL</text>
   </g>
 
   <!-- PGSync ClickHouse -->
   <g>
-    <rect x="150" y="256" width="320" height="104" rx="16" fill="#22d3ee" opacity="0.16" filter="url(#ch-soft)"/>
-    <rect x="150" y="256" width="320" height="104" rx="16" fill="url(#ch-card)" stroke="#22d3ee" stroke-opacity="0.55"/>
-    <rect x="150" y="256" width="6" height="104" rx="3" fill="#22d3ee"/>
-    <text x="182" y="296" fill="#e8eefc" font-family="Roboto, sans-serif" font-size="21" font-weight="700">PGSync ClickHouse</text>
-    <text x="182" y="322" fill="#9fb2d4" font-family="Roboto Mono, monospace" font-size="13">real-time CDC · exactly-once</text>
-    <text x="182" y="342" fill="#7f93b8" font-family="Roboto Mono, monospace" font-size="12">mirror · denormalize</text>
+    <rect x="150" y="256" width="320" height="104" rx="16" opacity="0.16" filter="url(#ch-soft)" style="fill:var(--dg-9db0ca, #9db0ca)"/>
+    <rect x="150" y="256" width="320" height="104" rx="16" fill="url(#ch-card)" stroke-opacity="0.55" style="stroke:var(--dg-9db0ca, #9db0ca)"/>
+    <rect x="150" y="256" width="6" height="104" rx="3" style="fill:var(--dg-9db0ca, #9db0ca)"/>
+    <text x="182" y="296" font-family="Inter, sans-serif" font-size="21" font-weight="700" style="fill:var(--dg-e7e8e9, #e7e8e9)">PGSync ClickHouse</text>
+    <text x="182" y="322" font-family="JetBrains Mono, monospace" font-size="13" style="fill:var(--dg-b4b7bc, #b4b7bc)">real-time CDC · exactly-once</text>
+    <text x="182" y="342" font-family="JetBrains Mono, monospace" font-size="12" style="fill:var(--dg-989ba0, #989ba0)">mirror · denormalize</text>
   </g>
 
   <!-- ClickHouse -->
   <g>
-    <rect x="150" y="466" width="320" height="96" rx="16" fill="#ffcf34" opacity="0.20" filter="url(#ch-soft)"/>
-    <rect x="150" y="466" width="320" height="96" rx="16" fill="url(#ch-card)" stroke="#ffcf34" stroke-opacity="0.65"/>
-    <rect x="150" y="466" width="6" height="96" rx="3" fill="#ffcf34"/>
-    <text x="182" y="506" fill="#fff2c4" font-family="Roboto, sans-serif" font-size="22" font-weight="700">ClickHouse</text>
-    <text x="182" y="534" fill="#c9b783" font-family="Roboto Mono, monospace" font-size="13">ReplacingMergeTree · &lt;table&gt;_live</text>
+    <rect x="150" y="466" width="320" height="96" rx="16" opacity="0.20" filter="url(#ch-soft)" style="fill:var(--dg-cfc29a, #cfc29a)"/>
+    <rect x="150" y="466" width="320" height="96" rx="16" fill="url(#ch-card)" stroke-opacity="0.65" style="stroke:var(--dg-cfc29a, #cfc29a)"/>
+    <rect x="150" y="466" width="6" height="96" rx="3" style="fill:var(--dg-cfc29a, #cfc29a)"/>
+    <text x="182" y="506" font-family="Inter, sans-serif" font-size="22" font-weight="700" style="fill:var(--dg-e7e3d4, #e7e3d4)">ClickHouse</text>
+    <text x="182" y="534" font-family="JetBrains Mono, monospace" font-size="13" style="fill:var(--dg-b8ad8c, #b8ad8c)">ReplacingMergeTree · &lt;table&gt;_live</text>
   </g>
 </svg>
 </div>

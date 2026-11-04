@@ -30,5 +30,8 @@ There are two modes of running PGSync:
     pgsync --config /path/to/schema.json
     ```
 
+!!! tip "Watch the sync as it runs"
+    Add `--monitor` to a daemon or WAL run to see events, throughput, slot lag, and errors in a full-screen terminal panel. See [Terminal monitor](../monitor/index.md).
+
 !!! info
     You can also specify the schema config as an environment variable `SCHEMA` and omit it in the commands above. The next section describes how to provide connection parameters via environment variables.

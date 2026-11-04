@@ -1,59 +1,62 @@
 ---
 title: PGSync
 hide:
+  - navigation
   - toc
 ---
 
-<p align="center">
-  <a href="https://pgsync.com">
-    <img src="assets/images/logo-no-background.svg#only-dark" alt="PGSync" width="300">
-    <img src="assets/images/logo-no-background-dark.svg#only-light" alt="PGSync" width="300">
-  </a>
-</p>
+<div class="home-hero" markdown>
+<div class="home-hero__text" markdown>
 
-<p align="center">
-  <a href="https://codecov.io/gh/toluaina/pgsync" target="_blank">
-    <img src="https://codecov.io/gh/toluaina/pgsync/branch/main/graph/badge.svg?token=cvQzYkz6CV" alt="Coverage">
-  </a>
-  <a href="https://badge.fury.io/py/pgsync" target="_blank">
-    <img src="https://badge.fury.io/py/pgsync.svg" alt="Package version">
-  </a>
-  <a href="https://pypi.org/project/pgsync/" target="_blank">
-    <img src="https://img.shields.io/pypi/pyversions/pgsync" alt="Python versions">
-  </a>
-  <a href="https://github.com/toluaina/pgsync" target="_blank">
-    <img src="https://img.shields.io/github/stars/toluaina/pgsync?style=social" alt="GitHub stars">
-  </a>
-</p>
+<a class="home-pill" href="clickhouse/"><b>New</b> PGSync ClickHouse: stream Postgres into ClickHouse :material-arrow-right:</a>
 
-<div align="center" markdown>
+# Your relational data, searchable in real time.
 
-Real-time data synchronization from **PostgreSQL**, **MySQL**, and **MariaDB** to **Elasticsearch** and **OpenSearch**, continuously and transactionally.
+<p class="home-hero__lede">Real-time data synchronization from <strong>PostgreSQL</strong>, <strong>MySQL</strong>, and <strong>MariaDB</strong> to <strong>Elasticsearch</strong> and <strong>OpenSearch</strong>, continuously and transactionally.</p>
 
 <div class="hero-actions" markdown>
-
-[:material-rocket-launch: Get Started](getting-started/setup.md){ .md-button .md-button--primary }
-[:material-monitor-dashboard: Demo](https://demo.pgsync.com){ .md-button target="_blank" rel="noopener" }
+[Get started :material-arrow-right:](getting-started/setup.md){ .md-button .md-button--primary }
+[Live demo](https://demo.pgsync.com){ .md-button target="_blank" rel="noopener" }
 [:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
-[:material-package-variant: PyPI](https://pypi.org/project/pgsync/){ .md-button }
-[:material-docker: Docker](https://hub.docker.com/r/toluaina1/pgsync){ .md-button }
-[:simple-digitalocean: DigitalOcean](https://marketplace.digitalocean.com/apps/pgsync?utm_medium=opensource&utm_source=pgsync){ .md-button }
-
 </div>
 
+<div class="home-install"><span>$</span> pip install pgsync</div>
+
+</div>
+<div class="home-hero__code" markdown>
+
+=== "schema.json"
+
+    ```json
+    {
+      "table": "book",
+      "columns": ["isbn", "title"],
+      "children": [
+        { "table": "author", "columns": ["name"] }
+      ]
+    }
+    ```
+
+=== "Document"
+
+    ```json
+    {
+      "isbn": "9788374950978",
+      "title": "Kafka on the Shore",
+      "author": ["Haruki Murakami", "Philip Gabriel"]
+    }
+    ```
+
+</div>
 </div>
 
-!!! tip "New · PGSync Pro"
-    Real-time **semantic & hybrid search** on top of PGSync, vectors kept fresh
-    by change data capture, re-embedded only when *meaning* changes.
-    [Explore PGSync Pro :material-arrow-right:](pro/index.md)
-
-!!! tip "New · PGSync ClickHouse"
-    Stream **PostgreSQL → ClickHouse** in real time for analytics, mirror a table
-    for free, or denormalize a whole relational tree into one wide table.
-    [Explore PGSync ClickHouse :material-arrow-right:](clickhouse/index.md)
-
----
+<div class="home-flow">
+  <span class="home-flow__group"><span>PostgreSQL</span><span>MySQL</span><span>MariaDB</span></span>
+  <span class="home-arrow" aria-hidden="true">→</span>
+  <strong>PGSync</strong>
+  <span class="home-arrow" aria-hidden="true">→</span>
+  <span class="home-flow__group"><span>Elasticsearch</span><span>OpenSearch</span><span>ClickHouse</span></span>
+</div>
 
 ## What is PGSync?
 
@@ -61,7 +64,7 @@ PGSync is a **lightweight middleware** that captures changes from your relationa
 
 Define your **document schema once** in JSON, and PGSync handles change capture, ordering, and delivery automatically, no custom ETL code required.
 
-<div class="grid cards" markdown>
+<div class="grid cards home-features" markdown>
 
 -   :material-sync:{ .lg .middle } **Change Data Capture**
 
@@ -89,8 +92,6 @@ Define your **document schema once** in JSON, and PGSync handles change capture,
 
 </div>
 
----
-
 ## Quick Start
 
 <div class="termy">
@@ -105,7 +106,7 @@ Successfully installed pgsync
 
 Define your schema in JSON:
 
-```json
+```json title="schema.json"
 {
   "database": "mydb",
   "index": "books",
@@ -125,8 +126,6 @@ $ pgsync --config schema.json --daemon
 ```
 
 </div>
-
----
 
 ## The PGSync family
 
@@ -167,8 +166,6 @@ analytics. Same `schema.json`, same CLI.
     [:material-database-arrow-right: Explore PGSync ClickHouse](clickhouse/index.md)
 
 </div>
-
----
 
 <p>PGSync is supported by <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=pgsync" rel="sponsored noopener noreferrer">DigitalOcean</a>.</p>
 <p>

@@ -1,14 +1,14 @@
-/* Sleeker header styling */
+/* Header */
 
-/* Logo sizing and gentle hover */
+/* Logo: the script wordmark, cropped tight, so the height sets its size */
 .md-header__button.md-logo img {
-  height: 1.6rem;
+  height: 1.45rem;
   width: auto;
-  transition: transform 0.25s ease;
+  transition: opacity 0.2s ease;
 }
 
 .md-header__button.md-logo:hover img {
-  transform: scale(1.06);
+  opacity: 0.8;
 }
 
 /* Site title - the wordmark logo carries the brand, so hide the static
@@ -18,18 +18,8 @@
 }
 
 .md-header__title {
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-/* Header overall - slightly tighter */
-.md-header {
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
-}
-
-/* Search bar - rounder */
-.md-search__form {
-  border-radius: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 /* GitHub icon in header */
@@ -37,15 +27,7 @@
   width: auto;
 }
 
-/* Footer styling */
-.md-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.md-footer-meta {
-  background: rgba(0, 0, 0, 0.2);
-}
-
+/* Footer */
 .md-social {
   gap: 0.6rem;
 }
@@ -63,71 +45,6 @@
 .md-copyright {
   font-size: 0.7rem;
   opacity: 0.7;
-}
-
-/* Persistent "PGSync Pro" CTA button in the header (injected by custom.js) */
-.pgsync-pro-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  align-self: center;
-  margin: 0 0.5rem;
-  padding: 0.3rem 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff !important;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-}
-.pgsync-pro-cta__spark {
-  color: var(--md-accent-fg-color, #00d0e0);
-  font-size: 0.8em;
-}
-.pgsync-pro-cta__pro {
-  color: var(--md-accent-fg-color, #00d0e0);
-  font-weight: 700;
-}
-.pgsync-pro-cta:hover {
-  border-color: var(--md-accent-fg-color, #00d0e0);
-  background: rgba(0, 208, 224, 0.12);
-  box-shadow: 0 0 0 3px rgba(0, 208, 224, 0.12);
-}
-@media screen and (max-width: 60em) {
-  .pgsync-pro-cta { display: none; }
-}
-
-/* PGSync ClickHouse header CTA, mirrors the Pro CTA with a ClickHouse accent */
-.pgsync-ch-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  align-self: center;
-  margin: 0 0.5rem 0 0;
-  padding: 0.3rem 0.85rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff !important;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  white-space: nowrap;
-  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
-}
-.pgsync-ch-cta__spark { color: #ffcf34; font-size: 0.8em; }
-.pgsync-ch-cta__name { color: #ffcf34; font-weight: 700; }
-.pgsync-ch-cta:hover {
-  border-color: #ffcf34;
-  background: rgba(255, 207, 52, 0.12);
-  box-shadow: 0 0 0 3px rgba(255, 207, 52, 0.12);
-}
-/* two CTAs need room, drop the ClickHouse pill a bit sooner than the Pro one */
-@media screen and (max-width: 76em) {
-  .pgsync-ch-cta { display: none; }
 }
 
 /* ============ Homepage hero action buttons ============ */
@@ -175,18 +92,6 @@
   background: color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
 }
 
-/* primary "Get Started", flat solid indigo, no glow */
-.hero-actions .md-button--primary {
-  border-color: transparent;
-  color: #fff;
-  background: var(--md-primary-fg-color, #3f51b5);
-}
-.hero-actions .md-button--primary:hover {
-  border-color: transparent;
-  color: #fff;
-  background: color-mix(in srgb, var(--md-primary-fg-color, #3f51b5) 85%, #fff);
-}
-
 /* PGSync Pro flow diagram (hero on the Pro page) */
 .pgpro-flow {
   margin: 2rem auto 0.4rem;
@@ -197,7 +102,7 @@
   height: auto;
   display: block;
   border-radius: 22px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--md-shadow-z3);
 }
 
 /* Two-column hero on the Pro page: pitch left, diagram right */
@@ -245,7 +150,7 @@
   height: auto;
   display: block;
   border-radius: 22px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  box-shadow: var(--md-shadow-z3);
 }
 @media screen and (max-width: 60em) {
   .pgch-hero { grid-template-columns: 1fr; gap: 1rem; }
@@ -257,11 +162,11 @@
 .pl {
   max-width: 52rem;
   margin: 2rem auto 0.5rem;
-  background: #0d1424;
-  border: 1px solid var(--md-default-fg-color--lightest, #28324a);
+  background: var(--gr-surface);
+  border: 1px solid var(--gr-border);
   border-radius: 18px;
   padding: 1.6rem 1.8rem 2rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--md-shadow-z3);
 }
 .pl-steps {
   display: flex;
@@ -274,12 +179,12 @@
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--md-code-font-family), monospace;
   font-size: 0.72rem;
   letter-spacing: 0.02em;
   color: var(--md-default-fg-color--light);
   background: transparent;
-  border: 1px solid var(--md-default-fg-color--lightest, #28324a);
+  border: 1px solid var(--gr-border);
   border-radius: 2rem;
   padding: 0.35rem 0.8rem;
   cursor: pointer;
@@ -291,7 +196,7 @@
   width: 1.15rem;
   height: 1.15rem;
   border-radius: 50%;
-  background: var(--md-default-fg-color--lightest, #28324a);
+  background: var(--gr-border);
   color: var(--md-default-fg-color--light);
   font-size: 0.66rem;
 }
@@ -327,119 +232,115 @@
 /* tables */
 .pl-tables { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
 .pl-table {
-  border: 1px solid #28324a;
+  border: 1px solid var(--gr-border);
   border-radius: 10px;
   overflow: hidden;
   min-width: 15rem;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--md-code-font-family), monospace;
   font-size: 0.76rem;
 }
 .pl-th {
-  background: #182238;
-  color: #7fb2e0;
+  background: var(--gr-surface-2);
+  color: var(--gr-accent);
   padding: 0.4rem 0.8rem;
   font-weight: 700;
   letter-spacing: 0.04em;
 }
-.pl-tr { display: flex; justify-content: space-between; gap: 1rem; padding: 0.34rem 0.8rem; border-top: 1px solid #1b2740; }
-.pl-tr span:first-child { color: #7a86a3; }
-.pl-tr span:last-child { color: #dfe5f2; }
+.pl-tr { display: flex; justify-content: space-between; gap: 1rem; padding: 0.34rem 0.8rem; border-top: 1px solid var(--gr-border); }
+.pl-tr span:first-child { color: var(--gr-subtle); }
+.pl-tr span:last-child { color: var(--gr-text); }
 
 /* code (sql + json) */
 .pl-code {
-  background: #0a1020;
-  border: 1px solid #1e2b45;
+  background: var(--gr-bg);
+  border: 1px solid var(--gr-border);
   border-radius: 10px;
   padding: 1rem 1.2rem;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--md-code-font-family), monospace;
   font-size: 0.8rem;
   line-height: 1.55;
-  color: #c8d0e0;
+  color: var(--gr-text);
   max-width: 40rem;
   margin: 0 auto;
   overflow-x: auto;
 }
-.pl-code .k { color: #7c9dff; }
-.pl-code .s { color: #6fe0b0; }
-.pl-code .key { color: #5ee7f5; }
-.pl-code .p { color: #8a95af; }
+.pl-code .k { color: var(--md-code-hl-keyword-color); }
+.pl-code .s { color: var(--md-code-hl-string-color); }
+.pl-code .key { color: var(--md-code-hl-name-color); }
+.pl-code .p { color: var(--gr-subtle); }
 
 /* embed */
 .pl-embed-src, .pl-query {
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--md-code-font-family), monospace;
   font-size: 0.82rem;
-  color: #cdd6e6;
-  border: 1px solid #28324a;
+  color: var(--gr-text);
+  border: 1px solid var(--gr-border);
   border-radius: 10px;
   padding: 0.7rem 1rem;
   max-width: 34rem;
   margin: 0 auto;
 }
-.pl-query { font-family: var(--md-text-font, "Roboto"); font-size: 1.1rem; font-style: italic; color: #eef2fb; }
-.pl-flow-down { text-align: center; margin: 0.9rem 0; color: #7a86a3; font-family: "Roboto Mono", monospace; font-size: 0.7rem; }
+.pl-query { font-family: var(--md-text-font-family); font-size: 1.1rem; font-style: italic; color: var(--gr-text-strong); }
+.pl-flow-down { text-align: center; margin: 0.9rem 0; color: var(--gr-subtle); font-family: var(--md-code-font-family), monospace; font-size: 0.7rem; }
 .pl-flow-down span {
   display: block; width: 2px; height: 26px; margin: 0 auto 6px;
-  background: linear-gradient(#5ea8ff, #22d3ee); border-radius: 2px;
+  background: linear-gradient(var(--gr-border-strong), var(--pl-accent)); border-radius: 2px;
   position: relative; overflow: hidden;
 }
 .pl-flow-down span::after {
   content: ""; position: absolute; left: -1px; width: 4px; height: 8px;
-  background: #e8fbff; border-radius: 2px; animation: pl-drop 1.3s linear infinite;
+  background: var(--gr-text-strong); border-radius: 2px; animation: pl-drop 1.3s linear infinite;
 }
 @keyframes pl-drop { from { top: -8px; } to { top: 28px; } }
 .pl-vec {
   text-align: center;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--md-code-font-family), monospace;
   font-size: 0.82rem;
-  color: #7fe9f5;
-  background: rgba(0, 208, 224, 0.08);
-  border: 1px solid rgba(0, 208, 224, 0.3);
+  border: 1px solid transparent;
   border-radius: 10px;
   padding: 0.7rem 1rem;
   max-width: 40rem;
   margin: 0 auto;
 }
-.pl-vec .pl-dim { color: #5c7a86; margin-left: 0.6rem; font-size: 0.72rem; }
+.pl-vec .pl-dim { color: var(--gr-subtle); margin-left: 0.6rem; font-size: 0.72rem; }
 .pl-note { text-align: center; color: var(--md-default-fg-color--light); font-size: 0.82rem; max-width: 38rem; margin: 1.1rem auto 0; }
 .pl-note b { color: var(--md-default-fg-color); }
 
 /* result */
 .pl-result {
-  border: 1px solid rgba(0, 208, 224, 0.35);
-  background: #111a2e;
+  border: 1px solid transparent;
+  background: var(--gr-surface-2);
   border-radius: 12px;
   padding: 1rem 1.3rem;
   max-width: 34rem;
   margin: 0 auto;
 }
-.pl-result-title { font-family: var(--md-text-font, "Roboto"); font-size: 1.25rem; font-weight: 600; color: #fff; }
-.pl-result-meta { font-family: "Roboto Mono", monospace; font-size: 0.76rem; color: #8a95af; margin: 0.3rem 0 0.7rem; }
-.pl-result-meta b { color: #dfe5f2; }
+.pl-result-title { font-family: var(--md-text-font-family); font-size: 1.25rem; font-weight: 600; color: var(--gr-text-strong); }
+.pl-result-meta { font-family: var(--md-code-font-family), monospace; font-size: 0.76rem; color: var(--gr-subtle); margin: 0.3rem 0 0.7rem; }
+.pl-result-meta b { color: var(--gr-text); }
 .pl-pill {
   display: inline-block;
-  font-family: "Roboto Mono", monospace;
+  font-family: var(--md-code-font-family), monospace;
   font-size: 0.66rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--md-accent-fg-color, #00d0e0);
-  background: rgba(0, 208, 224, 0.12);
   border-radius: 2rem;
   padding: 0.25rem 0.7rem;
 }
 
 /* ---- pipeline flow rail: per-step colour, travelling packet, progress ---- */
-.pl { --pl-accent: #00d0e0; }
+.pl { --pl-accent: #8fa3bf; }
 .pl-steps { position: relative; z-index: 1; }
 .pl-line {
   position: absolute; top: 50%; left: 6%; right: 6%; height: 2px;
-  background: #26314c; transform: translateY(-50%); z-index: 0;
+  background: var(--gr-border-strong); transform: translateY(-50%); z-index: 0;
 }
 .pl-packet {
   position: absolute; top: 50%; left: 0; width: 11px; height: 11px;
   margin-left: -5.5px; transform: translateY(-50%); border-radius: 50%;
   background: var(--pl-accent);
-  box-shadow: 0 0 14px 3px var(--pl-accent);
+  box-shadow: 0 0 8px 1px var(--pl-accent);
   opacity: 0;
   transition: left 0.55s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s, opacity 0.3s;
   z-index: 3;
@@ -451,18 +352,18 @@
   background: linear-gradient(270deg, var(--pl-accent), transparent);
   border-radius: 3px; opacity: 0.55; pointer-events: none;
 }
-.pl-step { position: relative; z-index: 1; background: #0d1424; }
+.pl-step { position: relative; z-index: 1; background: var(--gr-surface); }
 .pl-step.is-active {
-  color: #06202a;
+  color: #16181c;
   background: var(--pl-accent);
   border-color: var(--pl-accent);
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--pl-accent) 18%, transparent);
 }
-.pl-step.is-active .pl-num { background: #06202a; color: var(--pl-accent); }
+.pl-step.is-active .pl-num { background: #16181c; color: var(--pl-accent); }
 
 .pl-progress {
   height: 3px; margin: 1rem 6% 0.2rem;
-  background: #1c2740; border-radius: 3px; overflow: hidden;
+  background: var(--gr-border-strong); border-radius: 3px; overflow: hidden;
 }
 .pl-fill {
   display: block; width: 0; height: 100%;
@@ -483,14 +384,16 @@
   color: var(--pl-accent);
   background: color-mix(in srgb, var(--pl-accent) 14%, transparent);
 }
-.pl-flow-down span { background: linear-gradient(#5ea8ff, var(--pl-accent)); }
 
-/* Grid cards: lay each card out as a column and push its button (the last
-   paragraph) to the bottom, so CTAs line up across cards of differing height, e.g. the Pricing page's "Get it on GitHub" vs "Get PGSync Pro". */
+/* Grid cards: lay each card out as a column and push a last paragraph that
+   holds a link (the card's button) to the bottom, so CTAs line up across
+   cards of differing height, e.g. the Pricing page's "Get it on GitHub" vs
+   "Get PGSync Pro". Text-only cards keep their normal spacing. */
 .md-typeset .grid.cards > :is(ul, ol) > li {
   display: flex;
   flex-direction: column;
 }
-.md-typeset .grid.cards > :is(ul, ol) > li > p:last-child {
+.md-typeset .grid.cards > :is(ul, ol) > li > p:last-child:has(a) {
   margin-top: auto;
+  padding-top: 0.6rem;
 }

@@ -1,4 +1,4 @@
-# :material-download: Installation
+# Installation
 
 ## pip (Recommended)
 
@@ -14,6 +14,16 @@ pip install pgsync
     # or: venv\Scripts\activate  # Windows
     pip install pgsync
     ```
+
+??? tip "Optional: terminal monitor"
+
+    Install the `monitor` extra to use `pgsync --monitor`. It adds the [rich](https://github.com/Textualize/rich) library.
+
+    ```bash
+    pip install 'pgsync[monitor]'
+    ```
+
+    See [Terminal monitor](../monitor/index.md).
 
 ---
 

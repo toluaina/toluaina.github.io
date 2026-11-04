@@ -1,4 +1,4 @@
-# :material-console: Command Arguments
+# Command Arguments
 
 ## Usage
 
@@ -49,6 +49,14 @@ pgsync [OPTIONS]
 
 ---
 
+## Monitoring
+
+| Argument | Short | Description |
+|----------|-------|-------------|
+| `--monitor` | `-m` | Show a full-screen terminal monitor of sync events. Use with `--daemon` or `--wal`. Needs `pip install 'pgsync[monitor]'`. See [Terminal monitor](../monitor/index.md). |
+
+---
+
 ## Scaling
 
 Split the sync into separate producer and consumer processes to scale throughput across processes or machines. See [Multiple Workers](../scaling/multiple-workers.md).
@@ -96,6 +104,12 @@ pgsync -c schema.json --polling -n 4 -d
 
 ```bash
 pgsync -c schema.json --wal
+```
+
+**With the terminal monitor:**
+
+```bash
+pgsync -c schema.json --daemon --monitor
 ```
 
 !!! note

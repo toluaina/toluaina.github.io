@@ -14,6 +14,7 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 | :material-key-chain: **Composite Keys** | Supports composite primary and foreign keys |
 | :material-file-tree: **Deeply Nested Documents** | Arbitrary depth of related entities supported |
 | :material-cog: **Customizable Structure** | Tailor documents to your index and query needs |
+| :material-monitor-dashboard: **Terminal Monitor** | Watch events, throughput, slot lag, and errors as they happen with [`--monitor`](../monitor/index.md) |
 
 ## Details
 

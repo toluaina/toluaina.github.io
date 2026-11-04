@@ -1,4 +1,4 @@
-# :material-cog: Environment Variables
+# Environment Variables
 
 PGSync uses the [dotenv](https://github.com/theskumar/python-dotenv) module for reading environment variables from a `.env` file.
 
@@ -136,6 +136,15 @@ pgsync -c schema.json
 | `CONSOLE_LOGGING_HANDLER_MIN_LEVEL` | | Log level: `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL` |
 | `CUSTOM_LOGGING` | | Path to custom logging configuration file |
 | `FORMAT_WITH_COMMAS` | True | Comma formatted logging output |
+
+### Terminal monitor
+
+These variables apply only with `--monitor`. See [Colors](../monitor/index.md#colors).
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `MONITOR_THEME` | default | Color theme: `default` (dark terminal), `light`, `classic` (terminal colors), or `mono` |
+| `MONITOR_COLORS` | | Comma-separated `role=style` items that change single colors, for example `border=magenta,insert=#00ff00` |
 
 ### New Relic
 

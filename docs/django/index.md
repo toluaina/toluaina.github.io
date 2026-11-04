@@ -1,8 +1,8 @@
-# :simple-django: Django integration
+# Django Integration
 
 [django-pgsync](https://github.com/toluaina/django-pgsync) is the official
 Django integration for PGSync. Declare search indexes from your Django
-models — no hand-written schema JSON — and let PGSync keep
+models (no hand-written schema JSON) and let PGSync keep
 Elasticsearch/OpenSearch in sync with your database.
 
 ```bash
@@ -99,20 +99,20 @@ python manage.py pgsync_daemon      # continuous sync (systemd etc.)
 
 | Mode | How it works | Postgres requirements |
 |------|--------------|-----------------------|
-| `polling` (default) | Periodic forward pass | **None beyond read access** — works on read-only and managed clusters |
+| `polling` (default) | Periodic forward pass | **None beyond read access**; works on read-only and managed clusters |
 | `event` | Triggers + `pg_notify` + replication slot | `wal_level=logical`, slot rights, triggers |
 | `wal` | Streams the logical replication slot | `wal_level=logical`, slot rights |
 
 !!! tip "Why polling is the default"
 
-    Polling needs no superuser-level database settings — ideal for hosted
+    Polling needs no superuser-level database settings, so it suits hosted
     Postgres (RDS, Cloud SQL, Supabase) where you may not control
     `wal_level`. When you control the database, `wal` gives the lowest
     overhead real-time sync.
 
 !!! warning "Root deletes in polling mode"
 
-    Deleting a root row leaves a stale document in the index — there is
+    Deleting a root row leaves a stale document in the index, because there is
     no delete record to observe. Child-row deletes are fine since the
     parent document is rebuilt. If you hard-delete root rows, use
     `wal`/`event` mode or a soft-delete flag.
@@ -132,7 +132,7 @@ CELERY_BEAT_SCHEDULE = {
 }
 ```
 
-A cache lock prevents overlapping runs — ticks that fire while a pull is
+A cache lock prevents overlapping runs. Ticks that fire while a pull is
 still in flight simply skip, so short intervals are safe. With
 [django-celery-beat](https://django-celery-beat.readthedocs.io/) the
 schedule is editable in the Django admin.
@@ -141,9 +141,9 @@ schedule is editable in the Django admin.
 
 ## Learn more
 
-- [django-pgsync on GitHub](https://github.com/toluaina/django-pgsync) —
+- [django-pgsync on GitHub](https://github.com/toluaina/django-pgsync):
   source, issues and a runnable
   [example project](https://github.com/toluaina/django-pgsync/tree/main/example)
 - [django-pgsync on PyPI](https://pypi.org/project/django-pgsync/)
-- [Schema definition](../schema/index.md) — the PGSync schema that
+- [Schema definition](../schema/index.md): the PGSync schema that
   `pgsync_schema` generates for you

@@ -1,4 +1,4 @@
-# :material-file-code: Schema Definition
+# Schema Definition
 
 The schema file defines how to map your database tables to Elasticsearch/OpenSearch documents.
 
