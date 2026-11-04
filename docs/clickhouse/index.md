@@ -221,7 +221,7 @@ WHERE _is_deleted = 0;
 
 <div class="hero-actions" markdown>
 [:material-tag: See pricing](pricing.md){ .md-button .md-button--primary }
-[:material-star-four-points: PGSync Pro](../pro/index.md){ .md-button }
+[:material-star-four-points: PGSync Semantic](../pro/index.md){ .md-button }
 </div>
 
 </div>

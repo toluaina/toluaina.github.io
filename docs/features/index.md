@@ -49,5 +49,5 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 !!! tip "More destinations"
     Beyond search: **[PGSync ClickHouse](../clickhouse/index.md)** streams
     PostgreSQL into ClickHouse for real-time analytics, and
-    **[PGSync Pro](../pro/index.md)** adds semantic & hybrid search, the same
+    **[PGSync Semantic](../pro/index.md)** adds semantic & hybrid search, the same
     `schema.json` and CLI.

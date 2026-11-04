@@ -10,14 +10,14 @@ hide:
 
 <a class="home-pill" href="clickhouse/"><b>New</b> PGSync ClickHouse: stream Postgres into ClickHouse :material-arrow-right:</a>
 
-# Your relational data, searchable in real time.
+# Search your relational data by meaning, in real time.
 
-<p class="home-hero__lede">Real-time data synchronization from <strong>PostgreSQL</strong>, <strong>MySQL</strong>, and <strong>MariaDB</strong> to <strong>Elasticsearch</strong> and <strong>OpenSearch</strong>, continuously and transactionally.</p>
+<p class="home-hero__lede">PGSync keeps <strong>Elasticsearch</strong> and <strong>OpenSearch</strong> in sync with <strong>PostgreSQL</strong>, <strong>MySQL</strong> and <strong>MariaDB</strong>. <strong>PGSync Semantic</strong> lets your users search by meaning, with hybrid keyword ranking, and re-embeds a document only when its meaning changes.</p>
 
 <div class="hero-actions" markdown>
-[Get started :material-arrow-right:](getting-started/setup.md){ .md-button .md-button--primary }
-[Live demo](https://demo.pgsync.com){ .md-button target="_blank" rel="noopener" }
-[:material-github: GitHub](https://github.com/toluaina/pgsync){ .md-button }
+[Explore Semantic :material-arrow-right:](pro/index.md){ .md-button .md-button--primary }
+[Try the live demo](https://demo.pgsync.com){ .md-button target="_blank" rel="noopener" }
+[:material-github: Open source](https://github.com/toluaina/pgsync){ .md-button }
 </div>
 
 <div class="home-install"><span>$</span> pip install pgsync</div>
@@ -25,25 +25,25 @@ hide:
 </div>
 <div class="home-hero__code" markdown>
 
+=== "Search"
+
+    ```json
+    // query: "a rebellion against a watchful state"
+    {
+      "title": "Nineteen Eighty-Four",
+      "author": ["George Orwell"]
+    }
+    ```
+
 === "schema.json"
 
     ```json
     {
       "table": "book",
-      "columns": ["isbn", "title"],
+      "columns": ["isbn", "title", "description"],
       "children": [
         { "table": "author", "columns": ["name"] }
       ]
-    }
-    ```
-
-=== "Document"
-
-    ```json
-    {
-      "isbn": "9788374950978",
-      "title": "Kafka on the Shore",
-      "author": ["Haruki Murakami", "Philip Gabriel"]
     }
     ```
 
@@ -56,6 +56,44 @@ hide:
   <strong>PGSync</strong>
   <span class="home-arrow" aria-hidden="true">→</span>
   <span class="home-flow__group"><span>Elasticsearch</span><span>OpenSearch</span><span>ClickHouse</span></span>
+</div>
+
+## One sync engine, four products
+
+<div class="grid cards home-features home-products" markdown>
+
+-   :material-magnify:{ .lg .middle } **PGSync Semantic**
+
+    <span class="home-tag">From $29/mo</span>
+
+    Semantic and hybrid search on your own data. Embeddings update only when the meaning changes. Includes an MCP server for AI agents.
+
+    [Explore Semantic :material-arrow-right:](pro/index.md)
+
+-   :material-sync:{ .lg .middle } **PGSync**
+
+    <span class="home-tag">Free, MIT</span>
+
+    The open-source sync engine. Nested JSON documents in Elasticsearch and OpenSearch, kept in sync in real time.
+
+    [Get started :material-arrow-right:](getting-started/setup.md)
+
+-   :material-chart-box-outline:{ .lg .middle } **PGSync ClickHouse**
+
+    <span class="home-tag">Mirror free, from $19/mo</span>
+
+    Stream Postgres into ClickHouse. Mirror one table, or flatten a whole tree into one wide table.
+
+    [Explore ClickHouse :material-arrow-right:](clickhouse/index.md)
+
+-   :material-language-python:{ .lg .middle } **django-pgsync**
+
+    <span class="home-tag">Free, open source</span>
+
+    Declare search indexes from your Django models. PGSync catches every write, also the ones that skip signals.
+
+    [Django integration :material-arrow-right:](django/index.md)
+
 </div>
 
 ## What is PGSync?
@@ -124,46 +162,6 @@ Then start syncing:
 ```console
 $ pgsync --config schema.json --daemon
 ```
-
-</div>
-
-## The PGSync family
-
-PGSync is free and open source. **PGSync Pro** adds real-time semantic & hybrid
-search; **PGSync ClickHouse** streams your data into ClickHouse for real-time
-analytics. Same `schema.json`, same CLI.
-
-<div class="grid cards" markdown>
-
--   :material-database-sync:{ .lg .middle } **PGSync · Community**
-
-    ---
-
-    Free & MIT. Real-time sync from PostgreSQL / MySQL / MariaDB to
-    Elasticsearch / OpenSearch, change data capture, denormalized documents,
-    and the Django integration.
-
-    [:material-rocket-launch: Get started](getting-started/setup.md)
-
--   :material-brain:{ .lg .middle } **PGSync · Pro**
-
-    ---
-
-    Everything in Community, plus **semantic & hybrid search** that re-embeds
-    only when meaning changes, hosted embedding providers, and an MCP server for
-    AI agents.
-
-    [:material-star-four-points: Explore PGSync Pro](pro/index.md)
-
--   :material-database-arrow-right:{ .lg .middle } **PGSync · ClickHouse**
-
-    ---
-
-    Real-time **PostgreSQL → ClickHouse** for analytics. **Mirror** a table free,
-    or **denormalize** a whole relational tree into one wide table (paid), on
-    `ReplacingMergeTree`, always fresh.
-
-    [:material-database-arrow-right: Explore PGSync ClickHouse](clickhouse/index.md)
 
 </div>
 

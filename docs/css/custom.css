@@ -60,7 +60,7 @@
 .hero-actions > p {
   display: contents;
 }
-/* equal-width buttons that fill the row (used on the Pro hero) */
+/* equal-width buttons that fill the row (used on the Semantic hero) */
 .hero-actions--fill .md-button {
   flex: 1 1 0;
   justify-content: center;
@@ -92,7 +92,7 @@
   background: color-mix(in srgb, var(--md-default-fg-color) 6%, transparent);
 }
 
-/* PGSync Pro flow diagram (hero on the Pro page) */
+/* PGSync Semantic flow diagram (hero on the Semantic page) */
 .pgpro-flow {
   margin: 2rem auto 0.4rem;
   max-width: 34rem;
@@ -105,7 +105,7 @@
   box-shadow: var(--md-shadow-z3);
 }
 
-/* Two-column hero on the Pro page: pitch left, diagram right */
+/* Two-column hero on the Semantic page: pitch left, diagram right */
 .pgpro-hero {
   display: grid;
   grid-template-columns: 1fr 1.08fr;
@@ -131,7 +131,7 @@
   .pgpro-hero__text .hero-actions { justify-content: center; }
 }
 
-/* ============ PGSync ClickHouse hero + flow (mirrors the Pro hero) ============ */
+/* ============ PGSync ClickHouse hero + flow (mirrors the Semantic hero) ============ */
 .pgch-hero {
   display: grid;
   grid-template-columns: 1fr 1.05fr;
@@ -388,7 +388,7 @@
 /* Grid cards: lay each card out as a column and push a last paragraph that
    holds a link (the card's button) to the bottom, so CTAs line up across
    cards of differing height, e.g. the Pricing page's "Get it on GitHub" vs
-   "Get PGSync Pro". Text-only cards keep their normal spacing. */
+   "Get PGSync Semantic". Text-only cards keep their normal spacing. */
 .md-typeset .grid.cards > :is(ul, ol) > li {
   display: flex;
   flex-direction: column;

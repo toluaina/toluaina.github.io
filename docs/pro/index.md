@@ -1,5 +1,5 @@
 ---
-title: PGSync Pro
+title: PGSync Semantic
 hide:
   - toc
 ---
@@ -7,7 +7,7 @@ hide:
 <div class="pgpro-hero" markdown>
 <div class="pgpro-hero__text" markdown>
 
-# PGSync Pro
+# PGSync Semantic
 
 Real-time **semantic & hybrid search** for PostgreSQL, that only re-embeds
 when *meaning* changes.
@@ -18,16 +18,18 @@ when *meaning* changes.
 [:material-play-circle: How it works](../how-it-works/index.md){ .md-button }
 </div>
 
-Your database stays the source of truth, PGSync Pro keeps a fresh vector index
+Your database stays the source of truth, PGSync Semantic keeps a fresh vector index
 in lock-step, and only pays to embed when *meaning* actually changes. Built on
 PGSync, which syncs **PostgreSQL, MySQL and MariaDB** to Elasticsearch /
 OpenSearch.
 
+<small>Formerly PGSync Pro. It still installs as `pgsync-pro`.</small>
+
 </div>
 <div class="pgpro-flow">
 <svg viewBox="0 0 780 620" role="img" aria-labelledby="flow-t flow-d" preserveAspectRatio="xMidYMid meet">
-  <title id="flow-t">PGSync Pro data flow</title>
-  <desc id="flow-d">PostgreSQL streams changes through PGSync and PGSync Pro into Elasticsearch, in real time.</desc>
+  <title id="flow-t">PGSync Semantic data flow</title>
+  <desc id="flow-d">PostgreSQL streams changes through PGSync and PGSync Semantic into Elasticsearch, in real time.</desc>
   <defs>
     <radialGradient id="pg-halo" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-opacity="0.30" style="stop-color:var(--dg-7d90aa, #7d90aa)"/>
@@ -66,7 +68,7 @@ OpenSearch.
   <!-- base ring -->
   <circle cx="390" cy="310" r="175" fill="none" stroke-width="1.5" stroke-opacity="0.7" style="stroke:var(--dg-36393e, #36393e)"/>
 
-  <!-- glow behind PGSync Pro (bottom) -->
+  <!-- glow behind PGSync Semantic (bottom) -->
   <circle cx="390" cy="485" r="66" opacity="0.16" filter="url(#pg-soft)" style="fill:var(--dg-9db0ca, #9db0ca)"/>
 
   <!-- flow arcs: streaming dashes -->
@@ -118,10 +120,10 @@ OpenSearch.
     <text opacity="0" x="155" y="306" text-anchor="end" font-size="17" font-weight="700" style="fill:var(--dg-e7e8e9, #e7e8e9)">OpenSearch<animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.03;0.47;0.5;1" dur="9s" begin="4.5s" repeatCount="indefinite"/></text>
     <text x="155" y="324" text-anchor="end" font-size="11.5" style="fill:var(--dg-a9acb1, #a9acb1)">search by meaning</text>
 
-    <!-- PGSync Pro (bottom, hero) -->
+    <!-- PGSync Semantic (bottom, hero) -->
     <circle cx="390" cy="485" r="50" fill="url(#pg-card)" stroke-opacity="0.9" stroke-width="1.6" style="stroke:var(--dg-9db0ca, #9db0ca)"/>
     <path d="M390 470 C391.6 481 393.6 483 404.5 485 C393.6 487 391.6 489 390 500 C388.4 489 386.4 487 375.5 485 C386.4 483 388.4 481 390 470 Z" style="fill:var(--dg-b4c3d6, #b4c3d6)"/>
-    <text x="390" y="560" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--dg-f5f5f6, #f5f5f6)">PGSync Pro</text>
+    <text x="390" y="560" text-anchor="middle" font-size="18" font-weight="700" style="fill:var(--dg-f5f5f6, #f5f5f6)">PGSync Semantic</text>
     <text x="390" y="578" text-anchor="middle" font-size="11.5" style="fill:var(--dg-b4c3d6, #b4c3d6)">embeddings · change-guard</text>
   </g>
 </svg>
@@ -186,7 +188,7 @@ OpenSearch.
 
 </div>
 
-PGSync and django-pgsync stay free and MIT forever. Pro adds the semantic layer
+PGSync and django-pgsync stay free and MIT forever. PGSync Semantic adds the semantic layer
 on top, the same `schema.json` and CLI, plus an `embedding` block.
 
 ---

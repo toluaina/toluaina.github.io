@@ -511,7 +511,7 @@ body {
   padding: 0.6rem 1.1rem;
   white-space: nowrap;
 }
-/* Equal-width button rows (Pro and ClickHouse heroes) wrap on phones
+/* Equal-width button rows (Semantic and ClickHouse heroes) wrap on phones
    instead of breaking the labels mid-word */
 @media screen and (max-width: 30em) {
   .hero-actions--fill .md-button {
@@ -641,7 +641,7 @@ body {
   display: none;
 }
 
-/* ---------- Pro and ClickHouse hero diagrams ---------- */
+/* ---------- Semantic and ClickHouse hero diagrams ---------- */
 /* The inline SVGs read each colour as var(--dg-<dark hex>, <dark hex>), so
    dark mode needs no rules. Light mode maps every dark-theme colour to a
    light-theme colour with the same role. */
@@ -815,4 +815,18 @@ body {
   .md-typeset .home-hero h1 {
     font-size: 2rem;
   }
+}
+
+/* Product row: price tag under each product name */
+.md-typeset .home-products .home-tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--gr-border);
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--gr-muted);
+}
+.md-typeset .home-products > :is(ul, ol) > li > p:nth-child(2) {
+  margin: 0.35rem 0 0;
 }

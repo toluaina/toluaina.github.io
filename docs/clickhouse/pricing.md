@@ -81,6 +81,6 @@ same schema, no code changes.
 [:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync ClickHouse" }
 
 Looking for semantic and hybrid search? See
-[PGSync Pro pricing](../pro/pricing.md).
+[PGSync Semantic pricing](../pro/pricing.md).
 
 </div>

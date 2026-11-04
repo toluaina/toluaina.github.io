@@ -125,7 +125,6 @@ nav:
       - getting-started/installation.md
       - getting-started/running.md
       - getting-started/docker.md
-    - Django integration: django/index.md
     - Environment variables: env-vars/index.md
     - Command arguments: command-args/index.md
     - Terminal monitor: monitor/index.md
@@ -152,7 +151,7 @@ nav:
       - scaling/parallel-sync.md
     - License: license/index.md
     - References: reference/index.md
-  - Pro:
+  - Semantic:
     - pro/index.md
     - How it works: how-it-works/index.md
     - Pricing: pro/pricing.md
@@ -162,4 +161,5 @@ nav:
     - How it works: clickhouse/how-it-works.md
     - Pricing: clickhouse/pricing.md
     - FAQ: clickhouse/faq.md
+  - Django: django/index.md
   - Pricing: pricing/index.md

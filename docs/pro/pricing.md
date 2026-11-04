@@ -1,10 +1,10 @@
 ---
-title: PGSync Pro, pricing
+title: PGSync Semantic, pricing
 ---
 
 <div align="center" markdown>
 
-# PGSync Pro pricing
+# PGSync Semantic pricing
 
 Simple, per-organization pricing. Start free, upgrade when you need search that
 understands *meaning*. No per-seat counting.
@@ -31,7 +31,7 @@ understands *meaning*. No per-seat counting.
 
     [:material-github: Get it on GitHub](https://github.com/toluaina/pgsync){ .md-button }
 
--   ### Pro
+-   ### Semantic
 
     ---
 
@@ -48,13 +48,13 @@ understands *meaning*. No per-seat counting.
     - MCP agent server
     - Email support & all updates
 
-    [:material-rocket-launch: Get PGSync Pro](https://buy.polar.sh/polar_cl_OaZCuL1ePBerK2Y8hfHPZMPhOZEayiCJ7BeZU129pqk){ .md-button .md-button--primary }
+    [:material-rocket-launch: Get PGSync Semantic](https://buy.polar.sh/polar_cl_OaZCuL1ePBerK2Y8hfHPZMPhOZEayiCJ7BeZU129pqk){ .md-button .md-button--primary }
 
 </div>
 
 ??? note "Compare all features"
 
-    | | Community | Pro |
+    | | Community | Semantic |
     |---|:--:|:--:|
     | Real-time change-data-capture sync | ✓ | ✓ |
     | Postgres / MySQL / MariaDB → Elasticsearch / OpenSearch | ✓ | ✓ |
@@ -89,7 +89,7 @@ pgsync-pro validate --config schema.json
 pgsync-pro bootstrap --config schema.json
 ```
 
-It's the same `schema.json` and CLI you already know from PGSync, Pro just adds
+It's the same `schema.json` and CLI you already know from PGSync. PGSync Semantic just adds
 an `embedding` block.
 
 <div align="center" markdown>
@@ -99,7 +99,7 @@ an `embedding` block.
 **Questions about licensing, cancelling, or your data?**
 
 [:material-frequently-asked-questions: Read the FAQ](faq.md){ .md-button .md-button--primary }
-[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
+[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Semantic" }
 
 Looking for real-time PostgreSQL to ClickHouse? See
 [PGSync ClickHouse pricing](../clickhouse/pricing.md).

@@ -21,16 +21,16 @@ need it. No per-seat counting. Pick the product you're pricing:
 
     ---
 
-    **PGSync** + **PGSync Pro**
+    **PGSync** + **PGSync Semantic**
 
     Real-time sync to **Elasticsearch / OpenSearch**, with optional semantic and
     hybrid search.
 
     - **Community**, free (MIT), the sync engine
-    - **Pro**, from **$29/mo**, semantic + hybrid search
+    - **Semantic**, from **$29/mo**, semantic + hybrid search
 
-    [:material-tag: See Pro pricing](../pro/pricing.md){ .md-button .md-button--primary }
-    [:material-book-open-variant: Learn about Pro](../pro/index.md){ .md-button }
+    [:material-tag: See Semantic pricing](../pro/pricing.md){ .md-button .md-button--primary }
+    [:material-book-open-variant: Learn about Semantic](../pro/index.md){ .md-button }
 
 -   ### :material-database-arrow-right: Analytics
 

@@ -1,29 +1,29 @@
 ---
-title: PGSync Pro, FAQ
+title: PGSync Semantic, FAQ
 ---
 
-# PGSync Pro, FAQ
+# PGSync Semantic, FAQ
 
-Common questions about buying, licensing, and running PGSync Pro. Can't find an
-answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro, question" }.
+Common questions about buying, licensing, and running PGSync Semantic. Can't find an
+answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Semantic, question" }.
 
 ## The product
 
-**How is Pro different from open-core PGSync?**
+**How is PGSync Semantic different from open-core PGSync?**
 PGSync (MIT) does the real-time change-data-capture sync to Elasticsearch /
-OpenSearch. Pro adds **semantic + hybrid search**, the **change-guard economics**,
+OpenSearch. PGSync Semantic adds **semantic + hybrid search**, the **change-guard economics**,
 the embedding providers, the MCP agent server, and the search dashboard. See the
 [full comparison](pricing.md).
 
 **Why not just build it on pgvector myself?**
 You can, and you'll then own the change-data-capture, the denormalization, the
 re-embedding logic, the provider integrations, and the database × engine
-compatibility matrix forever. Pro is cheaper than the engineering weeks to build
+compatibility matrix forever. PGSync Semantic is cheaper than the engineering weeks to build
 and maintain that, and it keeps your data in your own infrastructure.
 
 **Why not a hosted vector DB (Pinecone / Weaviate / Qdrant) or Algolia?**
 Those are separate services your data is copied into, priced by usage that grows
-with scale. PGSync Pro keeps your database as the source of truth, runs in your
+with scale. PGSync Semantic keeps your database as the source of truth, runs in your
 infra, and embeddings can run on-device, nothing leaves your environment.
 
 ## Pricing & billing
@@ -67,7 +67,7 @@ Keep the token out of shell history, use `PIP_EXTRA_INDEX_URL` or `pip.conf`.
 
 **What do I need running first?**
 PostgreSQL (or MySQL / MariaDB) with your data, and a search engine (Elasticsearch, or OpenSearch with the k-NN plugin) reachable at
-`ELASTICSEARCH_URL` (set `OPENSEARCH=true` for OpenSearch). PGSync Pro syncs
+`ELASTICSEARCH_URL` (set `OPENSEARCH=true` for OpenSearch). PGSync Semantic syncs
 *into* your existing engine; it doesn't install one. Native vector search (kNN)
 uses the engine's own vector index where available and falls back to backend
 cosine otherwise.
@@ -78,7 +78,7 @@ Don't publish it; if it leaks, tell us and we'll rotate it.
 
 **Do I need a kNN-capable search engine?**
 For production, yes (OpenSearch ships the plugin bundled; Elasticsearch 8+ is
-native). For evaluation, Pro can rank vectors without one.
+native). For evaluation, PGSync Semantic can rank vectors without one.
 
 ## Data & privacy
 
@@ -100,6 +100,6 @@ short, favorable document.
 ---
 
 [:material-tag: See pricing](pricing.md){ .md-button .md-button--primary }
-[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Pro" }
+[:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Semantic" }
 
 </div>
