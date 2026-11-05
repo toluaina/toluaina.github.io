@@ -10,13 +10,13 @@ answer? [Email us](#){ .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync Sem
 ## The product
 
 **How is PGSync Semantic different from open-core PGSync?**
-PGSync (MIT) does the real-time change-data-capture sync to Elasticsearch /
+PGSync (MIT) does the real-time change data capture sync to Elasticsearch /
 OpenSearch. PGSync Semantic adds **semantic + hybrid search**, the **change-guard economics**,
 the embedding providers, the MCP agent server, and the search dashboard. See the
 [full comparison](pricing.md).
 
 **Why not just build it on pgvector myself?**
-You can, and you'll then own the change-data-capture, the denormalization, the
+You can, and you'll then own the change data capture, the denormalization, the
 re-embedding logic, the provider integrations, and the database × engine
 compatibility matrix forever. PGSync Semantic is cheaper than the engineering weeks to build
 and maintain that, and it keeps your data in your own infrastructure.
@@ -24,36 +24,36 @@ and maintain that, and it keeps your data in your own infrastructure.
 **Why not a hosted vector DB (Pinecone / Weaviate / Qdrant) or Algolia?**
 Those are separate services your data is copied into, priced by usage that grows
 with scale. PGSync Semantic keeps your database as the source of truth, runs in your
-infra, and embeddings can run on-device, nothing leaves your environment.
+infra, and embeddings can run on your own machines, so nothing leaves your environment.
 
 ## Pricing & billing
 
 **How much is it?**
-**$29/mo billed annually**, or **$39/mo month-to-month**, per organization.
+**$29/mo billed annually**, or **$39/mo billed monthly**, per organization.
 Launch pricing, the list price rises as we add features.
 
 **What is an "organization"?**
-One legal entity and the infrastructure it operates (wholly-owned subsidiaries
-included). Separate legal entities, or clients you resell to, are not covered. If
+One legal entity and the infrastructure it operates (subsidiaries that it fully owns
+are included). Separate legal entities, or clients you resell to, are not covered. If
 in doubt, ask, we're reasonable.
 
-**Is it per-seat?**
-No. One flat per-organization subscription, use it across your team and
-infrastructure, no seat counting.
+**Do I pay per user?**
+No. You pay one flat subscription per organization. Use it across your whole
+team and infrastructure.
 
 **Is there a free trial?**
 No free trial. Evaluate with the open-core engine, the reference demo, and the
-docs; the **monthly plan is cancel-anytime**, so you can start for a single month
+docs; you can **cancel the monthly plan at any time**, so you can start for a single month
 with no long commitment.
 
 **Do you offer refunds?**
-No refunds, the monthly, cancel-anytime plan is the low-commitment option
-instead. (Statutory consumer rights, where they apply, are honored.)
+No refunds. Instead, choose the monthly plan, which you can cancel at any
+time. (Statutory consumer rights, where they apply, are honored.)
 
 **What happens when I cancel?**
-Your last installed version keeps working, no phone-home, no time-bomb. You stop
-receiving updates, new versions, and support, and your private-index token is
-revoked so you can no longer install or upgrade.
+Your last installed version keeps working. It does not contact our servers, and it
+does not stop on a set date. You stop receiving updates, new versions, and
+support, and we revoke your private package index token, so you can no longer install or upgrade.
 
 **Can I switch monthly ↔ annual, or upgrade later?**
 Yes, through the billing portal; changes are prorated.
@@ -61,7 +61,7 @@ Yes, through the billing portal; changes are prorated.
 ## Installation & use
 
 **How do I install it?**
-After subscribing you receive a private-index install token and install with
+After subscribing you receive an install token for the private package index and install with
 `pip install "pgsync-pro[local,demo]" --extra-index-url <your private index URL>`.
 Keep the token out of shell history, use `PIP_EXTRA_INDEX_URL` or `pip.conf`.
 
@@ -83,8 +83,8 @@ native). For evaluation, PGSync Semantic can rank vectors without one.
 ## Data & privacy
 
 **Does my data leave my infrastructure?**
-With the default local / FastEmbed providers, **no**, text is embedded on-device
-and nothing leaves your environment. If you opt into a hosted provider
+With the default local / FastEmbed providers, **no**, text is embedded on your own
+machines and nothing leaves your environment. If you opt into a hosted provider
 (OpenAI / Cohere / Voyage), only the fields you choose to embed are sent to that
 provider, under their terms.
 

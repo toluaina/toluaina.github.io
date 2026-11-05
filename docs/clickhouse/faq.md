@@ -11,8 +11,8 @@ denormalized add-on, and running it. Can't find an answer?
 ## The product
 
 **What is PGSync ClickHouse?**
-Real-time change-data-capture from **PostgreSQL to ClickHouse**. It reads the
-Postgres WAL and keeps a ClickHouse table in lock-step on `ReplacingMergeTree`,
+Real-time change data capture from **PostgreSQL to ClickHouse**. It reads the
+Postgres WAL and keeps a ClickHouse table in step with it on `ReplacingMergeTree`,
 with no ETL jobs and no nightly batch. See [how it works](how-it-works.md).
 
 **How is it different from PGSync (open-core)?**
@@ -30,33 +30,34 @@ the same change capture), writing to ClickHouse instead.
 Those are separate pipelines or managed services. PGSync ClickHouse reuses the
 PGSync you already know (the same `schema.json` and CDC), runs **in your own
 infrastructure**, and gives you **native denormalization** into wide ClickHouse
-tables, keyed on the WAL position for exactly-once.
+tables, keyed on the WAL position, so each change lands exactly once.
 
 **Do I need Redis?**
-Not for WAL-streaming mode. The default trigger mode uses Redis as a queue; WAL
+Not in WAL streaming mode. The default trigger mode uses Redis as a queue; WAL
 mode reads the replication slot directly.
 
 ## Pricing & billing
 
 **How much is it?**
 **Mirror mode is free.** Denormalized mode is **$19/mo billed annually** (or
-$24/mo month-to-month), per organization. Launch pricing; see the
+$24/mo billed monthly), per organization. Launch pricing; see the
 [pricing page](pricing.md).
 
 **What is an "organization"?**
-One legal entity and the infrastructure it operates (wholly-owned subsidiaries
-included). Separate legal entities, or clients you resell to, are not covered.
+One legal entity and the infrastructure it operates (subsidiaries that it fully owns
+are included). Separate legal entities, or clients you resell to, are not covered.
 
-**Is it per-seat?**
-No. One flat per-organization subscription for the denormalized add-on.
+**Do I pay per user?**
+No. You pay one flat subscription per organization for the denormalized add-on.
 
 **Is there a free trial?**
 **Mirror mode is the free tier:** use it for as long as you like. Upgrade to the
-denormalized add-on when you need wide tables; the plan is cancel-anytime.
+denormalized add-on when you need wide tables; you can cancel the plan at any time.
 
 **What happens when I cancel?**
-Your last installed version keeps working, with no phone-home and no time-bomb.
-You stop receiving updates and your private-index token is revoked, so you can no
+Your last installed version keeps working. It does not contact our servers, and it
+does not stop on a set date. You stop receiving updates and we revoke your
+private package index token, so you can no
 longer install or upgrade the paid package. **Mirror mode stays free.**
 
 ## Installation & use
@@ -90,8 +91,8 @@ An update is an append with a higher `_version` (the source WAL position) that
 wins under `FINAL`. A delete writes a tombstone that the `<table>_live` view
 filters out. You always read clean, current state.
 
-**Is it exactly-once?**
-Yes. `_version` is the WAL LSN, so re-applying a change on a crash-replay
+**Does each change land exactly once?**
+Yes. `_version` is the WAL LSN, so if a change is applied again after a crash, it
 re-inserts an identical row that `ReplacingMergeTree` collapses, with no
 duplicates and no resurrected deletes.
 
@@ -102,7 +103,7 @@ The ClickHouse table is reconciled additively (`ALTER TABLE ADD COLUMN`).
 **Can I control the ClickHouse engine and partitioning?**
 Yes. An optional `clickhouse` block in `schema.json` sets `ORDER BY`,
 `PARTITION BY`, `TTL` and engine settings per table. (Note: `PARTITION BY` must be
-derivable from the primary key, since deletes are PK-only tombstones.)
+derivable from the primary key, because a delete writes a tombstone that holds only the primary key.)
 
 <div align="center" markdown>
 

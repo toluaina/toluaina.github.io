@@ -19,7 +19,7 @@ when *meaning* changes.
 </div>
 
 Your database stays the source of truth, PGSync Semantic keeps a fresh vector index
-in lock-step, and only pays to embed when *meaning* actually changes. Built on
+in step with it, and only pays to embed when *meaning* actually changes. Built on
 PGSync, which syncs **PostgreSQL, MySQL and MariaDB** to Elasticsearch /
 OpenSearch.
 
@@ -87,7 +87,7 @@ OpenSearch.
   <!-- centre caption -->
   <g text-anchor="middle" font-family="'JetBrains Mono', monospace">
     <text x="390" y="304" font-size="12" letter-spacing="3" style="fill:var(--dg-989ba0, #989ba0)">REAL-TIME</text>
-    <text x="390" y="324" font-size="11" style="fill:var(--dg-6b6e74, #6b6e74)">in lock-step</text>
+    <text x="390" y="324" font-size="11" style="fill:var(--dg-6b6e74, #6b6e74)">in step</text>
   </g>
 
   <g font-family="'Inter', system-ui, sans-serif">
@@ -173,7 +173,7 @@ OpenSearch.
     Local `sentence-transformers` embeddings mean text never leaves your
     environment. OpenAI / Cohere / Voyage optional.
 
--   :material-robot-happy:{ .lg .middle } **Agent-ready (MCP)**
+-   :material-robot-happy:{ .lg .middle } **Built for AI agents (MCP)**
 
     ---
 

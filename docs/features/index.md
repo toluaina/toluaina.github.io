@@ -6,7 +6,7 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 
 | Feature | Description |
 |---------|-------------|
-| :material-database-check: **Multi-Database Support** | Works with PostgreSQL (9.6+), MySQL (5.7+), or MariaDB (10.5+) |
+| :material-database-check: **Support for Several Databases** | Works with PostgreSQL (9.6+), MySQL (5.7+), or MariaDB (10.5+) |
 | :material-lightning-bolt: **Low Overhead** | Negligible impact on database performance |
 | :material-sync: **Transactional Consistency** | Only committed writes indexed; operations applied in commit order |
 | :material-shield-check: **Fault Tolerant** | No data loss on crashes; resumes from last checkpoint |
@@ -28,7 +28,7 @@ PGSync focuses on reliability, low overhead, and clean documents for search.
 
 ### :material-database: Data Modeling
 - Composite **primary** and **foreign** keys supported
-- Arbitrary-depth relationships (one-to-one, one-to-many, through tables)
+- Relationships at any depth (one-to-one, one-to-many, through tables)
 - Extract and map PostgreSQL JSON fields to top-level document fields
 
 ### :material-speedometer: Performance

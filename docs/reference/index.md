@@ -9,7 +9,7 @@
 | :simple-github: | [**GitHub**](https://github.com/toluaina/pgsync){ target="_blank" } | Source code, issues, and contributions |
 | :material-package-variant: | [**PyPI**](https://pypi.org/project/pgsync/){ target="_blank" } | Python package installation |
 | :simple-docker: | [**Docker Hub**](https://hub.docker.com/r/toluaina1/pgsync){ target="_blank" } | Container images |
-| :simple-digitalocean: | [**DigitalOcean Marketplace**](https://marketplace.digitalocean.com/apps/pgsync){ target="_blank" } | One-click deployment |
+| :simple-digitalocean: | [**DigitalOcean Marketplace**](https://marketplace.digitalocean.com/apps/pgsync){ target="_blank" } | Deploy with one click |
 
 ---
 

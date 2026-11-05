@@ -1,9 +1,9 @@
 # Django Integration
 
 [django-pgsync](https://github.com/toluaina/django-pgsync) is the official
-Django integration for PGSync. Declare search indexes from your Django
-models (no hand-written schema JSON) and let PGSync keep
-Elasticsearch/OpenSearch in sync with your database.
+Django integration for PGSync. Declare search indexes on your Django
+models, and PGSync keeps Elasticsearch/OpenSearch in sync with your
+database. You never write the schema JSON by hand.
 
 ```bash
 pip install django-pgsync            # includes pgsync
@@ -16,11 +16,11 @@ Requires Python 3.10+, Django 4.2+ and PostgreSQL.
 
 ## Why not signals?
 
-Signal-based indexers hook into the ORM, so anything that bypasses
+Indexers built on Django signals hook into the ORM, so anything that bypasses
 `Model.save()` silently never reaches your index. django-pgsync uses
 PGSync's change data capture, which watches the **database** instead:
 
-| Write path | Signal-based indexers | django-pgsync |
+| Write path | Signal indexers | django-pgsync |
 |------------|:---------------------:|:-------------:|
 | `instance.save()` / `delete()` | :material-check: | :material-check: |
 | `queryset.update()` / `delete()` | :material-close: | :material-check: |
@@ -105,17 +105,17 @@ python manage.py pgsync_daemon      # continuous sync (systemd etc.)
 
 !!! tip "Why polling is the default"
 
-    Polling needs no superuser-level database settings, so it suits hosted
-    Postgres (RDS, Cloud SQL, Supabase) where you may not control
-    `wal_level`. When you control the database, `wal` gives the lowest
-    overhead real-time sync.
+    Polling does not need superuser access to change database settings, so
+    it suits hosted Postgres (RDS, Cloud SQL, Supabase) where you may not
+    control `wal_level`. When you control the database, `wal` gives real
+    time sync with the lowest overhead.
 
 !!! warning "Root deletes in polling mode"
 
     Deleting a root row leaves a stale document in the index, because there is
-    no delete record to observe. Child-row deletes are fine since the
-    parent document is rebuilt. If you hard-delete root rows, use
-    `wal`/`event` mode or a soft-delete flag.
+    no delete record to observe. Deletes on child rows are fine, because
+    PGSync rebuilds the parent document. If you delete root rows
+    permanently, use `wal`/`event` mode, or mark rows as deleted with a flag.
 
 ---
 

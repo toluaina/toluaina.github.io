@@ -7,7 +7,7 @@ title: PGSync ClickHouse, pricing
 # PGSync ClickHouse pricing
 
 Real-time **PostgreSQL → ClickHouse** sync. Mirror a table for free; pay only for
-denormalized wide tables. Per-organization pricing, no per-seat counting.
+denormalized wide tables. You pay per organization, not per user.
 [Learn more](index.md).
 
 </div>
@@ -26,7 +26,7 @@ denormalized wide tables. Per-organization pricing, no per-seat counting.
 
     - Versioned upserts + tombstone deletes
     - Full native type mapping + `<table>_live` view
-    - Exactly-once on replay
+    - No duplicates after a replay
 
     [:material-book-open-variant: Get started](index.md){ .md-button }
 
@@ -54,7 +54,7 @@ denormalized wide tables. Per-organization pricing, no per-seat counting.
 ## How buying works
 
 :material-numeric-1-circle:{ .lg .middle } **Subscribe**, check out in a minute.
-Per-organization subscription, monthly or annual, no per-seat counting.
+One subscription per organization, monthly or annual. You do not pay per user.
 
 :material-numeric-2-circle:{ .lg .middle } **Get your token**, we issue a private
 package-index credential to your inbox automatically.

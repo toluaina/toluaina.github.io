@@ -40,7 +40,7 @@ time. No ETL jobs, no nightly batch.
 
     Each change is an **append** to a `ReplacingMergeTree`: an upsert carries a
     `_version` (the source WAL position); a delete writes a **tombstone**. The
-    newest `_version` always wins, with no updates-in-place and no races.
+    newest `_version` always wins, with no updates in place and no races.
 
 -   :material-numeric-4-circle:{ .lg .middle } **Query the clean, live state**
 
@@ -67,8 +67,8 @@ INSERT INTO book VALUES ('1984', '', 0,                          /*_version*/ 18
 SELECT title, price FROM book_live;      -- clean, deduplicated, tombstone-free
 ```
 
-`_version` is the source **WAL LSN**, so re-applying a change (a crash-replay)
-re-inserts an identical row that `ReplacingMergeTree` collapses: **exactly-once**,
+`_version` is the source **WAL LSN**, so if a change is applied again after a crash, it
+re-inserts an identical row that `ReplacingMergeTree` collapses: **each change lands once**,
 with no duplicates and no resurrected deletes.
 
 ## Denormalized mode: one wide table

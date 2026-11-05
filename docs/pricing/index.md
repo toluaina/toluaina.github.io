@@ -8,8 +8,8 @@ hide:
 
 # Pricing
 
-Per-organization pricing across the PGSync family. Start free, upgrade when you
-need it. No per-seat counting. Pick the product you're pricing:
+Pricing per organization across the PGSync family. Start free, upgrade when you
+need it. You do not pay per user. Pick the product you're pricing:
 
 </div>
 
@@ -53,8 +53,8 @@ need it. No per-seat counting. Pick the product you're pricing:
 
 ---
 
-All paid plans are per-organization, cancel-anytime on the monthly option, and
-install from a private package index the moment you subscribe.
+You pay for each plan per organization. You can cancel the monthly option at any
+time, and you install from a private package index the moment you subscribe.
 
 [:material-email: Talk to us](#){ .md-button .eml data-u="tolu" data-d="pgsync.com" data-s="PGSync pricing" }
 

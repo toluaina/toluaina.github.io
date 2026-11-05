@@ -9,7 +9,7 @@ hide:
 
 # PGSync ClickHouse
 
-Real-time **PostgreSQL → ClickHouse** that keeps an analytics store in lock-step
+Real-time **PostgreSQL → ClickHouse** that keeps an analytics store in step
 with your database, with **no ETL**.
 
 <div class="hero-actions hero-actions--fill" markdown>
@@ -74,7 +74,7 @@ Built on [PGSync](../index.md); the same `schema.json` and CLI.
     <rect x="150" y="256" width="320" height="104" rx="16" fill="url(#ch-card)" stroke-opacity="0.55" style="stroke:var(--dg-9db0ca, #9db0ca)"/>
     <rect x="150" y="256" width="6" height="104" rx="3" style="fill:var(--dg-9db0ca, #9db0ca)"/>
     <text x="182" y="296" font-family="Inter, sans-serif" font-size="21" font-weight="700" style="fill:var(--dg-e7e8e9, #e7e8e9)">PGSync ClickHouse</text>
-    <text x="182" y="322" font-family="JetBrains Mono, monospace" font-size="13" style="fill:var(--dg-b4b7bc, #b4b7bc)">real-time CDC · exactly-once</text>
+    <text x="182" y="322" font-family="JetBrains Mono, monospace" font-size="13" style="fill:var(--dg-b4b7bc, #b4b7bc)">real-time CDC · no duplicates</text>
     <text x="182" y="342" font-family="JetBrains Mono, monospace" font-size="12" style="fill:var(--dg-989ba0, #989ba0)">mirror · denormalize</text>
   </g>
 
@@ -116,7 +116,7 @@ Built on [PGSync](../index.md); the same `schema.json` and CLI.
     - Versioned upserts + tombstone deletes on `ReplacingMergeTree`
     - Full native type mapping (Decimal, `DateTime64` UTC, arrays, …)
     - A companion `<table>_live` view: clean, deduplicated, no `FINAL` gymnastics
-    - Exactly-once on replay (keyed on the source WAL LSN)
+    - No duplicates after a replay (keyed on the source WAL LSN)
 
 -   ### :material-table-merge-cells: Denormalized (paid)
 
@@ -156,11 +156,11 @@ Built on [PGSync](../index.md); the same `schema.json` and CLI.
     Fold a relational tree into one wide table: flattened columns and native
     `Array(Tuple(...))`, queryable with `ARRAY JOIN`. No JSON wrangling.
 
--   :material-backup-restore:{ .lg .middle } **Exactly-once on replay**
+-   :material-backup-restore:{ .lg .middle } **No duplicates on replay**
 
     ---
 
-    `_version` is the source WAL LSN, so a crash-replay can't duplicate rows or
+    `_version` is the source WAL LSN, so a replay after a crash can't duplicate rows or
     resurrect deletes.
 
 -   :material-tune:{ .lg .middle } **Per-table engine control**

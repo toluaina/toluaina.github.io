@@ -6,8 +6,8 @@ title: PGSync Semantic, pricing
 
 # PGSync Semantic pricing
 
-Simple, per-organization pricing. Start free, upgrade when you need search that
-understands *meaning*. No per-seat counting.
+Simple pricing per organization. Start free, upgrade when you need search that
+understands *meaning*. You do not pay per user.
 
 </div>
 
@@ -39,7 +39,7 @@ understands *meaning*. No per-seat counting.
     <br><small>or **$39 / month**, billed monthly, cancel anytime</small>
     <br><small>:material-tag: Launch pricing, rises as we add features</small>
 
-    Everything semantic, self-serve. Install from a private index the moment you
+    Everything semantic, and you set it up yourself. Install from a private index the moment you
     subscribe.
 
     - Semantic + hybrid search
@@ -56,17 +56,17 @@ understands *meaning*. No per-seat counting.
 
     | | Community | Semantic |
     |---|:--:|:--:|
-    | Real-time change-data-capture sync | ✓ | ✓ |
+    | Real-time change data capture sync | ✓ | ✓ |
     | Postgres / MySQL / MariaDB → Elasticsearch / OpenSearch | ✓ | ✓ |
     | Denormalized nested documents | ✓ | ✓ |
     | Django integration | ✓ | ✓ |
     | **Semantic (vector) search** |  | ✓ |
     | **Hybrid search** (kNN + BM25) |  | ✓ |
     | **Change-guard**, re-embed only when meaning changes |  | ✓ |
-    | On-device embeddings (local / FastEmbed) |  | ✓ |
+    | Embeddings on your own machines (local / FastEmbed) |  | ✓ |
     | Hosted embeddings (OpenAI / Cohere / Voyage) |  | ✓ |
     | MCP server for AI agents |  | ✓ |
-    | Zero-downtime model reindex |  | ✓ |
+    | Model reindex with no downtime |  | ✓ |
     | Search dashboard & reference demo |  | ✓ |
     | Product updates & new features |  | ✓ |
     | Support | Community | Email · business-day |
@@ -76,7 +76,7 @@ understands *meaning*. No per-seat counting.
 ## How buying works
 
 :material-numeric-1-circle:{ .lg .middle } **Subscribe**, check out in a minute.
-Per-organization subscription, monthly or annual, no per-seat counting.
+One subscription per organization, monthly or annual. You do not pay per user.
 
 :material-numeric-2-circle:{ .lg .middle } **Get your token**, we issue a private
 package-index credential to your inbox automatically.
