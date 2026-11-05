@@ -1,0 +1,832 @@
+/* ==========================================================================
+   Graphite theme
+   Muted slate palette, hairline borders, one low-saturation accent.
+   Loaded after custom.css, so these rules win on equal specificity.
+   Note: the theme sets html font-size to 125%, so 1rem = 20px here.
+   ========================================================================== */
+
+/* The theme loads Inter at 400/500/700 only; headings here use 600 */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+/* ---------- Tokens: dark (slate) ---------- */
+[data-md-color-scheme="slate"] {
+  --gr-bg: #202225;
+  --gr-surface: #27292d;
+  --gr-surface-2: #2e3035;
+  --gr-border: #36393e;
+  --gr-border-strong: #45484e;
+  --gr-text: #e7e8e9;
+  --gr-text-strong: #f5f5f6;
+  --gr-muted: #a9acb1;
+  --gr-subtle: #989ba0;
+  --gr-accent: #9db0ca;
+  --gr-link: #bccadb;
+  --gr-btn-bg: #e7e8e9;
+  --gr-btn-fg: #202225;
+
+  --md-default-bg-color: var(--gr-bg);
+  --md-default-fg-color: rgba(230, 232, 235, 0.88);
+  --md-default-fg-color--light: rgba(230, 232, 235, 0.62);
+  --md-default-fg-color--lighter: rgba(230, 232, 235, 0.34);
+  --md-default-fg-color--lightest: rgba(230, 232, 235, 0.1);
+
+  --md-primary-fg-color: var(--gr-bg);
+  --md-primary-fg-color--light: var(--gr-surface);
+  --md-primary-fg-color--dark: var(--gr-bg);
+  --md-primary-bg-color: var(--gr-text-strong);
+  --md-primary-bg-color--light: var(--gr-muted);
+  --md-accent-fg-color: var(--gr-accent);
+  --md-accent-fg-color--transparent: rgba(157, 176, 202, 0.14);
+  --md-accent-bg-color: var(--gr-bg);
+
+  --md-typeset-color: rgba(230, 232, 235, 0.86);
+  --md-typeset-a-color: var(--gr-link);
+  --md-typeset-table-color: var(--gr-border);
+  --md-typeset-table-color--light: var(--gr-surface);
+
+  --md-code-bg-color: var(--gr-surface);
+  --md-code-fg-color: #d4d6d9;
+  --md-code-hl-keyword-color: #9db0ca;
+  --md-code-hl-string-color: #b9c7b0;
+  --md-code-hl-number-color: #c8b99a;
+  --md-code-hl-constant-color: #a9b4c4;
+  --md-code-hl-function-color: #c9d3e0;
+  --md-code-hl-special-color: #b7a6c0;
+  --md-code-hl-name-color: #9db0ca;
+  --md-code-hl-comment-color: #8a919c;
+
+  --md-footer-bg-color: var(--gr-bg);
+  --md-footer-bg-color--dark: var(--gr-bg);
+  --md-footer-fg-color: var(--gr-text);
+  --md-footer-fg-color--light: var(--gr-muted);
+  --md-footer-fg-color--lighter: var(--gr-subtle);
+
+  --md-admonition-bg-color: var(--gr-surface);
+  --md-shadow-z2: 0 0 0 1px var(--gr-border);
+  --md-shadow-z3: 0 12px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px var(--gr-border);
+}
+
+/* ---------- Tokens: light (default) ---------- */
+[data-md-color-scheme="default"] {
+  --gr-bg: #fafafb;
+  --gr-surface: #ffffff;
+  --gr-surface-2: #f2f3f5;
+  --gr-border: #e3e6ea;
+  --gr-border-strong: #c9cdd3;
+  --gr-text: #2c3038;
+  --gr-text-strong: #16181c;
+  --gr-muted: #4a5260;
+  --gr-subtle: #5b626e;
+  --gr-accent: #4a6378;
+  --gr-link: #3b5470;
+  --gr-btn-bg: #16181c;
+  --gr-btn-fg: #fafafb;
+
+  --md-default-bg-color: var(--gr-bg);
+  --md-default-fg-color: rgba(22, 24, 28, 0.88);
+  --md-default-fg-color--light: rgba(22, 24, 28, 0.64);
+  --md-default-fg-color--lighter: rgba(22, 24, 28, 0.36);
+  --md-default-fg-color--lightest: rgba(22, 24, 28, 0.08);
+
+  --md-primary-fg-color: var(--gr-bg);
+  --md-primary-fg-color--light: var(--gr-surface);
+  --md-primary-fg-color--dark: var(--gr-bg);
+  --md-primary-bg-color: var(--gr-text-strong);
+  --md-primary-bg-color--light: var(--gr-muted);
+  --md-accent-fg-color: var(--gr-accent);
+  --md-accent-fg-color--transparent: rgba(74, 99, 120, 0.1);
+  --md-accent-bg-color: var(--gr-bg);
+
+  --md-typeset-color: var(--gr-text);
+  --md-typeset-a-color: var(--gr-link);
+  --md-typeset-table-color: var(--gr-border);
+  --md-typeset-table-color--light: var(--gr-surface-2);
+
+  --md-code-bg-color: #f3f4f6;
+  --md-code-fg-color: #2c3038;
+  --md-code-hl-keyword-color: #3b5470;
+  --md-code-hl-string-color: #4f6b47;
+  --md-code-hl-number-color: #7a5f2e;
+  --md-code-hl-name-color: #3b5470;
+  --md-code-hl-comment-color: #6b7280;
+
+  --md-footer-bg-color: var(--gr-bg);
+  --md-footer-bg-color--dark: var(--gr-bg);
+  --md-footer-fg-color: var(--gr-text);
+  --md-footer-fg-color--light: var(--gr-muted);
+  --md-footer-fg-color--lighter: var(--gr-subtle);
+
+  --md-admonition-bg-color: var(--gr-surface);
+  --md-shadow-z2: 0 0 0 1px var(--gr-border);
+  --md-shadow-z3: 0 12px 32px rgba(15, 23, 42, 0.1), 0 0 0 1px var(--gr-border);
+}
+
+body {
+  background: var(--gr-bg);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Header ---------- */
+.md-header,
+.md-header[data-md-state="shadow"],
+.md-header--shadow {
+  background: color-mix(in srgb, var(--gr-bg) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--gr-border);
+  box-shadow: none;
+  color: var(--gr-text-strong);
+}
+/* The wordmark is light artwork (#f5f5f6); on the light header, invert
+   it to near-black (#0a0a09) so it matches the heading colour */
+[data-md-color-scheme="default"] .md-header__button.md-logo img {
+  filter: invert(1);
+}
+.md-tabs {
+  background: var(--gr-bg);
+  border-bottom: 1px solid var(--gr-border);
+  color: var(--gr-muted);
+}
+
+/* Search: Zensical renders it as a button that opens a dialog; give it a
+   quiet surface with a hairline border */
+.md-header .md-search__button {
+  background: var(--gr-surface);
+  border: 1px solid var(--gr-border-strong);
+  border-radius: 0.4rem;
+  color: var(--gr-subtle);
+  box-shadow: none;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.md-header .md-search__button:hover {
+  background: var(--gr-surface-2);
+  border-color: var(--gr-muted);
+  color: var(--gr-text);
+}
+.md-header .md-search__button::after {
+  background: var(--gr-surface-2);
+  color: var(--gr-subtle);
+}
+
+/* Top tabs: muted labels, accent underline on the current tab */
+.md-tabs__list {
+  gap: 0.4rem;
+}
+.md-tabs__item {
+  height: 2.4rem;
+}
+.md-tabs__link {
+  margin-top: 0.75rem;
+  color: var(--gr-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  opacity: 1;
+  transition: color 0.15s ease;
+}
+.md-tabs__link:hover,
+.md-tabs__link:focus {
+  color: var(--gr-text-strong);
+}
+.md-tabs__item--active .md-tabs__link {
+  color: var(--gr-text-strong);
+}
+.md-tabs__item {
+  position: relative;
+}
+.md-tabs__item--active::after {
+  content: "";
+  position: absolute;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px 2px 0 0;
+  background: var(--gr-accent);
+}
+
+/* ---------- Global details ---------- */
+::selection {
+  background: color-mix(in srgb, var(--gr-accent) 32%, transparent);
+  color: var(--gr-text-strong);
+}
+:focus-visible {
+  outline: 2px solid var(--gr-accent);
+  outline-offset: 2px;
+  border-radius: 0.2rem;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gr-border-strong) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gr-border-strong);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ---------- Navigation ---------- */
+.md-nav {
+  font-size: 0.7rem;
+}
+.md-nav__title {
+  color: var(--gr-subtle);
+}
+.md-nav__item--section > .md-nav__link {
+  color: var(--gr-subtle);
+  font-weight: 600;
+}
+.md-nav__link {
+  color: var(--gr-muted);
+  transition: color 0.15s ease;
+}
+.md-nav__link:hover,
+.md-nav__link:focus {
+  color: var(--gr-text-strong);
+}
+.md-nav__link--active,
+.md-nav__item .md-nav__link--active {
+  color: var(--gr-text-strong);
+  font-weight: 500;
+}
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary .md-nav__link--active {
+    box-shadow: inset 2px 0 0 var(--gr-accent);
+    padding-left: 0.5rem;
+    margin-left: -0.5rem;
+  }
+  .md-sidebar--primary {
+    border-right: 1px solid var(--gr-border);
+  }
+}
+.md-nav--secondary .md-nav__title {
+  color: var(--gr-text);
+  font-weight: 600;
+}
+
+/* ---------- Typography ---------- */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  color: var(--gr-text-strong);
+  font-weight: 600;
+}
+.md-typeset :is(h1, h2, h3, h4) {
+  text-wrap: balance;
+}
+.md-typeset :is(p, li) {
+  text-wrap: pretty;
+}
+.md-typeset h1 {
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+.md-typeset h2 {
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  margin-top: 2.2em;
+}
+.md-typeset h3 {
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+}
+.md-typeset strong {
+  color: var(--gr-text-strong);
+  font-weight: 600;
+}
+.md-typeset a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-underline-offset: 0.18em;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+.md-typeset a:hover {
+  color: var(--gr-text-strong);
+  text-decoration-color: currentColor;
+}
+.md-typeset .headerlink,
+.md-typeset .md-button,
+.md-typeset .grid.cards a {
+  text-decoration: none;
+}
+.md-typeset hr {
+  border-bottom: 1px solid var(--gr-border);
+  margin: 2rem 0;
+}
+
+/* ---------- Code ---------- */
+.md-typeset pre > code,
+.md-typeset .highlight pre {
+  border-radius: 0.5rem;
+}
+.md-typeset pre {
+  border: 1px solid var(--gr-border);
+  border-radius: 0.5rem;
+}
+.md-typeset code {
+  font-size: 0.82em;
+  border-radius: 0.25rem;
+}
+.md-typeset :not(pre) > code {
+  border: 1px solid var(--gr-border);
+  padding: 0.1em 0.35em;
+}
+/* Keep flags such as --monitor whole in table cells */
+.md-typeset table :not(pre) > code {
+  white-space: nowrap;
+}
+/* File name bar from title="..." on a code block */
+.md-typeset .highlight span.filename {
+  background: var(--gr-surface-2);
+  border: 1px solid var(--gr-border);
+  border-bottom: 0;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: var(--gr-muted);
+  font-family: var(--md-code-font-family), monospace;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+.md-typeset .highlight span.filename + pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.md-typeset .highlight span.filename + pre > code {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.md-typeset .md-code__button {
+  color: var(--gr-subtle);
+}
+.md-typeset .md-code__button:hover {
+  color: var(--gr-text-strong);
+}
+
+/* Tabbed blocks: underline style, accent on the active tab */
+.md-typeset .tabbed-labels {
+  box-shadow: inset 0 -1px 0 var(--gr-border);
+}
+.md-typeset .tabbed-labels > label {
+  color: var(--gr-subtle);
+  font-weight: 500;
+}
+.md-typeset .tabbed-labels > label:hover {
+  color: var(--gr-text-strong);
+}
+.md-typeset .tabbed-set > input:checked + label {
+  color: var(--gr-text-strong);
+}
+.js .md-typeset .tabbed-labels:before {
+  background: var(--gr-accent);
+}
+
+/* ---------- Tables ---------- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--gr-border);
+  border-radius: 0.5rem;
+  box-shadow: none;
+  font-size: 0.72rem;
+  overflow: hidden;
+}
+.md-typeset table:not([class]) th {
+  background: var(--gr-surface);
+  color: var(--gr-text-strong);
+  font-weight: 600;
+}
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--gr-border);
+  font-variant-numeric: tabular-nums;
+}
+.md-typeset table:not([class]) tbody tr:hover {
+  background: var(--gr-surface);
+  box-shadow: none;
+}
+
+/* ---------- Admonitions: neutral frame, muted icon colour per meaning ---------- */
+/* [class] lifts specificity over the theme's per-type border colours */
+.md-typeset .admonition[class],
+.md-typeset details[class] {
+  border: 1px solid var(--gr-border);
+  border-radius: 0.5rem;
+  background: var(--gr-surface);
+  box-shadow: none;
+  font-size: 0.75rem;
+  --gr-adm: var(--gr-accent);
+}
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  background: transparent;
+  color: var(--gr-text-strong);
+  font-weight: 600;
+  border: 0;
+}
+.md-typeset .admonition > .admonition-title::before,
+.md-typeset details > summary::before {
+  background-color: var(--gr-adm);
+}
+.md-typeset details > summary::after {
+  color: var(--gr-subtle);
+}
+.md-typeset :is(.admonition, details):is(.warning, .caution, .attention) {
+  --gr-adm: #c8a96a;
+}
+.md-typeset :is(.admonition, details):is(.danger, .error, .failure, .bug) {
+  --gr-adm: #c98a84;
+}
+.md-typeset :is(.admonition, details):is(.success, .check, .done) {
+  --gr-adm: #9db8ac;
+}
+
+/* ---------- Grid cards ---------- */
+.md-typeset .grid.cards > :is(ul, ol) > li,
+.md-typeset .grid > .card {
+  border: 1px solid var(--gr-border);
+  border-radius: 0.6rem;
+  background: var(--gr-surface);
+  padding: 1.2rem 1.3rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li:hover,
+.md-typeset .grid > .card:hover {
+  border-color: var(--gr-border-strong);
+  box-shadow: none;
+}
+/* Drop the divider inside cards; the title weight already separates it */
+.md-typeset .grid.cards > :is(ul, ol) > li > hr {
+  display: none;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li > p {
+  margin: 0.5rem 0 0;
+}
+.md-typeset .grid.cards > :is(ul, ol) > li > p:first-child {
+  margin-top: 0;
+}
+.md-typeset .grid.cards .lg {
+  color: var(--gr-accent);
+}
+
+/* ---------- Buttons ---------- */
+.md-typeset .md-button {
+  border: 1px solid var(--gr-border-strong);
+  border-radius: 0.4rem;
+  color: var(--gr-text);
+  font-weight: 500;
+  transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.md-typeset .md-button:hover,
+.md-typeset .md-button:focus {
+  background: var(--gr-surface-2);
+  border-color: var(--gr-muted);
+  color: var(--gr-text-strong);
+}
+.md-typeset .md-button--primary,
+.hero-actions .md-button--primary {
+  background: var(--gr-btn-bg);
+  border-color: var(--gr-btn-bg);
+  color: var(--gr-btn-fg);
+}
+.md-typeset .md-button--primary:hover,
+.md-typeset .md-button--primary:focus,
+.hero-actions .md-button--primary:hover {
+  background: color-mix(in srgb, var(--gr-btn-bg) 86%, var(--gr-bg));
+  border-color: transparent;
+  color: var(--gr-btn-fg);
+}
+.hero-actions .md-button {
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 0.6rem 1.1rem;
+  white-space: nowrap;
+}
+/* Equal-width button rows (Semantic and ClickHouse heroes) wrap on phones
+   instead of breaking the labels mid-word */
+@media screen and (max-width: 30em) {
+  .hero-actions--fill .md-button {
+    flex: 1 1 auto;
+  }
+}
+.hero-actions .md-button:not(.md-button--primary) {
+  border-color: var(--gr-border-strong);
+  color: var(--gr-text);
+}
+
+/* ---------- Copy-email button (added by mail.js beside each email link) ---------- */
+.md-typeset .eml-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font: inherit;
+  vertical-align: middle;
+}
+.md-typeset .md-button + .eml-copy {
+  margin-left: 0.4rem;
+}
+.md-typeset .eml-copy svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  flex: none;
+}
+.md-typeset .eml-copy.is-copied {
+  border-color: var(--gr-accent);
+  color: var(--gr-text-strong);
+}
+.md-typeset .eml-copy--inline {
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  margin-left: 0.15em;
+  padding: 0;
+  border: 0;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: var(--gr-subtle);
+  font-size: 0.9em;
+}
+.md-typeset .eml-copy--inline:hover,
+.md-typeset .eml-copy--inline.is-copied {
+  background: var(--gr-surface-2);
+  color: var(--gr-text-strong);
+}
+/* Announced to screen readers only */
+.eml-copy__status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- Footer ---------- */
+.md-footer {
+  border-top: 1px solid var(--gr-border);
+}
+.md-footer-meta {
+  background: var(--gr-bg);
+  border-top: 1px solid var(--gr-border);
+}
+.md-footer__link {
+  color: var(--gr-muted);
+}
+.md-footer__link:hover {
+  color: var(--gr-text-strong);
+}
+
+/* ---------- Terminal (termynal) ---------- */
+:root {
+  --color-bg: #27292d;
+  --color-text: #d4d6d9;
+  --color-text-subtle: #989ba0;
+}
+[data-termynal] {
+  border: 1px solid #36393e;
+  border-radius: 0.5rem;
+  font-family: var(--md-code-font-family, "JetBrains Mono"), monospace;
+  font-size: 0.7rem;
+  padding: 2.4rem 1.4rem 1.2rem;
+}
+[data-termynal]:before {
+  top: 0.65rem;
+  left: 0.8rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: #4d5056;
+  box-shadow: 0.8rem 0 0 #4d5056, 1.6rem 0 0 #4d5056;
+}
+[data-termynal]:after {
+  top: 0.35rem;
+  font-size: 0.6rem;
+}
+.md-typeset a[data-terminal-control] {
+  color: var(--color-text-subtle);
+  font-size: 0.6rem;
+  text-decoration: none;
+}
+.md-typeset a[data-terminal-control]:hover {
+  color: var(--color-text);
+}
+
+/* ---------- Terminal monitor preview (monitor page) ---------- */
+/* Always a dark terminal, in both site themes; a tight line height so the
+   box-drawing characters join into continuous lines */
+.md-typeset .monitor-screen pre {
+  border: 1px solid #36393e;
+  border-radius: 0.5rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+.md-typeset .monitor-screen pre > code {
+  background: #17181b;
+  color: #d4d6d9;
+  font-size: 0.56rem;
+  line-height: 1.32;
+  padding: 1rem 1.1rem;
+}
+/* A picture of a screen, not a command: no copy button */
+.md-typeset .monitor-screen .md-code__nav {
+  display: none;
+}
+
+/* ---------- Semantic and ClickHouse hero diagrams ---------- */
+/* The inline SVGs read each colour as var(--dg-<dark hex>, <dark hex>), so
+   dark mode needs no rules. Light mode maps every dark-theme colour to a
+   light-theme colour with the same role. */
+[data-md-color-scheme="default"] {
+  /* surfaces */
+  --dg-1d1f22: #f4f5f7;
+  --dg-232528: #f8f9fa;
+  --dg-2b2d31: #ffffff;
+  --dg-36393e: #d3d7dd;
+  /* text, strongest to dimmest */
+  --dg-f5f5f6: #16181c;
+  --dg-e7e8e9: #16181c;
+  --dg-f0f1f2: #2c3038;
+  --dg-b4b7bc: #3d434d;
+  --dg-a9acb1: #4a5260;
+  --dg-989ba0: #5b626e;
+  --dg-6b6e74: #8a919c;
+  /* steel accent */
+  --dg-c0cad8: #3b5470;
+  --dg-b4c3d6: #3b5470;
+  --dg-a9b9cd: #4f6884;
+  --dg-9db0ca: #4a6378;
+  --dg-a3b1c4: #5a7189;
+  --dg-8a9cb5: #6b8099;
+  --dg-7d90aa: #b4c3d6;
+  --dg-6f8199: #8a9cb5;
+  /* sage accent */
+  --dg-a9c2b7: #5b7a6c;
+  --dg-9db8ac: #4f6b5f;
+  /* sand accent (ClickHouse) */
+  --dg-e7e3d4: #3d3420;
+  --dg-cfc29a: #8a7444;
+  --dg-c8b99a: #8a7444;
+  --dg-b8ad8c: #7a6a3f;
+}
+
+/* ---------- How-it-works pipeline (light mode) ---------- */
+/* custom.js sets a pale per-step accent; on a light panel, text that uses
+   it would be too faint, so it takes the theme accent */
+[data-md-color-scheme="default"] :is(.pl-pill, .pl-vec) {
+  color: var(--gr-accent);
+}
+
+/* ==========================================================================
+   Home page
+   ========================================================================== */
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.8rem;
+  align-items: center;
+  margin: 2.4rem 0 3.2rem;
+}
+.md-typeset .home-hero h1 {
+  font-size: 2.8rem;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 1.1rem 0 1rem;
+}
+.home-hero__lede {
+  color: var(--gr-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 26rem;
+}
+.home-hero .hero-actions {
+  justify-content: flex-start;
+  margin: 1.4rem 0 1rem;
+}
+.md-typeset .home-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--gr-border-strong);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.65rem;
+  color: var(--gr-text);
+  background: var(--gr-surface);
+  text-decoration: none;
+}
+.md-typeset .home-pill:hover {
+  border-color: var(--gr-accent);
+  color: var(--gr-text-strong);
+}
+.home-pill b {
+  color: var(--gr-accent);
+  font-weight: 600;
+  flex: none;
+}
+.home-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--gr-border);
+  background: var(--gr-surface);
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.8rem;
+  font-family: var(--md-code-font-family), monospace;
+  font-size: 0.7rem;
+  color: var(--gr-text);
+}
+.home-install span {
+  color: var(--gr-subtle);
+}
+/* Feature grid: four across on wide screens, two on tablets */
+@media screen and (min-width: 45em) {
+  .md-typeset .grid.cards.home-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media screen and (min-width: 76.25em) {
+  .md-typeset .grid.cards.home-features {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.home-hero__code pre {
+  margin: 0;
+  box-shadow: var(--md-shadow-z3);
+}
+
+/* Source to target strip */
+.home-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem 1.4rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--gr-border);
+  border-bottom: 1px solid var(--gr-border);
+  font-size: 0.72rem;
+  color: var(--gr-muted);
+}
+.home-flow strong {
+  color: var(--gr-text-strong);
+}
+.home-flow .home-arrow {
+  color: var(--gr-border-strong);
+  font-size: 1rem;
+}
+.home-flow__group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 1.4rem;
+}
+/* On phones the flow reads top to bottom */
+@media screen and (max-width: 45em) {
+  .home-flow {
+    flex-direction: column;
+  }
+  .home-flow .home-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+/* Home sections use space, not divider lines */
+.md-typeset .home-flow ~ h2 {
+  margin-top: 4.5rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.025em;
+}
+
+@media screen and (max-width: 60em) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+    margin-top: 1rem;
+  }
+  .md-typeset .home-hero h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Product row: price tag under each product name */
+.md-typeset .home-products .home-tag {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border: 1px solid var(--gr-border);
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--gr-muted);
+}
+.md-typeset .home-products > :is(ul, ol) > li > p:nth-child(2) {
+  margin: 0.35rem 0 0;
+}
