@@ -25,25 +25,42 @@ hide:
 </div>
 <div class="home-hero__code" markdown>
 
-=== "Search"
-
-    ```json
-    // query: "a rebellion against a watchful state"
-    {
-      "title": "Nineteen Eighty-Four",
-      "author": ["George Orwell"]
-    }
-    ```
-
 === "schema.json"
 
     ```json
     {
       "table": "book",
-      "columns": ["isbn", "title", "description"],
+      "columns": ["id", "title", "description"],
       "children": [
         { "table": "author", "columns": ["name"] }
       ]
+    }
+    ```
+
+=== "Monitor"
+
+    ```text
+    pgsync 8.0.0 · ● healthy · up 12m34s
+    book · trigger   sent 98,412   slot lag 1.2 MB
+
+    THROUGHPUT  last 30s
+    events  ▅▇▄▆▇█▃▃▇▅▇▅▄▇▇▇▇▆▄▅  842/s
+    docs    ▇▇▄▅▆▆▇▇▅▆▇▇▅▅▆▇▆▅█▇  611/s
+
+    LIVE EVENTS
+    14:32:07.912  UPDATE  public.book  id=1949  description
+    14:32:07.905  INSERT  public.book_author  book_id=3150
+    14:32:07.871  DELETE  public.book  id=11007
+    ```
+
+=== "Search"
+
+    ```json
+    // query: "a rebellion against a watchful state"
+    {
+      "id": 1949,
+      "title": "Nineteen Eighty-Four",
+      "author": ["George Orwell"]
     }
     ```
 

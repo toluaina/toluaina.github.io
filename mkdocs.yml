@@ -1,9 +1,9 @@
 # Project information
 site_name: PGSync
-site_url: https://pgsync.com
+site_url: https://pgsync.com/
 site_author: Tolu Aina
 site_description: >-
-  PGSync simplifies your data pipeline by integrating Postgres/MySQL/MariaDB into Elasticsearch/OpenSearch.
+  PGSync keeps Elasticsearch and OpenSearch in sync with PostgreSQL, MySQL and MariaDB in real time. PGSync Semantic adds search by meaning.
 
 # Repository
 repo_name: toluaina/pgsync
@@ -16,6 +16,7 @@ copyright: Copyright &copy; 2026 Tolu Aina &middot; <a href="/terms/">Terms</a> 
 # Configuration
 theme:
   name: material
+  custom_dir: overrides
   variant: classic
   palette:
     - media: "(prefers-color-scheme: dark)"

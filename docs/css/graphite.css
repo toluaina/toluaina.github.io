@@ -830,3 +830,149 @@ body {
 .md-typeset .home-products > :is(ul, ol) > li > p:nth-child(2) {
   margin: 0.35rem 0 0;
 }
+
+/* Hero panel: schema.json, monitor and search share one height, so the
+   hero does not move when the tab changes */
+.home-hero__code .tabbed-block > .highlight code,
+.md-typeset .hero-mon {
+  box-sizing: border-box;
+  height: 14.6rem;
+  align-content: start;
+}
+.home-hero__code .tabbed-labels {
+  position: relative;
+}
+/* Progress bar for the automatic cycle (custom.js sets left and width) */
+.hero-cycle-bar {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: var(--gr-text-strong);
+  transform-origin: left;
+  transform: scaleX(0);
+  pointer-events: none;
+  z-index: 1;
+}
+.hero-cycle-bar.is-running {
+  animation: hero-cycle var(--hero-dur, 6s) linear forwards;
+}
+.home-hero__code:hover .hero-cycle-bar,
+.hero-cycle-bar.is-paused {
+  animation-play-state: paused;
+}
+.js .md-typeset .home-hero__code .tabbed-set.is-cycling > .tabbed-labels::before {
+  opacity: 0;
+}
+@keyframes hero-cycle {
+  to { transform: scaleX(1); }
+}
+.hero-line-in {
+  animation: hero-line-in 0.35s ease both;
+}
+@keyframes hero-line-in {
+  from { opacity: 0; transform: translateY(3px); }
+}
+.hero-caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 1.1em;
+  vertical-align: -0.2em;
+  background: var(--gr-accent);
+}
+
+/* Compact terminal monitor in the hero */
+[data-md-color-scheme="slate"] {
+  --gr-op-insert: #7fc79a;
+  --gr-op-update: #e2c06d;
+  --gr-op-delete: #e88a8a;
+}
+[data-md-color-scheme="default"] {
+  --gr-op-insert: #2f7d4f;
+  --gr-op-update: #8a5d0c;
+  --gr-op-delete: #b23a3a;
+}
+.md-typeset .hero-mon {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  background: var(--gr-surface);
+  border-radius: 0.4rem;
+  box-shadow: var(--md-shadow-z3);
+  font-family: var(--md-code-font-family), monospace;
+  font-size: 0.6rem;
+  line-height: 1.6;
+  color: var(--gr-muted);
+  font-variant-numeric: tabular-nums;
+}
+.hero-mon__bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.8rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--gr-surface-2);
+}
+.md-typeset .hero-mon b {
+  color: var(--gr-text-strong);
+  font-weight: 500;
+}
+.hero-mon__ok { color: var(--gr-op-insert); }
+.hero-mon__body {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  overflow: hidden;
+}
+.hero-mon__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.8rem;
+}
+.hero-mon__sec {
+  color: var(--gr-subtle);
+  font-size: 0.55rem;
+  letter-spacing: 0.06em;
+}
+.hero-mon__row {
+  display: grid;
+  grid-template-columns: 6ch minmax(0, 1fr) 6ch;
+  gap: 0.5rem;
+  white-space: pre;
+}
+.hero-mon__row b { text-align: right; }
+.hero-mon__spark {
+  overflow: hidden;
+  color: var(--gr-accent);
+}
+.hero-mon__events > div {
+  display: grid;
+  grid-template-columns: 12.5ch 6ch minmax(0, 1fr);
+  gap: 0.5rem;
+  white-space: pre;
+}
+.hero-mon__events > div > span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--gr-text);
+}
+.hero-mon__events > div > span:first-child { color: var(--gr-subtle); }
+.hero-mon__events > .is-new { animation: hero-ev-in 0.5s ease; }
+@keyframes hero-ev-in {
+  from { background: var(--gr-surface-2); }
+}
+.hero-mon .op-insert { color: var(--gr-op-insert); }
+.hero-mon .op-update { color: var(--gr-op-update); }
+.hero-mon .op-delete { color: var(--gr-op-delete); }
+@media screen and (max-width: 30em) {
+  .hero-mon__events > div { grid-template-columns: 6ch minmax(0, 1fr); }
+  .hero-mon__events > div > span:first-child { display: none; }
+}
+
+/* Operation colors in the monitor page preview (always a dark terminal) */
+.md-typeset .monitor-screen .op-insert { color: #7fc79a; }
+.md-typeset .monitor-screen .op-update { color: #e2c06d; }
+.md-typeset .monitor-screen .op-delete { color: #e88a8a; }
+.md-typeset .monitor-screen .op-truncate { color: #d29ad8; }
+.md-typeset .monitor-screen .op-skip { color: #6e7178; }
+/* A symbol from the fallback font, sized to one cell of the code font */
+.md-typeset .monitor-screen .mono-cell { display: inline-block; width: 1ch; }
